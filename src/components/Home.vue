@@ -17,493 +17,65 @@ export default {
 </script>
 
 <template>
-    <section class="u-clearfix u-image u-section-1" id="sec-2d2a">
-        <div
-            class="u-clearfix u-sheet u-valign-bottom-lg u-valign-bottom-xl u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-                <div class="u-layout">
-                    <div class="u-layout-row">
-                        <div class="u-container-align-left u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1"
-                            src="">
-                            <div class="u-container-layout u-valign-middle u-container-layout-1">
-                                <h3 class="u-align-left u-text u-text-body-alt-color u-text-default u-text-1"
-                                    data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                    data-animation-delay="500">
-                                    Coaching center</h3>
-                                <h1 class="u-align-left u-custom-font u-font-ubuntu u-text u-text-body-alt-color u-text-2"
-                                    data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                    data-animation-delay="0">
-                                    Teaching and Learning Center</h1>
-                                <p class="u-align-left u-text u-text-body-alt-color u-text-3"
-                                    data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                    data-animation-delay="250"> Further your professional development with
-                                    online and on-site courses, webinars and teaching materials.</p>
-                                <a href="https://nicepage.com/k/consulting-website-templates"
-                                    class="u-active-palette-1-light-3 u-align-left u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-light-3 u-radius-20 u-text-active-palette-1-base u-text-hover-palette-1-base u-white u-btn-1"
-                                    data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                    data-animation-delay="500">contact us</a>
-                            </div>
-                        </div>
-                        <div class="u-align-left u-container-align-center-sm u-container-align-center-xs u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2"
-                            data-animation-name="customAnimationIn" data-animation-duration="1500">
-                            <div
-                                class="u-container-layout u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-xl u-valign-top-sm u-valign-top-xs u-container-layout-2">
-                                <img src="@/assets/dswamin.png" alt=""
-                                    class="u-expanded-width-lg u-expanded-width-xl u-image u-image-default u-image-1">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-left u-palette-2-base u-section-2" id="carousel_10de">
+    <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="256"
+        data-image-height="256" id="sec-cdda">
         <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-                <div class="u-layout">
-                    <div class="u-layout-row">
-                        <div class="u-container-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-                            <div class="u-container-layout u-valign-top u-container-layout-1">
-                                <h5 class="u-align-left u-text u-text-default u-text-palette-2-light-1 u-text-1"
-                                    data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                    data-animation-delay="500">what
-                                    we do</h5>
-                                <div class="u-list u-list-1">
-                                    <div class="u-repeater u-repeater-1">
-                                        <div class="u-container-align-left u-container-style u-list-item u-repeater-item u-shape-rectangle u-list-item-1"
-                                            data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                            data-animation-delay="250">
-                                            <div
-                                                class="u-container-layout u-similar-container u-valign-middle u-container-layout-2">
-                                                <h3 class="u-align-left u-text u-text-2"> New Strategies for Teacher
-                                                    Learning</h3>
-                                                <p class="u-align-left u-text u-text-3"> Ut enim ad minim veniam, quis
-                                                    nostrud exercitation
-                                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                            </div>
-                                        </div>
-                                        <div class="u-container-align-left u-container-style u-list-item u-repeater-item u-shape-rectangle u-list-item-2"
-                                            data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                            data-animation-delay="250">
-                                            <div
-                                                class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
-                                                <h3 class="u-align-left u-text u-text-4"> Professional Learning in Practice
-                                                </h3>
-                                                <p class="u-align-left u-text u-text-5"> Ut enim ad minim veniam, quis
-                                                    nostrud exercitation
-                                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="u-container-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-                            <div class="u-container-layout u-valign-top u-container-layout-4">
-                                <h5 class="u-align-left u-text u-text-default u-text-palette-2-light-1 u-text-6"
-                                    data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                    data-animation-delay="500" data-animation-direction=""> Professional Learning</h5>
-                                <div class="u-list u-list-2">
-                                    <div class="u-repeater u-repeater-2">
-                                        <div class="u-container-align-left u-container-style u-list-item u-repeater-item u-shape-rectangle u-list-item-3"
-                                            data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                            data-animation-delay="250">
-                                            <div
-                                                class="u-container-layout u-similar-container u-valign-middle u-container-layout-5">
-                                                <h3 class="u-align-left u-text u-text-7"> What Teachers Need to Know</h3>
-                                                <p class="u-align-left u-text u-text-8"> Ut enim ad minim veniam, quis
-                                                    nostrud exercitation
-                                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                            </div>
-                                        </div>
-                                        <div class="u-container-align-left u-container-style u-list-item u-repeater-item u-shape-rectangle u-list-item-4"
-                                            data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                            data-animation-delay="250">
-                                            <div
-                                                class="u-container-layout u-similar-container u-valign-middle u-container-layout-6">
-                                                <h3 class="u-align-left u-text u-text-9"> The Good Design</h3>
-                                                <p class="u-align-left u-text u-text-10"> Ut enim ad minim veniam, quis
-                                                    nostrud exercitation
-                                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="skrollable skrollable-between u-align-center u-clearfix u-container-align-center u-image u-section-3"
-        id="carousel_801b" data-image-width="2500" data-image-height="1278" data-animation-name=""
-        data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
-        <div class="u-clearfix u-sheet u-sheet-1">
-            <h2 class="u-text u-text-body-alt-color u-text-1" data-animation-name="customAnimationIn"
-                data-animation-duration="1500" data-animation-delay="500">Education and Learning</h2>
-            <p class="u-text u-text-body-alt-color u-text-default u-text-2" data-animation-name="customAnimationIn"
-                data-animation-duration="1500" data-animation-delay="500">Learning is something we do almost every day</p>
-            <div class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-list-1">
-                <div class="u-repeater u-repeater-1">
-                    <div class="u-align-left u-container-style u-list-item u-palette-5-light-2 u-repeater-item u-list-item-1"
-                        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-                        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
-                            <div class="u-align-center u-container-style u-group u-palette-1-base u-radius-50 u-shape-round u-group-1"
-                                data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                data-animation-delay="500">
-                                <div class="u-container-layout u-valign-middle u-container-layout-2">
-                                    <h2 class="u-custom-font u-font-oswald u-text u-text-body-alt-color u-text-3">01</h2>
-                                </div>
-                            </div>
-                            <h5 class="u-text u-text-4">Teaching</h5>
-                            <p class="u-text u-text-default u-text-5">Sample text. Click to select the text box. Click again
-                                or double
-                                click to start editing the text.</p>
-                            <a href="https://nicepage.com/website-builder"
-                                class="u-active-none u-border-1 u-border-active-palette-2-base u-border-hover-palette-2-base u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-hover-none u-none u-radius-0 u-text-body-color u-top-left-radius-0 u-top-right-radius-0 u-btn-1">learn
-                                more</a>
-                        </div>
-                    </div>
-                    <div class="u-align-left u-container-style u-list-item u-palette-5-light-2 u-repeater-item u-list-item-2"
-                        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-                        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
-                            <div class="u-align-center u-container-style u-group u-palette-1-base u-radius-50 u-shape-round u-group-2"
-                                data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                data-animation-delay="500">
-                                <div class="u-container-layout u-valign-middle u-container-layout-4">
-                                    <h2
-                                        class="u-custom-font u-font-oswald u-text u-text-body-alt-color u-text-default u-text-6">
-                                        02</h2>
-                                </div>
-                            </div>
-                            <h5 class="u-text u-text-7">Innovations<br>
-                            </h5>
-                            <p class="u-text u-text-default u-text-8">Sample text. Click to select the text box. Click again
-                                or double
-                                click to start editing the text.</p>
-                            <a href="https://nicepage.com/templates"
-                                class="u-active-none u-border-1 u-border-active-palette-2-base u-border-hover-palette-2-base u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-hover-none u-none u-radius-0 u-text-body-color u-top-left-radius-0 u-top-right-radius-0 u-btn-2">learn
-                                more</a>
-                        </div>
-                    </div>
-                    <div class="u-align-left u-container-style u-list-item u-palette-5-light-2 u-repeater-item u-list-item-3"
-                        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-                        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-5">
-                            <div class="u-align-center u-container-style u-group u-palette-1-base u-radius-50 u-shape-round u-group-3"
-                                data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                data-animation-delay="500">
-                                <div class="u-container-layout u-valign-middle u-container-layout-6">
-                                    <h2
-                                        class="u-custom-font u-font-oswald u-text u-text-body-alt-color u-text-default u-text-9">
-                                        03</h2>
-                                </div>
-                            </div>
-                            <h5 class="u-text u-text-10">Students</h5>
-                            <p class="u-text u-text-default u-text-11">Sample text. Click to select the text box. Click
-                                again or
-                                double click to start editing the text.</p>
-                            <a href="https://nicepage.studio"
-                                class="u-active-none u-border-1 u-border-active-palette-2-base u-border-hover-palette-2-base u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-hover-none u-none u-radius-0 u-text-body-color u-top-left-radius-0 u-top-right-radius-0 u-btn-3">learn
-                                more</a>
-                        </div>
-                    </div>
-                    <div class="u-align-left u-container-style u-list-item u-palette-5-light-2 u-repeater-item u-list-item-4"
-                        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-                        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-7">
-                            <div class="u-align-center u-container-style u-group u-palette-1-base u-radius-50 u-shape-round u-group-4"
-                                data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                data-animation-delay="500">
-                                <div class="u-container-layout u-valign-middle u-container-layout-8">
-                                    <h2
-                                        class="u-custom-font u-font-oswald u-text u-text-body-alt-color u-text-default u-text-12">
-                                        04</h2>
-                                </div>
-                            </div>
-                            <h5 class="u-text u-text-13">Resources</h5>
-                            <p class="u-text u-text-default u-text-14">Sample text. Click to select the text box. Click
-                                again or
-                                double click to start editing the text.</p>
-                            <a href="https://nicepage.com/c/counter-html-templates"
-                                class="u-active-none u-border-1 u-border-active-palette-2-base u-border-hover-palette-2-base u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-hover-none u-none u-radius-0 u-text-body-color u-top-left-radius-0 u-top-right-radius-0 u-btn-4">learn
-                                more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="u-align-center u-clearfix u-palette-2-base u-section-4" id="carousel_13e4">
-        <div
-            class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-sheet-1">
-            <h2 class="u-text u-text-default u-text-1" data-animation-name="customAnimationIn"
-                data-animation-duration="1500" data-animation-delay="250">Meet The Team</h2>
-            <p class="u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500"
-                data-animation-delay="250">Image by <a href="https://www.freepik.com/photos/people"
-                    class="u-border-1 u-border-no-left u-border-no-right u-border-no-top u-border-white u-btn u-button-link u-button-style u-none u-text-body-alt-color u-btn-1">Freepik</a>
-            </p>
-            <div class="u-expanded-width u-list u-list-1">
-                <div class="u-repeater u-repeater-1">
-                    <div v-for="person in myArray"
-                        class="u-align-left u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-1"
-                        data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-                        <div class="u-container-layout u-similar-container u-container-layout-1">
-                            <div alt="" class="u-image u-image-circle u-image-1" data-image-width="598"
-                                data-image-height="598"></div>
-                            <div
-                                class="u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-group-1">
-                                <div class="u-container-layout">
-                                    <p class="u-align-left u-text u-text-grey-30 u-text-3">{{ person.title }}</p>
-                                    <h3
-                                        class="u-align-left u-custom-font u-font-raleway u-text u-text-palette-1-base u-text-4">
-                                        {{ person.name }}
-                                    </h3>
-                                    <p class="u-align-left u-text u-text-body-color u-text-5">Glavi amet ritnisl libero
-                                        molestie ante ut
-                                        fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum</p>
-                                    <div class="u-social-icons u-spacing-30 u-social-icons-1">
-                                        <a class="u-social-url" title="facebook" target="_blank"
-                                            href="https://facebook.com/name"><span
-                                                class="u-icon u-icon-circle u-social-facebook u-social-icon u-text-palette-1-dark-1"><svg
-                                                    class="u-svg-link" preserveAspectRatio="xMidYMin slice"
-                                                    viewBox="0 0 112 112" style="">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b979">
-                                                    </use>
-                                                </svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0"
-                                                    id="svg-b979">
-                                                    <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
-                                                    <path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
-c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path>
-                                                </svg></span>
-                                        </a>
-                                        <a class="u-social-url" title="twitter" target="_blank"
-                                            href="https://twitter.com/name"><span
-                                                class="u-icon u-icon-circle u-social-icon u-social-twitter u-text-palette-1-dark-1"><svg
-                                                    class="u-svg-link" preserveAspectRatio="xMidYMin slice"
-                                                    viewBox="0 0 112 112" style="">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-030e">
-                                                    </use>
-                                                </svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0"
-                                                    id="svg-030e">
-                                                    <circle fill="currentColor" class="st0" cx="56.1" cy="56.1" r="55">
-                                                    </circle>
-                                                    <path fill="#FFFFFF" d="M83.8,47.3c0,0.6,0,1.2,0,1.7c0,17.7-13.5,38.2-38.2,38.2C38,87.2,31,85,25,81.2c1,0.1,2.1,0.2,3.2,0.2
-c6.3,0,12.1-2.1,16.7-5.7c-5.9-0.1-10.8-4-12.5-9.3c0.8,0.2,1.7,0.2,2.5,0.2c1.2,0,2.4-0.2,3.5-0.5c-6.1-1.2-10.8-6.7-10.8-13.1
-c0-0.1,0-0.1,0-0.2c1.8,1,3.9,1.6,6.1,1.7c-3.6-2.4-6-6.5-6-11.2c0-2.5,0.7-4.8,1.8-6.7c6.6,8.1,16.5,13.5,27.6,14
-c-0.2-1-0.3-2-0.3-3.1c0-7.4,6-13.4,13.4-13.4c3.9,0,7.3,1.6,9.8,4.2c3.1-0.6,5.9-1.7,8.5-3.3c-1,3.1-3.1,5.8-5.9,7.4
-c2.7-0.3,5.3-1,7.7-2.1C88.7,43,86.4,45.4,83.8,47.3z"></path>
-                                                </svg></span>
-                                        </a>
-                                        <a class="u-social-url" title="instagram" target="_blank"
-                                            href="https://instagram.com/name"><span
-                                                class="u-icon u-icon-circle u-social-icon u-social-instagram u-text-palette-1-dark-1 u-icon-3"><svg
-                                                    class="u-svg-link" preserveAspectRatio="xMidYMin slice"
-                                                    viewBox="0 0 512 512" style="">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-559e">
-                                                    </use>
-                                                </svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-559e">
-                                                    <path
-                                                        d="m305 256c0 27.0625-21.9375 49-49 49s-49-21.9375-49-49 21.9375-49 49-49 49 21.9375 49 49zm0 0">
-                                                    </path>
-                                                    <path
-                                                        d="m370.59375 169.304688c-2.355469-6.382813-6.113281-12.160157-10.996094-16.902344-4.742187-4.882813-10.515625-8.640625-16.902344-10.996094-5.179687-2.011719-12.960937-4.40625-27.292968-5.058594-15.503906-.707031-20.152344-.859375-59.402344-.859375-39.253906 0-43.902344.148438-59.402344.855469-14.332031.65625-22.117187 3.050781-27.292968 5.0625-6.386719 2.355469-12.164063 6.113281-16.902344 10.996094-4.882813 4.742187-8.640625 10.515625-11 16.902344-2.011719 5.179687-4.40625 12.964843-5.058594 27.296874-.707031 15.5-.859375 20.148438-.859375 59.402344 0 39.25.152344 43.898438.859375 59.402344.652344 14.332031 3.046875 22.113281 5.058594 27.292969 2.359375 6.386719 6.113281 12.160156 10.996094 16.902343 4.742187 4.882813 10.515624 8.640626 16.902343 10.996094 5.179688 2.015625 12.964844 4.410156 27.296875 5.0625 15.5.707032 20.144532.855469 59.398438.855469 39.257812 0 43.90625-.148437 59.402344-.855469 14.332031-.652344 22.117187-3.046875 27.296874-5.0625 12.820313-4.945312 22.953126-15.078125 27.898438-27.898437 2.011719-5.179688 4.40625-12.960938 5.0625-27.292969.707031-15.503906.855469-20.152344.855469-59.402344 0-39.253906-.148438-43.902344-.855469-59.402344-.652344-14.332031-3.046875-22.117187-5.0625-27.296874zm-114.59375 162.179687c-41.691406 0-75.488281-33.792969-75.488281-75.484375s33.796875-75.484375 75.488281-75.484375c41.6875 0 75.484375 33.792969 75.484375 75.484375s-33.796875 75.484375-75.484375 75.484375zm78.46875-136.3125c-9.742188 0-17.640625-7.898437-17.640625-17.640625s7.898437-17.640625 17.640625-17.640625 17.640625 7.898437 17.640625 17.640625c-.003906 9.742188-7.898437 17.640625-17.640625 17.640625zm0 0">
-                                                    </path>
-                                                    <path
-                                                        d="m256 0c-141.363281 0-256 114.636719-256 256s114.636719 256 256 256 256-114.636719 256-256-114.636719-256-256-256zm146.113281 316.605469c-.710937 15.648437-3.199219 26.332031-6.832031 35.683593-7.636719 19.746094-23.246094 35.355469-42.992188 42.992188-9.347656 3.632812-20.035156 6.117188-35.679687 6.832031-15.675781.714844-20.683594.886719-60.605469.886719-39.925781 0-44.929687-.171875-60.609375-.886719-15.644531-.714843-26.332031-3.199219-35.679687-6.832031-9.8125-3.691406-18.695313-9.476562-26.039063-16.957031-7.476562-7.339844-13.261719-16.226563-16.953125-26.035157-3.632812-9.347656-6.121094-20.035156-6.832031-35.679687-.722656-15.679687-.890625-20.6875-.890625-60.609375s.167969-44.929688.886719-60.605469c.710937-15.648437 3.195312-26.332031 6.828125-35.683593 3.691406-9.808594 9.480468-18.695313 16.960937-26.035157 7.339844-7.480469 16.226563-13.265625 26.035157-16.957031 9.351562-3.632812 20.035156-6.117188 35.683593-6.832031 15.675781-.714844 20.683594-.886719 60.605469-.886719s44.929688.171875 60.605469.890625c15.648437.710937 26.332031 3.195313 35.683593 6.824219 9.808594 3.691406 18.695313 9.480468 26.039063 16.960937 7.476563 7.34375 13.265625 16.226563 16.953125 26.035157 3.636719 9.351562 6.121094 20.035156 6.835938 35.683593.714843 15.675781.882812 20.683594.882812 60.605469s-.167969 44.929688-.886719 60.605469zm0 0">
-                                                    </path>
-                                                </svg></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="skrollable skrollable-between u-align-center u-clearfix u-container-align-center u-image u-section-5"
-        src="" id="carousel_23c6" data-image-width="2500" data-image-height="1278">
-        <div class="u-clearfix u-sheet u-sheet-1">
-            <h2 class="u-align-center u-text u-text-body-alt-color u-text-1" data-animation-name="customAnimationIn"
-                data-animation-duration="1500" data-animation-delay="250"> Start working smarter</h2>
-            <p class="u-align-center u-large-text u-text u-text-body-alt-color u-text-variant u-text-2"
-                data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500"> Ut enim
-                ad
-                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                irure
-                dolor in reprehenderit</p>
-            <a href="https://nicepage.studio"
-                class="u-active-palette-1-light-3 u-align-center u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-palette-2-base u-btn u-btn-round u-button-style u-hover-palette-1-light-3 u-radius-20 u-text-active-palette-1-base u-text-hover-palette-1-base u-white u-btn-1"
-                data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750"
-                data-animation-direction=""> Discover more</a>
-        </div>
-    </section>
-    <section class="u-align-center u-clearfix u-image u-section-6" id="carousel_c4be" data-image-width="1980"
-        data-image-height="1134">
-        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-            <h1 class="u-custom-font u-font-montserrat u-text u-text-1" data-animation-name="customAnimationIn"
-                data-animation-duration="1500" data-animation-delay="0"> Your space <br>to learn, connect, <br>and be
-                inspired
-            </h1>
-            <p class="u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500"
-                data-animation-delay="500">Sample text. Click to select the text box. Click again or double click to start
-                editing the text.&nbsp;Viverra maecenas accumsan lacus vel <span class="u-text-grey-30"></span>facilisis
-                volutpat. Cras fermentum odio eu feugiat pretium nibh.
-            </p>
-            <p class="u-text u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1500"
-                data-animation-delay="500">Image from <a
-                    href="https://www.freepik.com/free-vector/geometrical-abstract-background_4239945.htm"
-                    class="u-active-none u-border-1 u-border-active-grey-75 u-border-black u-border-hover-grey-75 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-link u-button-style u-hover-none u-none u-radius-0 u-text-active-grey-75 u-text-body-color u-text-hover-grey-75 u-top-left-radius-0 u-top-right-radius-0 u-btn-1"
-                    target="_blank">Freepik</a>
-            </p>
-            <a href="https://nicepage.studio"
-                class="u-active-palette-1-light-3 u-align-center u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-palette-2-base u-btn u-btn-round u-button-style u-hover-palette-1-light-3 u-radius-20 u-text-active-palette-1-base u-text-hover-palette-1-base u-white u-btn-2"
-                data-animation-name="" data-animation-duration="0" data-animation-delay="0"
-                data-animation-direction="">Contact
-                Us</a>
-        </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center-lg u-container-align-center-xl u-white u-section-7"
-        id="carousel_845b">
-        <div
-            class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-valign-middle-xs u-sheet-1">
-            <h2 class="u-align-center u-text u-text-default u-text-palette-2-base u-text-1"
-                data-animation-name="customAnimationIn" data-animation-duration="1500">Educational programs</h2>
-            <p class="u-align-center u-large-text u-text u-text-variant u-text-2" data-animation-name="customAnimationIn"
-                data-animation-duration="1500" data-animation-delay="500"> Dignissim sodales ut eu sem. Amet luctus
-                venenatis
-            </p>
-            <img class="u-expanded-width u-image u-image-round u-radius-20 u-image-1"
-                src="@/assets/24974f46-7b66-12b8-3abf-c6083e0a2c1f.jpg" alt="" data-image-width="1200"
-                data-image-height="899" data-animation-name="customAnimationIn" data-animation-duration="1000"
-                data-animation-direction="Right" data-animation-delay="500">
-            <div class="u-list u-list-1">
-                <div class="u-repeater u-repeater-1">
-                    <div class="u-align-center u-container-style u-grey-5 u-list-item u-radius-20 u-repeater-item u-shape-round u-list-item-1"
-                        data-animation-name="fadeIn" data-animation-duration="1500" data-animation-direction="Right"
-                        data-animation-delay="500">
-                        <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
-                            <p class="u-text u-text-default u-text-palette-1-dark-2 u-text-3">awards won</p>
-                            <h3 class="u-custom-font u-font-montserrat u-text u-text-default u-text-palette-1-base u-text-4"
-                                data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">
-                                17</h3>
-                        </div>
-                    </div>
-                    <div class="u-align-center u-container-style u-grey-5 u-list-item u-radius-20 u-repeater-item u-shape-round u-list-item-2"
-                        data-animation-name="fadeIn" data-animation-duration="1500" data-animation-direction="Right"
-                        data-animation-delay="500">
-                        <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-2">
-                            <p class="u-text u-text-default u-text-palette-1-dark-2 u-text-5">XP YEARS</p>
-                            <h3 class="u-custom-font u-font-montserrat u-text u-text-default u-text-palette-1-base u-text-6"
-                                data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">
-                                12+</h3>
-                        </div>
-                    </div>
-                    <div class="u-align-center u-container-style u-grey-5 u-list-item u-radius-20 u-repeater-item u-shape-round u-list-item-3"
-                        data-animation-name="fadeIn" data-animation-duration="1500" data-animation-direction="Right"
-                        data-animation-delay="500">
-                        <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
-                            <p class="u-text u-text-default u-text-palette-1-dark-2 u-text-7">clients</p>
-                            <h3 class="u-custom-font u-font-montserrat u-text u-text-default u-text-palette-1-base u-text-8"
-                                data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">
-                                108</h3>
-                        </div>
-                    </div>
-                    <div class="u-align-center u-container-style u-grey-5 u-list-item u-radius-20 u-repeater-item u-shape-round u-list-item-4"
-                        data-animation-name="fadeIn" data-animation-duration="1500" data-animation-direction="Right"
-                        data-animation-delay="500">
-                        <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
-                            <p class="u-text u-text-default u-text-palette-1-dark-2 u-text-9">projects</p>
-                            <h3 class="u-custom-font u-font-montserrat u-text u-text-default u-text-palette-1-base u-text-10"
-                                data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">
-                                150</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <p class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-11">Images from <a
-                    href="https://freepik.com/photos/business"
-                    class="u-active-none u-border-1 u-border-active-palette-4-dark-1 u-border-grey-75 u-border-hover-palette-4-dark-1 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-link u-button-style u-hover-none u-none u-radius-0 u-text-body-color u-top-left-radius-0 u-top-right-radius-0 u-btn-1">Freepik</a>
-            </p>
-        </div>
-    </section>
-    <section class="u-clearfix u-container-align-center u-section-8" id="carousel_eb6d">
-        <div class="u-clearfix u-sheet u-sheet-1">
-            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-                <div class="u-layout">
-                    <div class="u-layout-row">
-                        <div class="u-container-align-center u-container-style u-layout-cell u-size-20-lg u-size-20-xl u-size-30-md u-size-30-sm u-size-30-xs u-layout-cell-1"
-                            data-animation-name="customAnimationIn" data-animation-duration="1000">
-                            <div class="u-container-layout u-valign-top u-container-layout-1">
-                                <h4 class="u-align-center u-text u-text-1">Contact Us</h4>
-                                <p class="u-align-center u-text u-text-default u-text-2"> Dignissim sodales ut eu sem. Amet
-                                    luctus
-                                    venenatis lectus magna.</p>
-                                <div class="u-align-center-sm u-align-center-xs u-form u-form-1">
-                                    <form action="https://forms.nicepagesrv.com/v2/form/process"
-                                        class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email"
-                                        name="form" style="padding: 0px;">
-                                        <div class="u-form-email u-form-group u-label-none">
-                                            <label for="email-5b2e" class="u-label">Email</label>
-                                            <input type="email" placeholder="Enter a valid email address" id="email-5b2e"
-                                                name="email"
-                                                class="u-grey-10 u-input u-input-rectangle u-radius-20 u-input-1"
-                                                required="false" wfd-id="id1102">
-                                        </div>
-                                        <div class="u-align-left u-form-group u-form-submit u-label-none">
-                                            <a href="#"
-                                                class="u-active-palette-1-dark-2 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-dark-2 u-radius-20 u-btn-1">Submit</a>
-                                            <input type="submit" value="submit" class="u-form-control-hidden"
-                                                wfd-id="id1103">
-                                        </div>
-                                        <div class="u-form-send-message u-form-send-success"> Thank you! Your message has
-                                            been sent. </div>
-                                        <div class="u-form-send-error u-form-send-message"> Unable to send your message.
-                                            Please fix errors
-                                            then try again. </div>
-                                        <input type="hidden" value="" name="recaptchaResponse" wfd-id="id1104">
-                                        <input type="hidden" name="formServices" value="3285ecad2bddd21b4f0535a1d124de82">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="u-container-align-center-lg u-container-align-center-md u-container-align-center-xl u-container-style u-layout-cell u-size-20-lg u-size-20-xl u-size-30-md u-size-30-sm u-size-30-xs u-layout-cell-2"
-                            data-animation-name="customAnimationIn" data-animation-duration="1500"
-                            data-animation-delay="500" data-animation-direction="">
-                            <div class="u-container-layout u-valign-top u-container-layout-2"><span
-                                    class="u-align-center u-file-icon u-icon u-icon-1"><img src="@/assets/733585.png"
-                                        alt=""></span>
-                                <h4 class="u-align-center u-text u-text-3"> Whatsapp Support</h4>
-                                <p
-                                    class="u-align-center u-text u-text-default-lg u-text-default-md u-text-default-xl u-text-4">
-                                    Add us
-                                    on WhatsApp &amp; send queries for instant reply.</p>
-                                <a href="tel:+12-345-678-89089"
-                                    class="u-active-palette-1-dark-2 u-align-center u-border-active-palette-2-light-2 u-border-hover-palette-2-light-2 u-border-none u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-custom u-hover-palette-1-dark-2 u-palette-1-base u-radius-19 u-text-active-white u-text-hover-white u-btn-2"
-                                    data-animation-name="" data-animation-duration="0" data-animation-delay="0"
-                                    data-animation-direction="">+12-345-678-89089</a>
-                            </div>
-                        </div>
-                        <div class="cell-temp-clone u-container-align-center u-container-style u-layout-cell u-size-20-lg u-size-20-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-3"
-                            data-animation-name="" data-animation-duration="0" data-animation-delay="0"
-                            data-animation-direction="">
-                            <div class="u-container-layout u-valign-top u-container-layout-3"><span
-                                    class="u-align-center u-file-icon u-icon u-text-palette-1-light-1 u-icon-2"><img
-                                        src="@/assets/684849-9e33152a.png" alt=""></span>
-                                <h4 class="u-align-center u-text u-text-5"> Live Chat</h4>
-                                <p class="u-align-center u-text u-text-6"> The fastest way to get in touch with an Expert
-                                </p>
-                                <a href="tel:+12-345-678-89089"
-                                    class="u-active-palette-1-dark-2 u-align-center u-border-active-palette-2-light-2 u-border-hover-palette-2-light-2 u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-custom u-hover-palette-1-dark-2 u-palette-1-base u-radius-20 u-text-active-white u-text-hover-white u-btn-3"
-                                    data-animation-name="" data-animation-duration="0" data-animation-delay="0"
-                                    data-animation-direction="">Live chart</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h1 class="u-text u-text-default u-title u-text-1">Sample Headline</h1>
+            <p class="u-large-text u-text u-text-variant u-text-2">Sample text. Click to select the text box. Click again or
+                double click to start editing the text.</p>
         </div>
     </section>
 </template>
+
+<style scoped>
+.u-section-1 {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJkZWZhdWx0LWltYWdlLXNvbGlkIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDAwIDI2NSIgc3R5bGU9IndpZHRoOiA0MDBweDsgaGVpZ2h0OiAyNjVweDsiPg0KPHJlY3QgZmlsbD0iI0M2RDhFMSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNjUiLz4NCjxwYXRoIGZpbGw9IiNEOUUzRTgiIGQ9Ik0zOTUuMyw5Ni4yYy01LTAuOC02LjEsMS4xLTguNSwyLjljLTEtMi4zLTIuNi02LjItNy43LTVjMS41LTUuMy0yLjYtOC40LTcuNy04LjRjLTAuNiwwLTEuMiwwLjEtMS44LDAuMg0KCWMtMS44LTQuMS02LTYuOS0xMC43LTYuOWMtNi41LDAtMTEuOCw1LjMtMTEuOCwxMS44YzAsMC40LDAsMC45LDAuMSwxLjNjLTEuMi0wLjgtMi41LTEuMy0zLjktMS4zYy00LjMsMC03LjksNC4yLTcuOSw5LjQNCgljMCwxLjIsMC4yLDIuNCwwLjYsMy41Yy0wLjUtMC4xLTEtMC4xLTEuNi0wLjFjLTYuOSwwLTEyLjUsNS41LTEyLjcsMTIuNGMtMC45LTAuMi0xLjktMC40LTIuOS0wLjRjLTYuNCwwLTExLjcsNS4yLTEyLjUsMTEuOA0KCWMtMS4yLTAuNC0yLjUtMC42LTMuOS0wLjZjLTUuOSwwLTEwLjgsMy44LTEyLjEsOC45Yy0yLjQtMi01LjUtMy4yLTguOS0zLjJjLTYsMC0xMS4xLDMuNy0xMi44LDguOGMtMS41LTEuNC0zLjgtMi4zLTYuMy0yLjMNCgljLTIuMSwwLTQuMSwwLjYtNS41LDEuN2gtMC4xYy0xLjMtNS41LTYuMi05LjUtMTIuMS05LjVjLTIuNCwwLTQuNywwLjctNi42LDEuOWMtMS40LTAuNy0zLTEuMi00LjgtMS4yYy0wLjMsMC0wLjUsMC0wLjgsMA0KCWMtMS41LTQuMS01LjItNy05LjUtN2MtMy4xLDAtNS45LDEuNS03LjgsMy45Yy0yLjItNC44LTYuOC04LjItMTIuMi04LjJjLTUuNiwwLTEwLjUsMy43LTEyLjUsOC44Yy0yLjEtMC45LTQuNC0xLjUtNi45LTEuNQ0KCWMtNi44LDAtMTIuNSwzLjktMTQuNSw5LjNjLTAuMiwwLTAuNSwwLTAuNywwYy01LjIsMC05LjYsMy4yLTExLjQsNy44Yy0yLjctMi44LTctNC41LTExLjgtNC41Yy0zLjMsMC02LjQsMC45LTguOSwyLjMNCgljLTIuMS02LjUtOC0xMi4yLTE4LjEtOS45Yy0yLjctMi4zLTYuMy0zLjctMTAuMS0zLjdjLTIuNSwwLTQuOCwwLjYtNi45LDEuNmMtMi4yLTUuOS03LjktMTAuMS0xNC42LTEwLjFjLTguNiwwLTE1LjYsNy0xNS42LDE1LjYNCgljMCwwLjksMC4xLDEuNywwLjIsMi41Yy0yLjYtNS03LjgtOC40LTEzLjgtOC40Yy04LjMsMC0xNS4xLDYuNS0xNS42LDE0LjZjLTIuOS0zLjItNy01LjMtMTEuNy01LjNjLTcuNCwwLTEzLjUsNS4xLTE1LjIsMTINCgljLTIuOS0zLjUtOS44LTYtMTQuNy02djExOS4yaDQwMFYxMDJDNDAwLDEwMiw0MDAsOTcsMzk1LjMsOTYuMnoiLz4NCjxwYXRoIGZpbGw9IiM4RUE4QkIiIGQ9Ik00MDAsMjA2LjJjMCwwLTI1LjMtMTkuMi0zMy42LTI1LjdjLTEzLjQtMTAuNi0yMy4xLTEyLjktMzEuNy03cy0yMy45LDE5LjctMjMuOSwxOS43cy01OC45LTYzLjktNjEuNS02Ni40DQoJYy0xLjUtMS40LTMuNi0xLjctNS41LTAuOWMtNS4yLDIuNC0xNy42LDkuNy0yNC41LDEyLjdjLTYuOSwyLjktNDEtNTAuNy00OS42LTUzcy04NC4zLDgzLjMtMTAxLjQsNzUuMXMtMjYuOS0yLjMtMzUuNCwzLjUNCgljLTguNiw1LjktMTEsNS45LTE1LjksOC4ycy0xNy4xLTUuOS0xNy4xLTUuOVYyNjVjMCwwLDQwMCwwLjIsNDAwLDB2LTU4LjhINDAweiIvPg0KPHBhdGggZmlsbD0iIzdFOTZBNiIgZD0iTTMzMy40LDE3OWMtMTMuMS05LjMtNDAsNC42LTU1LjEsMTAuN2MtMjMuNiw5LjYtOTQtNTQuNC0xMDcuMi01OS43YzAsMC00LjIsMy43LTkuNiw3LjYNCgljLTMuNS0wLjQtOC40LTUuNy05LjktNC43Yy00LjYsMy4xLTE3LjgsMTUuNC0yOC4zLDI2LjZjLTEwLjUsMTEuMy0xMS43LDAtMTUuOC0wLjZjLTIuNS0wLjQtNTQuMSw0Mi41LTU4LjcsNDMuMQ0KCUMyMi4zLDIwNS4zLDAsMTk3LjUsMCwxOTcuNVYyNjVsNDAwLTAuMXYtNTMuM0M0MDAsMjExLjYsMzQ0LjgsMTg3LjEsMzMzLjQsMTc5eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTAsMjY0Ljl2LTU4LjZjMCwwLDguMiwxLjgsMTEuMyw1LjNjMy4xLDMuNiwyNi4xLTQuMiwyNi4xLDQuN3MwLjUsNC4yLDAuNSwxNC44YzAsMTAuNywyMy00LjIsMzguMS0xOC40DQoJczM0LjktNDkuMiwzNi0zNWMxLDE0LjItMTUuMSwzOS4yLTI0LDU2LjRDNzkuMSwyNTEuNCw1MS43LDI2NSw1MS43LDI2NUwwLDI2NC45eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTEwMCwyNjVjMCwwLDY2LjctMTI1LjEsNjguMy0xMTYuOHMtNi44LDI5LjcsMi4xLDI2LjFjOC45LTMuNiwxNC42LTE2LDE4LjgtOS41czE2LjIsMzguNiwyMS45LDMzLjgNCgljNS43LTQuNywyMS40LTEzLjEsMjIuNC02LjVjMSw2LjUtMSw1LjMtNS43LDIwLjJDMjIzLjEsMjI3LjEsMjAwLDI2NSwyMDAsMjY1aC0xMGMwLDAsNi0yNC44LDguNi0zNC45YzIuNi0xMC4xLTMuNy0xOS0xMi04LjMNCglzLTIzLDIyLTI0LDE3LjhzLTUuNy0zMC4zLTE4LjgtMTQuMmMtMTMsMTYtMzMuOCwzOS43LTMzLjgsMzkuN2gtMTBWMjY1eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTI0NSwyNjVjMCwwLDE5LjgtNTQuNywzMy40LTY0LjJzNTMuNy0yNy45LDQ2LjktMTMuNmMtNi44LDE0LjItMTEsMzQuNC0yMC4zLDQ5LjgNCgljLTkuNCwxNS40LTE4LjgsMjYuMS0xNC4xLDEzLjZjNC43LTEyLjUsNi40LTIzLjMsMy43LTIzLjFDMjcxLjMsMjI5LjEsMjYwLDI2NSwyNjAsMjY1SDI0NXoiLz4NCjwvc3ZnPg0K");
+    background-position: 50% 50%;
+}
+
+.u-section-1 .u-sheet-1 {
+    min-height: 800px;
+}
+
+.u-section-1 .u-text-1 {
+    margin: 60px auto 0;
+}
+
+.u-section-1 .u-text-2 {
+    margin: 30px 157px 60px;
+}
+
+@media (max-width: 1199px) {
+    .u-section-1 .u-sheet-1 {
+        min-height: 660px;
+    }
+
+    .u-section-1 .u-text-2 {
+        margin-left: 57px;
+        margin-right: 57px;
+    }
+}
+
+@media (max-width: 991px) {
+    .u-section-1 .u-sheet-1 {
+        min-height: 506px;
+    }
+
+    .u-section-1 .u-text-2 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .u-section-1 .u-sheet-1 {
+        min-height: 380px;
+    }
+}
+
+@media (max-width: 575px) {
+    .u-section-1 .u-sheet-1 {
+        min-height: 239px;
+    }
+}
+</style>
