@@ -2,15 +2,26 @@
 export default {
     data() {
         return {
+            publicPath: import.meta.env.BASE_URL,
             myArray: [
-                { name: 'name1', title: 'title1' },
-                { name: 'name2', title: 'title2' },
-                { name: 'name3', title: 'title3' },
-                { name: 'name4', title: 'title4' },
-                { name: 'name5', title: 'title5' }
+                { name: 'ಸಂಸ್ಕಾರ ಸುಗಂದಃ', title: 'NOT_FOUND.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
+                { name: 'ಸಂಸ್ಕೃತಬಿಂದುಃ', title: 'samskrita_bindu.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
+                { name: 'ಸಂಸ್ಕ್ರತ ಗುರುಕುಲಮ್-1', title: 'sg_part1.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
+                { name: 'ಸಂಸ್ಕ್ರತ ಗುರುಕುಲಮ್-2', title: 'sg_part2.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
+                { name: 'ಸಂಸ್ಕ್ರತ ಗುರುಕುಲಮ್-3', title: 'sg_part3.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
+                { name: 'ಸಂಸ್ಕ್ರತ ಗುರುಕುಲಮ್-4 ಸುಭಾಷಿತಮ್', title: 'sg_part4.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
+                { name: 'ಸಂಸ್ಕ್ರತ ಗುರುಕುಲಮ್-5 ಸಂವಾದಶತಕಮ್', title: 'padakosha.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
+                { name: 'ರಸಬಿಂದು', title: 'NOT_FOUND.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
+                { name: 'ನಿತ್ಯವ್ಯವಹಾರ ಪದಕೋಶಃ', title: 'NOT_FOUND.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
+                { name: 'ಗೀತಾಮೃತಮ್', title: 'geetamritam.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
+                { name: 'ಅಮರಕೋಶಃ', title: 'amarakosha.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
+                { name: 'ನೀತಿಶತಕಮ್', title: 'NOT_FOUND.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
+                { name: 'ವಿಭಕ್ತಿ ಕೋಶಃ', title: 'vibaktikosha.jpg', author: 'ವರ್ಷಿತಾ ಜನಕರಾಜು', },
+                { name: 'ಸುವಚನಮ್', title: 'suvachanam.jpg', author: 'ಬಿ.ಎನ್. ವೈದೇಹಿ ಕುಮಾರ್', },
+                { name: 'ಕ್ರಿಯಾಪದಕೋಶಃ', title: 'kriyapada.jpg', author: 'ಡಾ.ತಿರುಮಲ', },
             ]
         };
-    },
+    }
 };
 
 </script>
@@ -18,57 +29,45 @@ export default {
 <template>
     <section class="u-align-center u-clearfix u-section-1" id="sec-882c">
         <div class="u-clearfix u-sheet u-sheet-1">
-            <h1 class="u-text u-text-default u-title u-text-1">Supporting Your Success</h1>
-            <p class="u-large-text u-text u-text-variant u-text-2">Sample text. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
-            <a href="" class="u-border-2 u-border-grey-dark-1 u-btn u-btn-round u-button-style u-radius-50 u-btn-1">Read
-                More</a>
+            <h1 class="u-text u-text-default u-title u-text-1">ಮಿತ್ರೀ ಸಂಸ್ಕೃತ ಸಂಸ್ಕೃತಿ ಪ್ರತಿಷ್ಠಾನಮ್ ಪ್ರಕಟಣೆಗಳು</h1>
         </div>
     </section>
     <section class="u-clearfix u-section-2" id="sec-1ad4">
-        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <p class="u-align-center u-large-text u-text u-text-default u-text-variant u-text-1">ಪುಸ್ತಕಗಳು ತಮಗೆ ಬೇಕಾದಲ್ಲಿ
+                ದಯವಿಟ್ಟು 9740855248 ಸಂಖ್ಯೆಗೆ ವಾಟ್ಸಪ್ ಮೂಲಕ ನಿಮ್ಮ ವಿಳಾಸವನ್ನು ಕಳಿಸಿಕೊಡಿ</p>
             <div class="u-expanded-width u-list u-list-1">
                 <div class="u-repeater u-repeater-1">
                     <div v-for="book in myArray" class="u-container-style u-list-item u-repeater-item">
-                        <div class="u-container-layout u-similar-container u-container-layout-2">
-                            <img alt="" class="u-expanded-width u-image u-image-default u-image-2" data-image-width="2000"
-                                data-image-height="1333"
-                                src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJkZWZhdWx0LWltYWdlLXNvbGlkIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDAwIDI2NSIgc3R5bGU9IndpZHRoOiA0MDBweDsgaGVpZ2h0OiAyNjVweDsiPg0KPHJlY3QgZmlsbD0iI0M2RDhFMSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNjUiLz4NCjxwYXRoIGZpbGw9IiNEOUUzRTgiIGQ9Ik0zOTUuMyw5Ni4yYy01LTAuOC02LjEsMS4xLTguNSwyLjljLTEtMi4zLTIuNi02LjItNy43LTVjMS41LTUuMy0yLjYtOC40LTcuNy04LjRjLTAuNiwwLTEuMiwwLjEtMS44LDAuMg0KCWMtMS44LTQuMS02LTYuOS0xMC43LTYuOWMtNi41LDAtMTEuOCw1LjMtMTEuOCwxMS44YzAsMC40LDAsMC45LDAuMSwxLjNjLTEuMi0wLjgtMi41LTEuMy0zLjktMS4zYy00LjMsMC03LjksNC4yLTcuOSw5LjQNCgljMCwxLjIsMC4yLDIuNCwwLjYsMy41Yy0wLjUtMC4xLTEtMC4xLTEuNi0wLjFjLTYuOSwwLTEyLjUsNS41LTEyLjcsMTIuNGMtMC45LTAuMi0xLjktMC40LTIuOS0wLjRjLTYuNCwwLTExLjcsNS4yLTEyLjUsMTEuOA0KCWMtMS4yLTAuNC0yLjUtMC42LTMuOS0wLjZjLTUuOSwwLTEwLjgsMy44LTEyLjEsOC45Yy0yLjQtMi01LjUtMy4yLTguOS0zLjJjLTYsMC0xMS4xLDMuNy0xMi44LDguOGMtMS41LTEuNC0zLjgtMi4zLTYuMy0yLjMNCgljLTIuMSwwLTQuMSwwLjYtNS41LDEuN2gtMC4xYy0xLjMtNS41LTYuMi05LjUtMTIuMS05LjVjLTIuNCwwLTQuNywwLjctNi42LDEuOWMtMS40LTAuNy0zLTEuMi00LjgtMS4yYy0wLjMsMC0wLjUsMC0wLjgsMA0KCWMtMS41LTQuMS01LjItNy05LjUtN2MtMy4xLDAtNS45LDEuNS03LjgsMy45Yy0yLjItNC44LTYuOC04LjItMTIuMi04LjJjLTUuNiwwLTEwLjUsMy43LTEyLjUsOC44Yy0yLjEtMC45LTQuNC0xLjUtNi45LTEuNQ0KCWMtNi44LDAtMTIuNSwzLjktMTQuNSw5LjNjLTAuMiwwLTAuNSwwLTAuNywwYy01LjIsMC05LjYsMy4yLTExLjQsNy44Yy0yLjctMi44LTctNC41LTExLjgtNC41Yy0zLjMsMC02LjQsMC45LTguOSwyLjMNCgljLTIuMS02LjUtOC0xMi4yLTE4LjEtOS45Yy0yLjctMi4zLTYuMy0zLjctMTAuMS0zLjdjLTIuNSwwLTQuOCwwLjYtNi45LDEuNmMtMi4yLTUuOS03LjktMTAuMS0xNC42LTEwLjFjLTguNiwwLTE1LjYsNy0xNS42LDE1LjYNCgljMCwwLjksMC4xLDEuNywwLjIsMi41Yy0yLjYtNS03LjgtOC40LTEzLjgtOC40Yy04LjMsMC0xNS4xLDYuNS0xNS42LDE0LjZjLTIuOS0zLjItNy01LjMtMTEuNy01LjNjLTcuNCwwLTEzLjUsNS4xLTE1LjIsMTINCgljLTIuOS0zLjUtOS44LTYtMTQuNy02djExOS4yaDQwMFYxMDJDNDAwLDEwMiw0MDAsOTcsMzk1LjMsOTYuMnoiLz4NCjxwYXRoIGZpbGw9IiM4RUE4QkIiIGQ9Ik00MDAsMjA2LjJjMCwwLTI1LjMtMTkuMi0zMy42LTI1LjdjLTEzLjQtMTAuNi0yMy4xLTEyLjktMzEuNy03cy0yMy45LDE5LjctMjMuOSwxOS43cy01OC45LTYzLjktNjEuNS02Ni40DQoJYy0xLjUtMS40LTMuNi0xLjctNS41LTAuOWMtNS4yLDIuNC0xNy42LDkuNy0yNC41LDEyLjdjLTYuOSwyLjktNDEtNTAuNy00OS42LTUzcy04NC4zLDgzLjMtMTAxLjQsNzUuMXMtMjYuOS0yLjMtMzUuNCwzLjUNCgljLTguNiw1LjktMTEsNS45LTE1LjksOC4ycy0xNy4xLTUuOS0xNy4xLTUuOVYyNjVjMCwwLDQwMCwwLjIsNDAwLDB2LTU4LjhINDAweiIvPg0KPHBhdGggZmlsbD0iIzdFOTZBNiIgZD0iTTMzMy40LDE3OWMtMTMuMS05LjMtNDAsNC42LTU1LjEsMTAuN2MtMjMuNiw5LjYtOTQtNTQuNC0xMDcuMi01OS43YzAsMC00LjIsMy43LTkuNiw3LjYNCgljLTMuNS0wLjQtOC40LTUuNy05LjktNC43Yy00LjYsMy4xLTE3LjgsMTUuNC0yOC4zLDI2LjZjLTEwLjUsMTEuMy0xMS43LDAtMTUuOC0wLjZjLTIuNS0wLjQtNTQuMSw0Mi41LTU4LjcsNDMuMQ0KCUMyMi4zLDIwNS4zLDAsMTk3LjUsMCwxOTcuNVYyNjVsNDAwLTAuMXYtNTMuM0M0MDAsMjExLjYsMzQ0LjgsMTg3LjEsMzMzLjQsMTc5eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTAsMjY0Ljl2LTU4LjZjMCwwLDguMiwxLjgsMTEuMyw1LjNjMy4xLDMuNiwyNi4xLTQuMiwyNi4xLDQuN3MwLjUsNC4yLDAuNSwxNC44YzAsMTAuNywyMy00LjIsMzguMS0xOC40DQoJczM0LjktNDkuMiwzNi0zNWMxLDE0LjItMTUuMSwzOS4yLTI0LDU2LjRDNzkuMSwyNTEuNCw1MS43LDI2NSw1MS43LDI2NUwwLDI2NC45eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTEwMCwyNjVjMCwwLDY2LjctMTI1LjEsNjguMy0xMTYuOHMtNi44LDI5LjcsMi4xLDI2LjFjOC45LTMuNiwxNC42LTE2LDE4LjgtOS41czE2LjIsMzguNiwyMS45LDMzLjgNCgljNS43LTQuNywyMS40LTEzLjEsMjIuNC02LjVjMSw2LjUtMSw1LjMtNS43LDIwLjJDMjIzLjEsMjI3LjEsMjAwLDI2NSwyMDAsMjY1aC0xMGMwLDAsNi0yNC44LDguNi0zNC45YzIuNi0xMC4xLTMuNy0xOS0xMi04LjMNCglzLTIzLDIyLTI0LDE3LjhzLTUuNy0zMC4zLTE4LjgtMTQuMmMtMTMsMTYtMzMuOCwzOS43LTMzLjgsMzkuN2gtMTBWMjY1eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTI0NSwyNjVjMCwwLDE5LjgtNTQuNywzMy40LTY0LjJzNTMuNy0yNy45LDQ2LjktMTMuNmMtNi44LDE0LjItMTEsMzQuNC0yMC4zLDQ5LjgNCgljLTkuNCwxNS40LTE4LjgsMjYuMS0xNC4xLDEzLjZjNC43LTEyLjUsNi40LTIzLjMsMy43LTIzLjFDMjcxLjMsMjI5LjEsMjYwLDI2NSwyNjAsMjY1SDI0NXoiLz4NCjwvc3ZnPg0K">
-                            <h3 class="u-text u-text-default u-text-3">{{ book.name }}</h3>
-                            <p class="u-text u-text-4">Sample text. Click to select the text box. Click again or double
-                                click to start
-                                editing the text.</p>
-                            <a href=""
-                                class="u-active-none u-border-2 u-border-hover-palette-2-base u-border-palette-2-light-1 u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-2">learn
-                                more</a>
+                        <div class="u-container-layout u-similar-container u-container-layout-1">
+                            <img alt="" class="u-expanded-width u-image u-image-contain u-image-default u-image-1"
+                                data-image-width="2000" data-image-height="3000"
+                                :src="`${publicPath}./books/${book.title}`">
+                            <h3 class="u-align-center u-text u-text-default u-text-2">{{ book.name }}</h3>
+                            <p class="u-align-center u-text u-text-3">{{ book.author }}</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <p class="u-align-center u-large-text u-text u-text-default u-text-variant u-text-8">ಪುಸ್ತಕಗಳು ತಮಗೆ ಬೇಕಾದಲ್ಲಿ
+                ದಯವಿಟ್ಟು 9740855248 ಸಂಖ್ಯೆಗೆ ವಾಟ್ಸಪ್ ಮೂಲಕ ನಿಮ್ಮ ವಿಳಾಸವನ್ನು ಕಳಿಸಿಕೊಡಿ</p>
         </div>
+
     </section>
 </template>
 
 
 <style scoped>
 .u-section-1 .u-sheet-1 {
-    min-height: 426px;
+    min-height: 203px;
 }
 
 .u-section-1 .u-text-1 {
-    margin: 114px auto 0;
+    margin: 20px auto 0;
 }
 
 .u-section-1 .u-text-2 {
-    margin: 40px 59px 0;
-}
-
-.u-section-1 .u-btn-1 {
-    background-image: none;
-    border-style: solid;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 40px auto;
+    margin: 20px 59px;
 }
 
 @media (max-width: 1199px) {
@@ -79,12 +78,17 @@ export default {
 }
 
 .u-section-2 .u-sheet-1 {
-    min-height: 552px;
+    min-height: 554px;
+}
+
+.u-section-2 .u-text-1 {
+    font-weight: 700;
+    margin: 18px 30px 0;
 }
 
 .u-section-2 .u-list-1 {
     grid-template-rows: auto;
-    margin: 50px 0;
+    margin: 0;
 }
 
 .u-section-2 .u-repeater-1 {
@@ -102,21 +106,12 @@ export default {
     margin: 0 auto 0 0;
 }
 
-.u-section-2 .u-text-1 {
-    margin: 20px auto 0 0;
-}
-
 .u-section-2 .u-text-2 {
-    margin: 20px 0 0;
+    margin: 20px 31px 0;
 }
 
-.u-section-2 .u-btn-1 {
-    font-size: 0.875rem;
-    letter-spacing: 1px;
-    border-style: none none solid;
-    text-transform: uppercase;
-    margin: 20px auto 0 0;
-    padding: 2px 0;
+.u-section-2 .u-text-3 {
+    margin: 20px 0 0;
 }
 
 .u-section-2 .u-container-layout-2 {
@@ -128,21 +123,12 @@ export default {
     margin: 0 auto 0 0;
 }
 
-.u-section-2 .u-text-3 {
-    margin: 20px auto 0 0;
-}
-
 .u-section-2 .u-text-4 {
-    margin: 20px 0 0;
+    margin: 20px 31px 0;
 }
 
-.u-section-2 .u-btn-2 {
-    font-size: 0.875rem;
-    letter-spacing: 1px;
-    border-style: none none solid;
-    text-transform: uppercase;
-    margin: 20px auto 0 0;
-    padding: 2px 0;
+.u-section-2 .u-text-5 {
+    margin: 20px 0 0;
 }
 
 .u-section-2 .u-container-layout-3 {
@@ -154,24 +140,23 @@ export default {
     margin: 0 auto 0 0;
 }
 
-.u-section-2 .u-text-5 {
-    margin: 20px auto 0 0;
+.u-section-2 .u-text-6 {
+    margin: 20px 31px 0;
 }
 
-.u-section-2 .u-text-6 {
+.u-section-2 .u-text-7 {
     margin: 20px 0 0;
 }
 
-.u-section-2 .u-btn-3 {
-    font-size: 0.875rem;
-    letter-spacing: 1px;
-    border-style: none none solid;
-    text-transform: uppercase;
-    margin: 20px auto 0 0;
-    padding: 2px 0;
+.u-section-2 .u-text-8 {
+    margin: 30px 30px 60px;
 }
 
 @media (max-width: 1199px) {
+    .u-section-2 .u-text-1 {
+        width: auto;
+    }
+
     .u-section-2 .u-list-1 {
         margin-right: initial;
         margin-left: initial;
@@ -227,6 +212,12 @@ export default {
 }
 
 @media (max-width: 767px) {
+    .u-section-2 .u-list-1 {
+        margin-top: 20px;
+        margin-right: initial;
+        margin-left: initial;
+    }
+
     .u-section-2 .u-repeater-1 {
         grid-template-columns: 100%;
     }
