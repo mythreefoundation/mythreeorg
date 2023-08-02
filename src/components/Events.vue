@@ -46,6 +46,11 @@ import CalendarView from '../views/CalendarView.vue'
                           click to start editing the text.&nbsp;Duis aute irure dolor in
                           reprehenderit in voluptate
                           velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                                         <p class="u-text u-text-2">Sample text. Click to select the text box. Click
+                          again or double
+                          click to start editing the text.&nbsp;Duis aute irure dolor in
+                          reprehenderit in voluptate
+                          velit esse cillum dolore eu fugiat nulla pariatur. </p>
                       </div>
                     </div>
                   </div>
