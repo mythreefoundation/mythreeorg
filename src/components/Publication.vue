@@ -3,7 +3,7 @@ export default {
     data() {
         return {
             publicPath: import.meta.env.BASE_URL,
-            myArray: [
+            books: [
                 { name: 'ಸಂಸ್ಕಾರ ಸುಗಂದಃ', title: 'NOT_FOUND.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
                 { name: 'ಸಂಸ್ಕೃತಬಿಂದುಃ', title: 'samskrita_bindu.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
                 { name: 'ಸಂಸ್ಕ್ರತ ಗುರುಕುಲಮ್-1', title: 'sg_part1.jpg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
@@ -29,7 +29,7 @@ export default {
 <template>
     <section class="u-align-center u-clearfix u-section-1" id="sec-882c">
         <div class="u-clearfix u-sheet u-sheet-1">
-            <h1 class="u-text u-text-default u-title u-text-1">ಮಿತ್ರೀ ಸಂಸ್ಕೃತ ಸಂಸ್ಕೃತಿ ಪ್ರತಿಷ್ಠಾನಮ್ ಪ್ರಕಟಣೆಗಳು</h1>
+            <h1 class="u-text u-text-default u-title u-text-1">ಮೈತ್ರಿ ಸಂಸ್ಕೃತ ಸಂಸ್ಕೃತಿ ಪ್ರತಿಷ್ಠಾನಮ್ ಪ್ರಕಟಣೆಗಳು</h1>
         </div>
     </section>
     <section class="u-clearfix u-section-2" id="sec-1ad4">
@@ -38,7 +38,7 @@ export default {
                 ದಯವಿಟ್ಟು 9740855248 ಸಂಖ್ಯೆಗೆ ವಾಟ್ಸಪ್ ಮೂಲಕ ನಿಮ್ಮ ವಿಳಾಸವನ್ನು ಕಳಿಸಿಕೊಡಿ</p>
             <div class="u-expanded-width u-list u-list-1">
                 <div class="u-repeater u-repeater-1">
-                    <div v-for="book in myArray" class="u-container-style u-list-item u-repeater-item">
+                    <div v-for="book in books" class="u-container-style u-list-item u-repeater-item">
                         <div class="u-container-layout u-similar-container u-container-layout-1">
                             <img alt="" class="u-expanded-width u-image u-image-contain u-image-default u-image-1"
                                 data-image-width="2000" data-image-height="3000"
