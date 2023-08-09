@@ -29,39 +29,32 @@ export default {
 </script>
 
 <template>
-    <header class="w3-container w3-teal w3-center" style="padding:128px 16px">
+    <header class="w3-container w3-teal w3-center" style="padding:64px 16px">
         <h3 class="w3-margin w3-jumbo">ಪ್ರಕಟಣೆಗಳು</h3>
         <p class="w3-xlarge">Template by w3.css</p>
     </header>
 
     <div class="w3-row-padding w3-padding-64 w3-container">
-        <div class="flex-container">
-            <div v-for="book in books" style="padding: 20px;">
-
-                <div :style="`display: inline-block; margin: 2px; box-shadow: 5px 5px 5px gray; width: 200px;`">
-                    <img :src="`${publicPath}./books/${book.title}`" :alt="`${book.title}`" :style="`max-height: 250px;
-    max-width: 200px; width: 100%;height: ${imageSizePx}px;object-fit: fill;`">
-
-                    <!-- <p>{{ book.name }}</p> -->
-                    <!-- <p>{{ book.author }}</p> -->
-                </div>
-
+        <div v-for="book in books" class="w3-third w3-container w3-margin-bottom"
+            style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <div class="w3-image-container"
+                style="height: 300px; display: flex; align-items: center; justify-content: center;">
+                <img :src="`${publicPath}./books/${book.title}`" :alt="`${book.title}`"
+                    style="max-width: 100%; max-height: 100%;">
+            </div>
+            <div class="w3-container w3-white w3-center">
+                <p><b>{{ book.name }}</b></p>
+                <p>{{ book.author }}</p>
             </div>
         </div>
+    </div>
 
 
-
-        <div class="iframe-container">
-            <iframe class="responsive-iframe"
-                src="https://docs.google.com/forms/d/e/1FAIpQLSfx3c5267Pc-emHYswdDSmoKC7PUgB9MB6tcWZZ9jA1-zYvGg/viewform?embedded=true"
+    <div class="iframe-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfx3c5267Pc-emHYswdDSmoKC7PUgB9MB6tcWZZ9jA1-zYvGg/viewform?embedded=true"
                 width="750" height="1685" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
-    </div>
 </template>
 
 
-<style scoped>
-p {
-    font-size: 12px;
-}
-</style>
+<style scoped></style>

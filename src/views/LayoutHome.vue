@@ -1,8 +1,12 @@
 <template>
     <header class="w3-container w3-teal w3-center" style="padding:128px 16px">
         <h1 class="w3-margin w3-jumbo">ಮೈತ್ರೀ ಸಂಸ್ಕೃತ-ಸಂಸ್ಕೃತಿ ಪ್ರತಿಷ್ಠಾನಮ್</h1>
-        <p class="w3-xlarge">Template by w3.css</p>
-        <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>
+        <!-- <p class="w3-xlarge">Template by w3.css</p>
+        <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button> -->
+
+        <div class="w3-bar-item w3-padding-large">
+            <img src="@/assets/mythree-logo.png" alt="Logo" class="w3-image" style="max-height: 150px;">
+        </div>
     </header>
 
     <div class="w3-row-padding w3-padding-64 w3-container">
@@ -54,9 +58,6 @@
     <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
         <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
     </div>
-
-    
 </template>
 
-<style>
-</style>
+<style></style>
