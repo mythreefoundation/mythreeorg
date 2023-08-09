@@ -22,15 +22,5 @@ export default defineComponent({
   <router-view />
   <Footer></Footer>
 
-  <section class="u-backlink u-clearfix u-grey-80">
-    <!-- <a class="u-link" href="https://nicepage.com/html-templates" target="_blank">
-        <span>HTML Template</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="https://nicepage.studio" target="_blank">
-        <span>Website Builder</span>
-      </a>. -->
-  </section>
+
 </template>

@@ -11,26 +11,11 @@ export default defineComponent({
 <template>
     <div class="container">
         <iframe class="responsive-iframe"
-            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FKolkata&title=Calendar%20of%20events&showTz=1&showTabs=0&showPrint=0&showCalendars=0&showNav=1&src=a2FydGhpa2FkaXR5YTE0N0BnbWFpbC5jb20&color=%234285F4"
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FKolkata&showNav=1&showPrint=0&showTabs=0&showTz=1&showCalendars=1&title=Mythree%20Pratishtanam%20Programs&src=bXl0aHJlZXByYXRpc2h0YW5hQGdtYWlsLmNvbQ&color=%23039BE5"
             style="padding: 20px;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
 </template>
 
 <style>
-.container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 100%;
-}
 
-.responsive-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-}
 </style>

@@ -1,65 +1,31 @@
+<script lang="ts">
+export default {
+    data() {
+        return {
+            pages: [
+                { name: 'Events', href:'events' },
+                { name: 'Publications', href:'books' }
+            ]
+        }
+    }
+}
+</script>
+
 <template>
-    <header class="u-clearfix u-header u-header" id="sec-48c3">
-        <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-sheet-1">
-            <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="1280" data-image-height="854">
-                <img src="@/assets/mythree-logo.png" class="u-logo-image u-logo-image-1">
-            </a>
-            <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
-                <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
-                    <a class="u-button-style u-custom-border u-custom-border-color u-custom-borders u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                        href="#" style="padding: 4px 54px; font-size: calc(1em + 8px);">
-                        <svg class="u-svg-link" viewBox="0 0 24 24">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
-                        </svg>
-                        <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <rect y="1" width="16" height="2"></rect>
-                                <rect y="7" width="16" height="2"></rect>
-                                <rect y="13" width="16" height="2"></rect>
-                            </g>
-                        </svg>
-                    </a>
-                </div>
-                <div class="u-custom-menu u-nav-container">
-                    <ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
-                        <li class="u-nav-item">
-                            <router-link
-                                class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base"
-                                :to="{ name: 'home' }">Home</router-link>
-                        </li>
-                        <li class="u-nav-item">
-                            <router-link
-                                class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base"
-                                :to="{ name: 'events' }">Events</router-link>
-                        </li>
-                        <li class="u-nav-item"><router-link
-                                class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base"
-                                :to="{ name: 'books' }">Books</router-link>
-                        </li>
-                    </ul>
-                </div>
-                <div class="u-custom-menu u-nav-container-collapse">
-                    <div class="u-black u-border-4 u-border-grey-75 u-container-style u-inner-container-layout u-sidenav">
-                        <div class="u-inner-container-layout u-sidenav-overflow">
-                            <div class="u-menu-close"></div>
-                            <ul
-                                class="u-align-center u-nav u-popupmenu-items u-spacing-9 u-text-active-palette-1-base u-unstyled u-nav-2">
-                                <li class="u-nav-item">
-                                    <router-link class="u-button-style u-nav-link" :to="{ name: 'home' }">Home</router-link>
-                                </li>
-                                <li class="u-nav-item"><router-link class="u-button-style u-nav-link"
-                                        :to="{ name: 'events' }">Events</router-link>
-                                </li>
-                                <li class="u-nav-item"><router-link class="u-button-style u-nav-link"
-                                        :to="{ name: 'books' }">Books</router-link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-                </div>
-            </nav>
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-teal w3-card w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-teal"
+                href="javascript:void(0);" onclick="myFunction()" title="Navigation"><i class="fa fa-bars"></i></a>
+
+            <router-link :to="{ name: 'home' }" class="w3-bar-item w3-button w3-padding-large w3-white">Home</router-link>
+            <router-link v-for="page in pages" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" :to="{ name: page.href }">{{ page.name }}</router-link>
+
         </div>
-    </header>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+            <router-link v-for="page in pages" class="w3-bar-item w3-button w3-padding-large" :to="{ name: page.href }">{{ page.name }}</router-link>
+        </div>
+    </div>
 </template>
