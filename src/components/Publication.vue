@@ -1,7 +1,5 @@
 <script lang="ts">
-import { storage } from '../firestore';
-import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
-import { getTokenFromUrl } from '../utils/utils';
+import { fetchImagesURL } from '../utils/utils';
 
 export default {
     data() {
@@ -33,39 +31,9 @@ export default {
     },
     async created() {
         // Call a function to fetch the image URL from Firebase Storage
-        await this.fetchImageURL();
+        // await this.fetchImageURL();
     },
     methods: {
-
-        async fetchImageURL() {
-            try {
-                getDownloadURL(ref(storage, 'books/amarakosha.jpg')).then(url => {
-                    this.imageUrl = url
-                })
-
-                listAll(ref(storage, 'books')).then(res => {
-
-                    // Loop through the items array on the result object
-                    res.items.forEach((itemRef) => {
-                        // Get the download URL for each image
-                        getDownloadURL(itemRef)
-                            .then((imgUrl) => {
-                                // Do something with the image URL, such as displaying it
-                                console.log(imgUrl);
-                                this.images.push(imgUrl);
-                            })
-                            .catch((error) => {
-                                // Handle any errors
-                                console.error(error);
-                            });
-                    });
-
-                })
-            } catch (error) {
-                console.error('Error fetching image URL:', error);
-            }
-        },
-
         sayHello() {
             console.log('Hello')
         }
