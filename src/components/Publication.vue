@@ -1,8 +1,12 @@
 <script lang="ts">
+import { storage } from '../firestore';
+import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
+import { getTokenFromUrl } from '../utils/utils';
+
 export default {
     data() {
         return {
-            imageSizePx: 250,
+            TOKEN: '',
             publicPath: import.meta.env.BASE_URL,
             books: [
                 { name: 'ಸಂಸ್ಕಾರ ಸುಗಂಧಃ', title: 'samskara_suganda.jpeg', author: 'ಡಾ.ಗಣಪತಿ ಹೆಗಡೆ', },
@@ -21,17 +25,67 @@ export default {
                 { name: 'ವಿಭಕ್ತಿಕೋಶಃ', title: 'vibaktikosha.jpg', author: 'ಕು.ವರ್ಷಿತಾ ಜನಕರಾಜು', },
                 { name: 'ಸುವಚನಮ್', title: 'suvachanam.jpg', author: 'ಶ್ರೀಮತಿ.ಬಿ.ಎನ್. ವೈದೇಹಿ ಕುಮಾರ್', },
                 { name: 'ಲಘುಕ್ರಿಯಾಪದಸಂಗ್ರಹಃ', title: 'kriyapada.jpg', author: 'ಡಾ.ತಿರುಮಲ', },
-            ]
+            ],
+            imageUrl: '',
+            images: [] as string[],
+            array: [] as Array<string>,
         };
+    },
+    async created() {
+        // Call a function to fetch the image URL from Firebase Storage
+        await this.fetchImageURL();
+    },
+    methods: {
+
+        async fetchImageURL() {
+            try {
+                getDownloadURL(ref(storage, 'books/amarakosha.jpg')).then(url => {
+                    this.imageUrl = url
+                })
+
+                listAll(ref(storage, 'books')).then(res => {
+
+                    // Loop through the items array on the result object
+                    res.items.forEach((itemRef) => {
+                        // Get the download URL for each image
+                        getDownloadURL(itemRef)
+                            .then((imgUrl) => {
+                                // Do something with the image URL, such as displaying it
+                                console.log(imgUrl);
+                                this.images.push(imgUrl);
+                            })
+                            .catch((error) => {
+                                // Handle any errors
+                                console.error(error);
+                            });
+                    });
+
+                })
+            } catch (error) {
+                console.error('Error fetching image URL:', error);
+            }
+        },
+
+        sayHello() {
+            console.log('Hello')
+        }
     }
-};
+}
+
+</script>
+
+<script lang="ts">
+
+
 
 </script>
 
 <template>
     <header class="w3-container w3-teal w3-center" style="padding:64px 16px">
-        <h3 class="w3-margin w3-jumbo">ಪ್ರಕಟಣೆಗಳು</h3>
-        <p class="w3-xlarge">Template by w3.css</p>
+        <h3 class="w3-margin w3-jumbo">ನಮ್ಮ ಪ್ರಕಟಣೆಗಳು</h3>
+        <p class="w3-xlarge">ಯಾವುದೇ ವಯೇಮಾನದವರಿಗೂ ಸುಲಭವಾಗಿ ಸಂಸಕೃತ ಕಲಿಯಲು
+            ಮೈತ್ರೇ ಸಂಸಕೃತ-ಸಂಸಕೃತ್ ಪ್ರತ್ಷ್ಠಾನವು
+            ಈ ಪುಸತಕಗಳನುು ಪ್ರಕಟಿಸಿದ.</p>
     </header>
 
     <div class="w3-row-padding w3-padding-64 w3-container">
@@ -39,21 +93,31 @@ export default {
             style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <div class="w3-image-container"
                 style="height: 300px; display: flex; align-items: center; justify-content: center;">
+
                 <img :src="`${publicPath}./books/${book.title}`" :alt="`${book.title}`"
                     style="max-width: 100%; max-height: 100%;">
+
             </div>
             <div class="w3-container w3-white w3-center">
                 <p><b>{{ book.name }}</b></p>
                 <p>{{ book.author }}</p>
             </div>
         </div>
+
+    </div>
+
+    <div class="iframe-container">
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfx3c5267Pc-emHYswdDSmoKC7PUgB9MB6tcWZZ9jA1-zYvGg/viewform?embedded=true"
+            width="750" height="1685" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+
+    <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+        <h1 class="w3-margin w3-xlarge">ಈ ಪುಸತಕಗಳು ನಿಮಗೆ ಬೇಕಾದಲಿಿ ಆಯಾ ಪುಸತಕಗಳ ಒಟ್ುು ಬಲೆ ಹಾಗೂ ಅಂಚೆವೆಚ್ಚ ರೂ. 50/- ನುು ಸೇರಿಸಿ 94482
+            43724 ಸಂಖ್ಯೆಗೆ PhonePay ಮುಖಂತರ ಕಳಿಸಬಹುದು</h1>
     </div>
 
 
-    <div class="iframe-container">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfx3c5267Pc-emHYswdDSmoKC7PUgB9MB6tcWZZ9jA1-zYvGg/viewform?embedded=true"
-                width="750" height="1685" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        </div>
 </template>
 
 

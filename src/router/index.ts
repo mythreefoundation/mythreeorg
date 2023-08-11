@@ -3,6 +3,8 @@ import LayoutHome from '../views/LayoutHome.vue'
 import AboutView from '../views/AboutView.vue'
 import Home from '../components/Home.vue'
 import Publication from '../components/Publication.vue'
+import MitraRashmi from '../components/MitraRashmi.vue'
+import DailyArticle from '../components/DailyArticle.vue'
 import Events from '../components/Events.vue'
 
 const router = createRouter({
@@ -19,6 +21,11 @@ const router = createRouter({
       component: Publication
     },
     {
+      path: '/mitrarashmi',
+      name: 'mitrarashmi',
+      component: MitraRashmi
+    },
+    {
       path: '/about',
       name: 'about',
       component: AboutView
@@ -32,6 +39,11 @@ const router = createRouter({
       path: '/events',
       name: 'events',
       component: Events
+    },
+    {
+      path: '/subashita',
+      name: 'subashita',
+      component: DailyArticle
     }
   ]
 })

@@ -4,7 +4,9 @@ export default {
         return {
             pages: [
                 { name: 'Events', href: 'events' },
-                { name: 'Publications', href: 'books' }
+                { name: 'Publications', href: 'books' },
+                { name: 'Mitrarashmi', href: 'mitrarashmi' },
+                { name: 'Subashitagalu', href: 'subashita' },
             ]
         }
     }

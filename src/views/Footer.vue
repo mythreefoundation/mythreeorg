@@ -1,8 +1,8 @@
 <template>
     <footer class="w3-row-padding w3-padding-32">
         <div class="w3-third">
-            <h3>Mythree Samskritha Samskrithi Prathisthanam</h3>
-            <p>#130, 3rd Main, Grihalakshmi Layout, 2nd Stage, Kamalanagar, Bangalore-560079</p>
+            <h3>Mythree Samskritha Samskrithi Prathisthanam (R)</h3>
+            <p>#130, Gruhalakshmi Layout 2nd Stage, Kamalanagar 3rd Main, Bengaluru 560079</p>
         </div>
 
         <div class="w3-center w3-third">
@@ -21,7 +21,7 @@
         <div class="w3-right w3-third">
             <h3>Get in touch</h3>
             <p>mythreefoundation@gmail.com</p>
-            <p>+91 9740855248</p>
+            <p>+91 9448243724</p>
         </div>
     </footer>
 </template>
