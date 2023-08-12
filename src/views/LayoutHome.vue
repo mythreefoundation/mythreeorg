@@ -1,3 +1,22 @@
+<script lang="ts">
+import { fetchImagesURL } from '../utils/utils';
+
+export default {
+    data() {
+        return {
+            publicPath: import.meta.env.BASE_URL,
+            latestNews: [] as string[],
+
+        }
+    },
+    async created() {
+        await fetchImagesURL("news").then(news => {
+            this.latestNews = news;
+        });
+    },
+}
+</script>
+
 <template>
     <header class="w3-container w3-teal w3-center" style="padding:128px 16px">
         <h1 class="w3-margin w3-jumbo">ಮೈತ್ರೀ ಸಂಸ್ಕೃತ-ಸಂಸ್ಕೃತಿ ಪ್ರತಿಷ್ಠಾನಮ್</h1>
@@ -8,6 +27,37 @@
             <img src="@/assets/mythree-logo.png" alt="Logo" class="w3-image" style="max-height: 150px;">
         </div>
     </header>
+
+    <h2 class="w3-text-teal w3-center">ಇತ್ತೀಚಿನ ಸುದ್ದಿಗಳು</h2>
+
+    <div class="w3-content w3-row-padding w3-display-container w3-padding-large" style="max-width:800px">
+        <div class="w3-image-container" style="height: 500px; display: flex; justify-content: center;">
+            <a v-for="newsImgUrl in latestNews" :href="`${newsImgUrl}`" target="_blank">
+                <img class="mySlides" alt="slidingImages" :src="`${newsImgUrl}`"
+                    style="width:100%;max-width: 100%; max-height: 100%;">
+            </a>
+        </div>
+
+        <!-- <img class="mySlides" :src="`${publicPath}./events/seniors.jpg`" style="width:100%"> -->
+
+        <!-- <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+            <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+            <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+        </div> -->
+
+        <!-- <div class="w3-center">
+            <div class="w3-section">
+                <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
+                <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+            </div>
+            <button class="w3-button demo" onclick="currentDiv(1)">1</button>
+            <button class="w3-button demo" onclick="currentDiv(2)">2</button>
+            <button class="w3-button demo" onclick="currentDiv(3)">3</button>
+        </div> -->
+    </div>
 
     <div class="w3-row-padding w3-padding-64 w3-container">
         <div class="w3-content">
@@ -60,4 +110,20 @@
     </div>
 </template>
 
-<style></style>
+<style scoped>
+.mySlides {
+    display: none
+}
+
+.w3-left,
+.w3-right,
+.w3-badge {
+    cursor: pointer
+}
+
+.w3-badge {
+    height: 13px;
+    width: 13px;
+    padding: 0
+}
+</style>

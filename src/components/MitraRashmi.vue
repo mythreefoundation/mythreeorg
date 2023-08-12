@@ -1,9 +1,10 @@
 <script lang="ts">
-import { storage } from '../firestore';
-import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
-import { getTokenFromUrl } from '../utils/utils';
+import VuePdfEmbed from 'vue-pdf-embed'
 
 export default {
+    components: {
+        VuePdfEmbed,
+    },
     data() {
         return {
             TOKEN: '',
@@ -23,46 +24,23 @@ export default {
             imageUrl: '',
             images: [] as string[],
             array: [] as Array<string>,
+            pdfSource: "'https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/examples/learning/helloworld.pdf",
+            isLoading: true,
         };
     },
     async created() {
         // Call a function to fetch the image URL from Firebase Storage
-        await this.fetchImageURL();
     },
     methods: {
-
-        async fetchImageURL() {
-            try {
-                getDownloadURL(ref(storage, 'books/amarakosha.jpg')).then(url => {
-                    this.imageUrl = url
-                })
-
-                listAll(ref(storage, 'books')).then(res => {
-
-                    // Loop through the items array on the result object
-                    res.items.forEach((itemRef) => {
-                        // Get the download URL for each image
-                        getDownloadURL(itemRef)
-                            .then((imgUrl) => {
-                                // Do something with the image URL, such as displaying it
-                                console.log(imgUrl);
-                                this.images.push(imgUrl);
-                            })
-                            .catch((error) => {
-                                // Handle any errors
-                                console.error(error);
-                            });
-                    });
-
-                })
-            } catch (error) {
-                console.error('Error fetching image URL:', error);
-            }
+        handleDocumentRender() {
+            this.isLoading = false
+            // this.pageCount = this.$refs.pdfRef.pageCount
         },
 
-        sayHello() {
-            console.log('Hello')
-        }
+
+        handleClick(imgUrl: string) {
+            document.getElementById('modal-id')!.style.display = 'block';
+        },
     }
 }
 
@@ -206,6 +184,24 @@ export default {
         </div>
         <h3 class="w3-text-teal w3-center">ಇನ್ನೇಕೆ ತಡ? ಲೇಖನವನನನ ಬರೆಯಲ್ನ ಆರಂಭಿಸ !</h3>
     </div>
+
+    <!-- <div id="modal-id" class="w3-modal">
+        <div class="w3-modal-content">
+
+            <div class="w3-container">
+                <span onclick="document.getElementById('modal-id').style.display='none'"
+                    class="w3-button w3-display-topright w3-padding-large w3-xxlarge">&times;</span>
+
+                <object :data="`${publicPath}./mitrarashmi/helloworld.pdf`" type="application/pdf" width="100%"
+                    height="100%">
+                    <p>It appears you don't have a PDF plugin for this browser. No biggie... you can <a
+                            href="example.pdf">click here to download the PDF file.</a></p>
+                </object>
+
+                <vue-pdf-embed ref="pdfRef" :source="pdfSource" />
+            </div>
+        </div>
+    </div> -->
 </template>
 
 
@@ -214,4 +210,14 @@ p {
     margin: 0;
     padding: 0;
 }
+
+.app-content {
+    padding: 24px 16px;
+}
+
+.vue-pdf-embed>div {
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.1);
+}
+
 </style>
