@@ -45,7 +45,7 @@ export default {
         <p>{{ book.detail }}</p>
       </div>
 
-      <a href="https://chat.whatsapp.com/" target="_blank">
+      <a href="https://chat.whatsapp.com/Cn0uObhJulL6LfwlpDG87X" target="_blank">
         <button class="w3-button w3-teal w3-padding-large w3-large w3-margin-top">Join WhatsApp Group</button>
       </a>
     </div>

@@ -23,6 +23,54 @@
         x.className = x.className.replace(" w3-show", "");
       }
     }
+
+    function dropdownFunction() {
+      var x = document.getElementById("demo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+
+    // add a click event listener to the document
+    document.addEventListener('click', function (event) {
+      // select the navDemo element
+      const x = document.getElementById('navDemo');
+
+      // select the button element that triggers the function
+      const button = document.getElementById("toggleNavigation");
+
+      // check if the clicked element is outside of the navDemo element
+      const isOutside = !x.contains(event.target);
+
+      // check if the clicked element is the button element or its child
+      const isButton = event.target === button || event.target.parentElement === button;
+
+
+      // if it is, hide the navDemo element
+      if (isOutside && !isButton) {
+        x.className = x.className.replace(" w3-show", "");
+
+
+      }
+
+
+    });
+
+    // add a load event listener to the window object
+    window.addEventListener("load", function () {
+      let links = document.querySelectorAll("[id=navDemo] a");
+      // loop through the links and add a click event listener to each one
+      for (let link of links) {
+        link.addEventListener("click", myFunction);
+      }
+    });
+
+
+
+
+
   </script>
 
 </head>

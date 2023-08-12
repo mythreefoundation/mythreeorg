@@ -1,8 +1,17 @@
 <script lang="ts">
 import { fetchImagesURL } from '../utils/utils';
 
-
 export default {
+    props: {
+        title: {
+            type: String,
+            required: true
+        },
+        folderName: {
+            type: String,
+            required: true
+        },
+    },
     data() {
         return {
             TOKEN: '',
@@ -16,7 +25,7 @@ export default {
         };
     },
     async created() {
-        await fetchImagesURL('arogya_subashita').then(img => {
+        await fetchImagesURL(this.folderName).then(img => {
             this.allImages = img;
             this.loadImages();
         });
@@ -24,7 +33,7 @@ export default {
     methods: {
         handleClick(imgUrl: string) {
             this.selectedImageUrl = imgUrl;
-            document.getElementById('id01')!.style.display = 'block';
+            document.getElementById('modal-id')!.style.display = 'block';
         },
 
         loadImages() {
@@ -40,7 +49,7 @@ export default {
 
 <template>
     <header class="w3-container w3-teal w3-center" style="padding:64px 16px">
-        <h3 class="w3-margin w3-jumbo">ಸುಭಾಷಿತಗಳು</h3>
+        <h3 class="w3-margin w3-jumbo">{{ title }}</h3>
         <!-- <p class="w3-xlarge"></p> -->
     </header>
 
@@ -61,11 +70,11 @@ export default {
         <button class="w3-button w3-teal w3-padding-large w3-large" v-if="currentIndex < allImages.length"
             @click="loadImages">Load more...</button>
     </div>
-    <div id="id01" class="w3-modal">
+    <div id="modal-id" class="w3-modal">
         <div class="w3-modal-content">
             <div class="w3-container">
-                <span onclick="document.getElementById('id01').style.display='none'"
-                    class="w3-button w3-display-topright">&times;</span>
+                <span onclick="document.getElementById('modal-id').style.display='none'"
+                    class="w3-button w3-display-topright w3-padding-large w3-xxlarge">&times;</span>
                 <div class="w3-image-container" style="height: 500px; display: flex; justify-content: center;">
 
                     <img :src="`${selectedImageUrl}`" alt="image" style="max-width: 100%; max-height: 100%;">
