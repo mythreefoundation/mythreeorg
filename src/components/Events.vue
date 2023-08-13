@@ -53,10 +53,8 @@ export default {
     <CalendarView />
   </div>
   <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">ಕಾಯೃಕರಮದ Link ಪಡೆಯಲು ಕು। ಧನಯಶ್ರೇ ಅವರ 74835
-      86269 ಸಂಖ್ಯಯಗೆ WhatsApp ಸಂದೇಶ ಕಳುಹಿಸಿ. ಕರೆ
-
-      ಮಾಡಲು ಅವಕಾಶವಲಲ.</h1>
+    <h1 class="w3-margin w3-xlarge">ಕಾಯೃಕ್ರಮದ Link ಪಡೆಯಲು ಕು। ಧನ್ಯಶ್ರೀ ಅವರ 74835
+      86269 ಸಂಖ್ಯೆಗೆ WhatsApp ಸಂದೇಶ ಕಳುಹಿಸಿ. ಕರೆ ಮಾಡಲು ಅವಕಾಶವಿಲ್ಲ</h1>
   </div>
 </template>
 

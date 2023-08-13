@@ -3,11 +3,11 @@ export default {
     data() {
         return {
             pages: [
-                { name: 'Events', href: 'events' },
-                { name: 'Publications', href: 'books' },
-                { name: 'Mitrarashmi', href: 'mitrarashmi' },
-                { name: 'Arogya Subashitagalu', href: 'arogyasubashita' },
-                { name: 'Nitya Subashitagalu', href: 'nityasubashita' },
+                { name: 'ಕಾರ್ಯಕ್ರಮಗಳು', href: 'events' },
+                { name: 'ಪ್ರಕಟಣೆಗಳು', href: 'books' },
+                { name: 'ಮಿತ್ರರಶ್ಮಿ', href: 'mitrarashmi' },
+                { name: 'ಆರೋಗ್ಯ ಸುಭಾಷಿತಗಳು', href: 'arogyasubashita' },
+                { name: 'ನಿತ್ಯ ಸುಭಾಷಿತಗಳು', href: 'nityasubashita' },
             ]
         }
     }

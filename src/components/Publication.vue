@@ -51,9 +51,8 @@ export default {
 <template>
     <header class="w3-container w3-teal w3-center" style="padding:64px 16px">
         <h3 class="w3-margin w3-jumbo">ನಮ್ಮ ಪ್ರಕಟಣೆಗಳು</h3>
-        <p class="w3-xlarge">ಯಾವುದೇ ವಯೇಮಾನದವರಿಗೂ ಸುಲಭವಾಗಿ ಸಂಸಕೃತ ಕಲಿಯಲು
-            ಮೈತ್ರೇ ಸಂಸಕೃತ-ಸಂಸಕೃತ್ ಪ್ರತ್ಷ್ಠಾನವು
-            ಈ ಪುಸತಕಗಳನುು ಪ್ರಕಟಿಸಿದ.</p>
+        <p class="w3-xlarge">ಯಾವುದೇ ವಯೋಮಾನದವರಿಗೂ ಸುಲಭವಾಗಿ ಸಂಸ್ಕೃತ ಕಲಿಯಲು
+ ಮೈತ್ರೀ ಸಂಸ್ಕೃತ ಸಂಸ್ಕೃತಿ ಪ್ರತಿಷ್ಠಾನವು  ಈ ಪುಸ್ತಕಗಳನ್ನು ಪ್ರಕಟಿಸಿದೆ.</p>
     </header>
 
     <div class="w3-row-padding w3-padding-64 w3-container">
@@ -81,8 +80,8 @@ export default {
     </div>
 
     <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-        <h1 class="w3-margin w3-xlarge">ಈ ಪುಸತಕಗಳು ನಿಮಗೆ ಬೇಕಾದಲಿಿ ಆಯಾ ಪುಸತಕಗಳ ಒಟ್ುು ಬಲೆ ಹಾಗೂ ಅಂಚೆವೆಚ್ಚ ರೂ. 50/- ನುು ಸೇರಿಸಿ 94482
-            43724 ಸಂಖ್ಯೆಗೆ PhonePay ಮುಖಂತರ ಕಳಿಸಬಹುದು</h1>
+        <h1 class="w3-margin w3-xlarge">ಈ ಪುಸತಕಗಳು ನಿಮಗೆ ಬೇಕಾದಲ್ಲಿ ಆಯಾ ಪುಸತಕಗಳ ಒಟ್ಟು ಬಲೆ ಹಾಗೂ ಅಂಚೆವೆಚ್ಚ ರೂ. 50/- ನುು ಸೇರಿಸಿ 94482
+            43724 ಸಂಖ್ಯೆಗೆ PhonePay ಮುಖಾಂತರ ಕಳಿಸಬಹುದು</h1>
     </div>
 
 
