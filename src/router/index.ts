@@ -11,6 +11,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   // trailingSlash: false,
   routes: [
+    { path: '/:pathMatch(.*)*', redirect: { name: 'home' } }, // catch-all route
     {
       path: '/',
       name: 'home',
