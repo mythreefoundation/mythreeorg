@@ -1,20 +1,24 @@
 import { storage } from '../firestore';
 import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
 
-export const getTokenFromUrl = (url: string | URL) => {
+export const getTokenFromUrl = (url: string) => {
     const params = new URLSearchParams(new URL(url).search);
-    return params.get("token");
+    return params.get("token") ?? "";
 };
 
 export const fetchImageURL = async (fileName: string) => {
     return await getDownloadURL(ref(storage, fileName));
 }
 
+export const fetchFileNames = async (folderName: string): Promise<string[]> => {
+    const res = await listAll(ref(storage, folderName));
+    let fileNames = Object.values(res.items).filter(value => value.name).map(value => value.name);
+    return fileNames;
+}
 
 export const fetchImagesURL = async (folderName: string): Promise<string[]> => {
     let allUrls: string[] = [];
     try {
-        
 
         // use await to get the result of listAll
         const res = await listAll(ref(storage, folderName));

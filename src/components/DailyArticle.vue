@@ -1,5 +1,5 @@
 <script lang="ts">
-import { fetchImagesURL } from '../utils/utils';
+import { getTokenFromUrl, fetchImageURL, fetchImagesURL, fetchFileNames } from '../utils/utils';
 
 export default {
     props: {
@@ -14,7 +14,7 @@ export default {
     },
     data() {
         return {
-            TOKEN: '',
+            TOKEN: '' as string,
             publicPath: import.meta.env.BASE_URL,
             allImages: [] as string[],
             displayedImages: [] as string[],
@@ -25,10 +25,25 @@ export default {
         };
     },
     async created() {
-        await fetchImagesURL(this.folderName).then(img => {
-            this.allImages = img;
+        // await fetchImagesURL(this.folderName).then(images => {
+        //     this.allImages = images;
+        //     this.loadImages();
+        // });
+
+        await fetchImageURL("logo.png").then(img => {
+            this.TOKEN = getTokenFromUrl(img);
+        })
+
+        await fetchFileNames(this.folderName).then(fileNames => {
+            fileNames.forEach((fileName) => {
+                let imgUrl = this.getFullUrlPath(this.folderName, fileName);
+                this.allImages.push(imgUrl);
+            })
+
             this.loadImages();
         });
+
+
     },
     methods: {
         handleClick(imgUrl: string) {
@@ -41,6 +56,11 @@ export default {
                 this.displayedImages.push(this.allImages[i]);
             }
             this.currentIndex += this.stepCount;
+        },
+
+        getFullUrlPath(folderName: string, fileName: string) {
+            let xmlFileName = encodeURIComponent(fileName);
+            return "https://firebasestorage.googleapis.com/v0/b/mythree-org.appspot.com/o/" + folderName + "%2F" + xmlFileName + "?alt=media&token=" + this.TOKEN;
         },
     }
 }
