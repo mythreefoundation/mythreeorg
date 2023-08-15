@@ -49,11 +49,13 @@ export default {
 <template>
     <header class="w3-container w3-teal w3-center" style="padding:64px 16px">
         <h3 class="w3-margin w3-jumbo">ಮಿತ್ರರಶ್ಮಿ ಮಾಸಪತ್ರಿಕೆ</h3>
-        <p class="w3-xlarge">ಮಿತ್ರರಶ್ಮಿ ಮಾಸಪತ್ರಿಕೆಯ ಸಂಚಿಕೆಗಳನ್ನು ಓದಬೇಕೆ? ಹಾಗಾದರೆ ಇಷ್ಟವಾದ ಸಂಚಿಕೆಯ ಮುಖಪುಟದ ಚಿತ್ರದ ಮೇಲೆ ಕ್ಲಿಕ್
-            ಮಾಡಿ.</p>
+        <p class="w3-xlarge">ಕನ್ನಡದ ಕನ್ನಡಿಯಲ್ಲಿ ಸಂಸ್ಕೃತ ಮಾಸಪತ್ರಿಕೆ</p>
     </header>
 
-    <div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-row-padding w3-padding-32 w3-container">
+        <h2 class="w3-text-teal w3-center">ಮಿತ್ರರಶ್ಮಿ ಮಾಸಪತ್ರಿಕೆಯ ಸಂಚಿಕೆಗಳನ್ನು ಓದಬೇಕೆ? ಹಾಗಾದರೆ ಇಷ್ಟವಾದ ಸಂಚಿಕೆಯ ಮುಖಪುಟದ ಚಿತ್ರದ ಮೇಲೆ ಕ್ಲಿಕ್
+            ಮಾಡಿ</h2>
+
         <div v-for="book in magazines" class="w3-third w3-container w3-margin-bottom"
             style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <div class="w3-image-container" style="height: 300px; display: flex; justify-content: center;">

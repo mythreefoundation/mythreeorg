@@ -42,3 +42,10 @@ export const fetchImagesURL = async (folderName: string): Promise<string[]> => {
         return allUrls;
     }
 }
+
+export const groupBy = (key: string) => (array: any[]): Record<string, any[]> =>
+    array.reduce((objectsByKeyValue, obj) => {
+        const value = obj[key];
+        objectsByKeyValue[value] = (objectsByKeyValue[value] || []).concat(obj);
+        return objectsByKeyValue;
+    }, {});

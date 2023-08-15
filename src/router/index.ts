@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LayoutHome from '../views/LayoutHome.vue'
-import AboutView from '../views/AboutView.vue'
-import Home from '../components/Home.vue'
+import Admin from '../components/Admin.vue'
 import Publication from '../components/Publication.vue'
 import MitraRashmi from '../components/MitraRashmi.vue'
 import DailyArticle from '../components/DailyArticle.vue'
@@ -31,6 +30,11 @@ const router = createRouter({
       path: '/events',
       name: 'events',
       component: Events
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: Admin
     },
     {
       path: '/arogyasubashita',

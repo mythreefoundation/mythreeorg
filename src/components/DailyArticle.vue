@@ -20,7 +20,6 @@ export default {
             displayedImages: [] as string[],
             selectedImageUrl: '',
             currentIndex: 0,
-            initialCount: 5,
             stepCount: 10
         };
     },
@@ -52,7 +51,7 @@ export default {
         },
 
         loadImages() {
-            for (let i = this.currentIndex; i < Math.min(this.currentIndex + this.initialCount, this.allImages.length); i++) {
+            for (let i = this.currentIndex; i < Math.min(this.currentIndex + this.stepCount, this.allImages.length); i++) {
                 this.displayedImages.push(this.allImages[i]);
             }
             this.currentIndex += this.stepCount;
@@ -73,8 +72,10 @@ export default {
         <!-- <p class="w3-xlarge"></p> -->
     </header>
 
-    <div class="w3-row-padding w3-padding-64 w3-container" style="padding-bottom: 0px!important;">
+    <div class="w3-row-padding w3-padding-32 w3-container" style="padding-bottom: 0px!important;">
         <h2 class="w3-center" v-if="allImages.length == 0">Loading...</h2>
+        <p class="w3-center" v-else>Displaying {{ displayedImages.length }} of {{ allImages.length }} images</p>
+
         <div v-for="imgUrl in displayedImages" class="w3-third w3-container w3-margin-bottom"
             style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <div class="w3-image-container"
@@ -86,8 +87,8 @@ export default {
         </div>
 
     </div>
-    <div class="w3-center">
-        <button class="w3-button w3-teal w3-padding-large w3-large" v-if="currentIndex < allImages.length"
+    <div class="w3-padding-small w3-center">
+        <button type="button" class="w3-button w3-teal w3-padding-large w3-large" v-if="currentIndex < allImages.length"
             @click="loadImages">Load more...</button>
     </div>
     <div id="modal-id" class="w3-modal">
