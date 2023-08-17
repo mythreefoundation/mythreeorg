@@ -1,99 +1,112 @@
 <script setup lang="ts">
 import CalendarView from '../views/CalendarView.vue'
 import CarouselView from '../views/CarouselView.vue'
-import { ref } from 'vue'
+//import { ref } from 'vue'
 
-let eventName = ref('')
-let eventPlace = ref('')
-let eventDate = ref()
+// let eventName = ref('')
+// let eventPlace = ref('')
+// let eventDate = ref()
 
-function createEvent(name: string, date: string, place: string) {
-  db.collection("events")
-    .add({ name: name, date: date, place: place })
-    .then(() => {
-      console.log("Document successfully written!", name);
-      alert("Event successfully Added")
-    })
-    .catch((error) => {
-      console.error("Error writing document: ", error);
-      alert("Error updating Event")
-    });
-}
+// function createEvent(name: string, date: string, place: string) {
+//   db.collection("events")
+//     .add({ name: name, date: date, place: place })
+//     .then(() => {
+//       console.log("Document successfully written!", name);
+//       alert("Event successfully Added")
+//     })
+//     .catch((error) => {
+//       console.error("Error writing document: ", error);
+//       alert("Error updating Event")
+//     });
+// }
 
 </script>
 <script lang="ts">
-import firebase from "../firebaseInit";
-const db = firebase.firestore();
-export default {
-  data() {
-    return {
-      myArray: [],
-    };
-  },
-  methods: {
-    readEvents: function () {
-      db.collection("events")
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
+import {db} from "../firebaseInit";
+import { collection, addDoc } from "firebase/firestore"; 
+const createEvent= async ()=>{
+try {
+  const docRef = await addDoc(collection(db, "users"), {
+    first: "Ada",
+    last: "Lovelace",
+    born: 1815
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+}
+// const db = firebase.firestore();
+// export default {
+//   data() {
+//     return {
+//       myArray: [],
+//     };
+//   },
+//   methods: {
+//     readEvents: function () {
+//       db.collection("events")
+//         .get()
+//         .then((querySnapshot) => {
+//           querySnapshot.forEach((doc) => {
 
-            this.myArray.push({
-              id: doc.id,
-              name: doc.data().name,
-              date: doc.data().date,
-            });
-            console.log(doc.id, " => ", doc.data());
-          });
-        })
-        .catch((error) => {
-          console.log("Error getting documents: ", error);
-        });
-      return this.myArray;
-    },
+//             this.myArray.push({
+//               id: doc.id,
+//               name: doc.data().name,
+//               date: doc.data().date,
+//             });
+//             console.log(doc.id, " => ", doc.data());
+//           });
+//         })
+//         .catch((error) => {
+//           console.log("Error getting documents: ", error);
+//         });
+//       return this.myArray;
+//     },
 
-    deleteEvents: function (docid) {
-      db.collection("events")
-        .doc(docid)
-        .delete()
-        .then(() => {
-          console.log("Document successfully deleted!");
-          alert("Event successfully Deleted")
-          //  this.readEmployees();
-        })
-        .catch((error) => {
-          console.error("Error removing document: ", error);
-          alert("Error deleting Event")
-        });
-    },
-    updateEvents: function (id, name, date) {
-      this.readEvents()
-      db.collection("events")
-        .doc(id)
-        .update({
-          name: name,
-          date: date,
-        })
-        .then(() => {
-          console.log("Document successfully updated!");
-          alert("Event updated")
-          this.readEvents();
-        })
-        .catch((error) => {
-          // The document probably doesn't exist.
-          alert("Error updating Event")
-          console.error("Error updating document: ", error);
-        });
-    }
-  },
+//     deleteEvents: function (docid) {
+//       db.collection("events")
+//         .doc(docid)
+//         .delete()
+//         .then(() => {
+//           console.log("Document successfully deleted!");
+//           alert("Event successfully Deleted")
+//           //  this.readEmployees();
+//         })
+//         .catch((error) => {
+//           console.error("Error removing document: ", error);
+//           alert("Error deleting Event")
+//         });
+//     },
+//     updateEvents: function (id, name, date) {
+//       this.readEvents()
+//       db.collection("events")
+//         .doc(id)
+//         .update({
+//           name: name,
+//           date: date,
+//         })
+//         .then(() => {
+//           console.log("Document successfully updated!");
+//           alert("Event updated")
+//           this.readEvents();
+//         })
+//         .catch((error) => {
+//           // The document probably doesn't exist.
+//           alert("Error updating Event")
+//           console.error("Error updating document: ", error);
+//         });
+//     }
+//   },
 
-  mounted() {
-    this.readEvents()
-  }
-};
+//   mounted() {
+//     this.readEvents()
+//   }
+// };
 
 </script>
 <template>
-  <table>
+  <!-- <table>
     <tr>
       <th>Event ID</th>
       <th>Event Name</th>
@@ -112,8 +125,9 @@ export default {
   <input type="text" v-model="eventName" class="form-control" placeholder="Event Name">
   <input type="text" v-model="eventDate" class="form-control" placeholder="Event date">
   <input type="text" v-model="eventPlace" class="form-control" placeholder="Event Place">
-  <button @click="createEvent(eventName, eventDate, eventPlace)">CREATE EVENT</button>
-  <CalendarView />
+  <button @click="createEvent(eventName, eventDate, eventPlace)">CREATE EVENT</button> -->
+  <!-- <CalendarView /> -->
+  <button @click="createEvent()">CREATE EVENT</button> 
 </template>
 
 <style scoped>

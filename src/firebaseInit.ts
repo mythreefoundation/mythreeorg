@@ -1,5 +1,7 @@
-import firebase from "firebase";
-
+import firebase from "firebase/compat/app";
+// Required for side-effects
+import "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBVl08w-TKSFVKd2xP7A9hnFQWkT26HbY8",
@@ -10,4 +12,6 @@ const firebaseConfig = {
   appId: "1:341915378720:web:ec31317243a3d7fecf8845",
   measurementId: "G-GL7GXGFFR7"
 };
+const app= firebase.initializeApp(firebaseConfig);
+export const db = getFirestore(app);
 export default firebase.initializeApp(firebaseConfig);
