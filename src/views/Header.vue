@@ -5,6 +5,7 @@ export default {
             pages: [
                 { name: 'ಕಾರ್ಯಕ್ರಮಗಳು', href: 'events' },
                 { name: 'ಪ್ರಕಟಣೆಗಳು', href: 'books' },
+                { name: 'ಲೇಖನಗಳು', href: 'articles' },
                 { name: 'ಮಿತ್ರರಶ್ಮಿ', href: 'mitrarashmi' },
                 { name: 'ಆರೋಗ್ಯ ಸುಭಾಷಿತಗಳು', href: 'arogyasubashita' },
                 { name: 'ನಿತ್ಯ ಸುಭಾಷಿತಗಳು', href: 'nityasubashita' },
@@ -17,7 +18,8 @@ export default {
 <template>
     <div class="w3-top">
         <div class="w3-bar w3-teal w3-card w3-left-align w3-large">
-            <a id="toggleNavigation" class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-teal"
+            <a id="toggleNavigation"
+                class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-teal"
                 href="javascript:void(0);" onclick="myFunction()"><i class="fa fa-bars"></i></a>
 
             <router-link :to="{ name: 'home' }" class="w3-bar-item w3-button w3-padding-large w3-white">Home</router-link>

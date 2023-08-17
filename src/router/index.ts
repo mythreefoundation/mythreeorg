@@ -5,10 +5,14 @@ import Publication from '../components/Publication.vue'
 import MitraRashmi from '../components/MitraRashmi.vue'
 import DailyArticle from '../components/DailyArticle.vue'
 import Events from '../components/Events.vue'
+import Articles from '../components/Articles.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   // trailingSlash: false,
+  scrollBehavior() {
+    return { top: 0, left: 0 }
+  },
   routes: [
     { path: '/:pathMatch(.*)*', redirect: { name: 'home' } }, // catch-all route
     {
@@ -30,6 +34,11 @@ const router = createRouter({
       path: '/events',
       name: 'events',
       component: Events
+    },
+    {
+      path: '/articles',
+      name: 'articles',
+      component: Articles
     },
     {
       path: '/admin',

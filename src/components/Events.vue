@@ -52,7 +52,10 @@ export default {
 
   </div>
 
+
   <CalendarView />
+
+  <h4 class="w3-center w3-margin">ನಿಮ್ಮ ಕ್ಯಾಲೆಂಡರ್ ಗೆ ಸೇರಿಸಲು ಮತ್ತು ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮಗಳ ಬಗ್ಗೆ ಸೂಚನೆ ಪಡೆಯಲು "+ Google Calendar" ಬಟನ್ ಕ್ಲಿಕ್ ಮಾಡಿ</h4>
 
   <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
     <h1 class="w3-margin w3-xlarge">ಕಾಯೃಕ್ರಮದ Link ಪಡೆಯಲು ಕು। ಧನ್ಯಶ್ರೀ ಅವರ 74835
