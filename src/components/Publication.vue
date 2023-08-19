@@ -1,13 +1,6 @@
 <script lang="ts">
 import { groupBy } from '../utils/utils';
-
-interface Book {
-    name: string; // The name of the book
-    groupId: string; // The group id of the book
-    title: string; // The title of the book image
-    description: string; // The description of the book
-    author: string; // The author of the book
-}
+import { type Book } from '../utils/models';
 
 export default {
     data() {

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { getTokenFromUrl, fetchImageURL, fetchImagesURL, fetchFileNames } from '../utils/utils';
+import { getTokenFromUrl, fetchImageURL, getFullUrlPath, fetchFileNames } from '../utils/utils';
 
 export default {
     props: {
@@ -35,7 +35,7 @@ export default {
 
         await fetchFileNames(this.folderName).then(fileNames => {
             fileNames.forEach((fileName) => {
-                let imgUrl = this.getFullUrlPath(this.folderName, fileName);
+                let imgUrl = getFullUrlPath(this.folderName, fileName, this.TOKEN);
                 this.allImages.push(imgUrl);
             })
 
@@ -55,11 +55,6 @@ export default {
                 this.displayedImages.push(this.allImages[i]);
             }
             this.currentIndex += this.stepCount;
-        },
-
-        getFullUrlPath(folderName: string, fileName: string) {
-            let xmlFileName = encodeURIComponent(fileName);
-            return "https://firebasestorage.googleapis.com/v0/b/mythree-org.appspot.com/o/" + folderName + "%2F" + xmlFileName + "?alt=media&token=" + this.TOKEN;
         },
     }
 }

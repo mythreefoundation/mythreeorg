@@ -1,5 +1,6 @@
-import { storage } from '../firestore'
+import { storage, db } from '../firestore'
 import { getStorage, ref, getDownloadURL, listAll, uploadBytes } from 'firebase/storage'
+import { collection, getDocs } from "firebase/firestore";
 
 export const getTokenFromUrl = (url: string) => {
     const params = new URLSearchParams(new URL(url).search)
@@ -52,9 +53,9 @@ export const groupBy =
                 return objectsByKeyValue
             }, {})
 
-export const uploadFile = (fileName) => {
+export const uploadFile = (bucket: string, fileName: any) => {
     const storage = getStorage()
-    const storageRef = ref(storage, 'products/' + fileName.name)
+    const storageRef = ref(storage, bucket + "/" + fileName.name)
 
     uploadBytes(storageRef, fileName)
         .then((snapshot) => {
@@ -63,4 +64,30 @@ export const uploadFile = (fileName) => {
         .catch((err) => {
             console.log('Error', err)
         })
+}
+
+export const getFullUrlPath = (folderName: string, fileName: string, token: string) => {
+    let xmlFileName = encodeURIComponent(fileName);
+    return "https://firebasestorage.googleapis.com/v0/b/mythree-org.appspot.com/o/" + folderName + "%2F" + xmlFileName + "?alt=media&token=" + token;
+}
+
+export const readCollection = async function (collectionName: string) {
+    // Get a reference to the events collection
+    const eventsRef = collection(db, collectionName);
+
+    // Get all documents in the events collection
+    const querySnapshot = await getDocs(eventsRef);
+
+    // Map each document to an object of MyObject type
+    let collectionData = querySnapshot.docs.map((doc) => {
+        // Get the document data
+        const data = doc.data();
+        // Return an object that matches your interface
+        return {
+            id: doc.id,
+            data: data,
+        };
+    });
+
+    return collectionData;
 }
