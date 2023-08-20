@@ -9,14 +9,16 @@ export interface Event {
 }
 
 export interface Book {
+    id: string;
     name: string; // The name of the book
     groupId: string; // The group id of the book
-    title: string; // The title of the book image
+    imageName: string; // The title of the book image
     description: string; // The description of the book
     author: string; // The author of the book
 }
 
 export interface MitraRashmi {
+    id: string;
     imageName: string,
     linkToMagazine: string,
     title: string,

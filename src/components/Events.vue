@@ -59,7 +59,7 @@ export default {
 
   <div class="w3-row-padding w3-padding-32 w3-container">
 
-    <div v-for="event in  events " class="w3-row"
+    <div v-for="event in events " class="w3-row"
       style="padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 10px;">
       <div class="w3-col m6 w3-center w3-padding-large">
         <img :src="`${event.imageName}`" :alt="`${event.name}`" class="w3-round w3-image" width="500" height="333">

@@ -1,4 +1,6 @@
 <script lang="ts">
+import { EventsBucket, MitraRashmiBucket, type MitraRashmi } from '@/utils/models';
+import { fetchImageURL, getTokenFromUrl, readCollection, getFullUrlPath } from '@/utils/utils';
 import VuePdfEmbed from 'vue-pdf-embed'
 
 export default {
@@ -9,18 +11,18 @@ export default {
         return {
             TOKEN: '',
             publicPath: import.meta.env.BASE_URL,
-            magazines: [
-                { name: 'ಮಿತ್ರರಶ್ಮಿಃ (ಮಾರ್ಗಶಿರ ಮಾಸಸಂಚಿಕೆ)', link: 'https://drive.google.com/file/d/1xmVniMT_j6aBDR-Gi44LGRXCbm1NVnI8/view', month: 'Nov 2022', title: 'nov2022.png' },
-                { name: 'MitraRashmi PushyaMaasa Sanchike 24Dec2022 Final (1)', link: 'https://drive.google.com/file/d/1vGAtKiUDK4O0f5J7W8u4UeWWdinhPhi1/view', month: 'Dec 2022', title: 'dec2022.png' },
-                { name: 'ಮಿತ್ರರಶ್ಮಿಃ (ಮಾಘಮಾಸ ಸಂಚಿಕೆ)', link: 'https://drive.google.com/file/d/1xkcha6rT4bMsy-T-VaXY3oTbunnf1gPq/view', month: 'Jan 2023', title: 'jan2023.png' },
-                { name: 'ಮಿತ್ರರಶ್ಮಿಃ (ಫಾಲ್ಗುಣಮಾಸ ಸಂಚಿಕೆ)', link: 'https://drive.google.com/file/d/13zXjobKf4H41yv1vQtdbodGVdHvVyd71/view', month: 'Feb 2023', title: 'feb2023.png' },
-                { name: 'ಮಿತ್ರರಶ್ಮಿಃ (ಚೈತ್ರಮಾಸ ಸಂಚಿಕೆ)', link: 'https://drive.google.com/file/d/1A4ygTb88nlA0n1lcr--EAERAgYPckL41/view', month: 'Mar 2023', title: 'mar2023.png' },
-                { name: 'Mitrarashmi Vaishaakhamaasa Sanchike 21Apr2023 Frozen', link: 'https://drive.google.com/file/d/1URdxBkn5XuZ5omsd9lxT-1pO1aIReina/view', month: 'Apr 2023', title: 'apr2023.png' },
-                { name: 'Mitrarashmi Jyestamaasa Sanchike 20May2023 Frozen', link: 'https://drive.google.com/file/d/19gsdKqPpxBrxQXV8bitol6uVZw-VCDOI/view', month: 'May 2023', title: 'may2023.png' },
-                { name: 'Mitrarashmi Aashadamaasa Sanchike 19Jun2023 Frozen', link: 'https://drive.google.com/file/d/1oh0EHjaLp216DS3fqc-beIGi6uW5uxK3/view', month: 'Jun 2023', title: 'june2023.png' },
-                { name: 'ಅಧಿಕ ಶ್ರಾವಣಮಾಸ ಸಂಚಿಕೆ', link: 'https://drive.google.com/file/d/1tX8AGfjA_57tzPJbOugzzoQJawe36EU5/view', month: 'Jul 2023', title: 'july2023.png' },
-            ],
-
+            // magazines: [
+            //     { name: 'ಮಿತ್ರರಶ್ಮಿಃ (ಮಾರ್ಗಶಿರ ಮಾಸಸಂಚಿಕೆ)', link: 'https://drive.google.com/file/d/1xmVniMT_j6aBDR-Gi44LGRXCbm1NVnI8/view', month: 'Nov 2022', title: 'nov2022.png' },
+            //     { name: 'MitraRashmi PushyaMaasa Sanchike 24Dec2022 Final (1)', link: 'https://drive.google.com/file/d/1vGAtKiUDK4O0f5J7W8u4UeWWdinhPhi1/view', month: 'Dec 2022', title: 'dec2022.png' },
+            //     { name: 'ಮಿತ್ರರಶ್ಮಿಃ (ಮಾಘಮಾಸ ಸಂಚಿಕೆ)', link: 'https://drive.google.com/file/d/1xkcha6rT4bMsy-T-VaXY3oTbunnf1gPq/view', month: 'Jan 2023', title: 'jan2023.png' },
+            //     { name: 'ಮಿತ್ರರಶ್ಮಿಃ (ಫಾಲ್ಗುಣಮಾಸ ಸಂಚಿಕೆ)', link: 'https://drive.google.com/file/d/13zXjobKf4H41yv1vQtdbodGVdHvVyd71/view', month: 'Feb 2023', title: 'feb2023.png' },
+            //     { name: 'ಮಿತ್ರರಶ್ಮಿಃ (ಚೈತ್ರಮಾಸ ಸಂಚಿಕೆ)', link: 'https://drive.google.com/file/d/1A4ygTb88nlA0n1lcr--EAERAgYPckL41/view', month: 'Mar 2023', title: 'mar2023.png' },
+            //     { name: 'Mitrarashmi Vaishaakhamaasa Sanchike 21Apr2023 Frozen', link: 'https://drive.google.com/file/d/1URdxBkn5XuZ5omsd9lxT-1pO1aIReina/view', month: 'Apr 2023', title: 'apr2023.png' },
+            //     { name: 'Mitrarashmi Jyestamaasa Sanchike 20May2023 Frozen', link: 'https://drive.google.com/file/d/19gsdKqPpxBrxQXV8bitol6uVZw-VCDOI/view', month: 'May 2023', title: 'may2023.png' },
+            //     { name: 'Mitrarashmi Aashadamaasa Sanchike 19Jun2023 Frozen', link: 'https://drive.google.com/file/d/1oh0EHjaLp216DS3fqc-beIGi6uW5uxK3/view', month: 'Jun 2023', title: 'june2023.png' },
+            //     { name: 'ಅಧಿಕ ಶ್ರಾವಣಮಾಸ ಸಂಚಿಕೆ', link: 'https://drive.google.com/file/d/1tX8AGfjA_57tzPJbOugzzoQJawe36EU5/view', month: 'Jul 2023', title: 'july2023.png' },
+            // ],
+            magazines: [] as MitraRashmi[],
             imageUrl: '',
             images: [] as string[],
             array: [] as Array<string>,
@@ -30,6 +32,21 @@ export default {
     },
     async created() {
         // Call a function to fetch the image URL from Firebase Storage
+        await fetchImageURL("logo.png").then(img => {
+            this.TOKEN = getTokenFromUrl(img);
+        })
+
+        await readCollection(MitraRashmiBucket).then(_magzs => {
+
+            _magzs.map((doc) => {
+                this.magazines.push({
+                    title: doc.data.title,
+                    id: doc.id,
+                    imageName: getFullUrlPath(MitraRashmiBucket, doc.data.imageName, this.TOKEN),
+                    linkToMagazine: doc.data.linkToMagazine,
+                })
+            })
+        })
     },
     methods: {
         handleDocumentRender() {
@@ -53,20 +70,20 @@ export default {
     </header>
 
     <div class="w3-row-padding w3-padding-32 w3-container">
-        <h2 class="w3-text-teal w3-center">ಮಿತ್ರರಶ್ಮಿ ಮಾಸಪತ್ರಿಕೆಯ ಸಂಚಿಕೆಗಳನ್ನು ಓದಬೇಕೆ? ಹಾಗಾದರೆ ಇಷ್ಟವಾದ ಸಂಚಿಕೆಯ ಮುಖಪುಟದ ಚಿತ್ರದ ಮೇಲೆ ಕ್ಲಿಕ್
-            ಮಾಡಿ</h2>
+        <h2 class="w3-text-teal w3-center">ಮಿತ್ರರಶ್ಮಿ ಮಾಸಪತ್ರಿಕೆಯ ಸಂಚಿಕೆಗಳನ್ನು ಓದಬೇಕೆ? ಹಾಗಾದರೆ ಇಷ್ಟವಾದ ಸಂಚಿಕೆಯ ಮುಖಪುಟದ
+            ಚಿತ್ರದ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ</h2>
 
         <div v-for="book in magazines" class="w3-third w3-container w3-margin-bottom"
             style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <div class="w3-image-container" style="height: 300px; display: flex; justify-content: center;">
 
-                <a :href="`${book.link}`" target="_blank">
-                    <img :src="`${publicPath}./mitrarashmi/${book.title}`" :alt="`${book.title}`"
+                <a :href="`${book.linkToMagazine}`" target="_blank">
+                    <img :src="`${book.imageName}`" :alt="`${book.title}`"
                         style="max-width: 100%; max-height: 100%;">
                 </a>
             </div>
             <div class="w3-container w3-white w3-center">
-                <p><b>{{ book.month }}</b></p>
+                <p><b>{{ book.title }}</b></p>
             </div>
         </div>
 
