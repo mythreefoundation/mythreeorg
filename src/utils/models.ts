@@ -10,11 +10,11 @@ export interface Event {
 
 export interface Book {
     id: string;
-    name: string; // The name of the book
-    groupId: string; // The group id of the book
-    imageName: string; // The title of the book image
-    description: string; // The description of the book
-    author: string; // The author of the book
+    name: string;
+    groupId: string;
+    imageName: string;
+    description: string;
+    author: string;
 }
 
 export interface MitraRashmi {
@@ -24,6 +24,12 @@ export interface MitraRashmi {
     title: string,
 }
 
+export interface Group {
+    id: string;
+    title: string,
+}
+
 export const EventsBucket = "events"
 export const BooksBucket = "books"
+export const GroupsBucket = "groups"
 export const MitraRashmiBucket = "mitrarashmi"

@@ -11,17 +11,6 @@ export default {
         return {
             TOKEN: '',
             publicPath: import.meta.env.BASE_URL,
-            // magazines: [
-            //     { name: 'ಮಿತ್ರರಶ್ಮಿಃ (ಮಾರ್ಗಶಿರ ಮಾಸಸಂಚಿಕೆ)', link: 'https://drive.google.com/file/d/1xmVniMT_j6aBDR-Gi44LGRXCbm1NVnI8/view', month: 'Nov 2022', title: 'nov2022.png' },
-            //     { name: 'MitraRashmi PushyaMaasa Sanchike 24Dec2022 Final (1)', link: 'https://drive.google.com/file/d/1vGAtKiUDK4O0f5J7W8u4UeWWdinhPhi1/view', month: 'Dec 2022', title: 'dec2022.png' },
-            //     { name: 'ಮಿತ್ರರಶ್ಮಿಃ (ಮಾಘಮಾಸ ಸಂಚಿಕೆ)', link: 'https://drive.google.com/file/d/1xkcha6rT4bMsy-T-VaXY3oTbunnf1gPq/view', month: 'Jan 2023', title: 'jan2023.png' },
-            //     { name: 'ಮಿತ್ರರಶ್ಮಿಃ (ಫಾಲ್ಗುಣಮಾಸ ಸಂಚಿಕೆ)', link: 'https://drive.google.com/file/d/13zXjobKf4H41yv1vQtdbodGVdHvVyd71/view', month: 'Feb 2023', title: 'feb2023.png' },
-            //     { name: 'ಮಿತ್ರರಶ್ಮಿಃ (ಚೈತ್ರಮಾಸ ಸಂಚಿಕೆ)', link: 'https://drive.google.com/file/d/1A4ygTb88nlA0n1lcr--EAERAgYPckL41/view', month: 'Mar 2023', title: 'mar2023.png' },
-            //     { name: 'Mitrarashmi Vaishaakhamaasa Sanchike 21Apr2023 Frozen', link: 'https://drive.google.com/file/d/1URdxBkn5XuZ5omsd9lxT-1pO1aIReina/view', month: 'Apr 2023', title: 'apr2023.png' },
-            //     { name: 'Mitrarashmi Jyestamaasa Sanchike 20May2023 Frozen', link: 'https://drive.google.com/file/d/19gsdKqPpxBrxQXV8bitol6uVZw-VCDOI/view', month: 'May 2023', title: 'may2023.png' },
-            //     { name: 'Mitrarashmi Aashadamaasa Sanchike 19Jun2023 Frozen', link: 'https://drive.google.com/file/d/1oh0EHjaLp216DS3fqc-beIGi6uW5uxK3/view', month: 'Jun 2023', title: 'june2023.png' },
-            //     { name: 'ಅಧಿಕ ಶ್ರಾವಣಮಾಸ ಸಂಚಿಕೆ', link: 'https://drive.google.com/file/d/1tX8AGfjA_57tzPJbOugzzoQJawe36EU5/view', month: 'Jul 2023', title: 'july2023.png' },
-            // ],
             magazines: [] as MitraRashmi[],
             imageUrl: '',
             images: [] as string[],
