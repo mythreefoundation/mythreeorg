@@ -109,19 +109,33 @@
       if (x.length > 0) { x[myIndex - 1].style.display = "block"; }
       setTimeout(carousel, 4000); // Change image every 4 seconds
     }
+
+    function openCity(evt, cityName) {
+      var i, x, tablinks;
+      x = document.getElementsByClassName("city");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < x.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" w3-teal", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " w3-teal";
+    }
   </script>
-  <script type="module" crossorigin src="/mythreeorg/assets/index-25438ddb.js"></script>
-  <link rel="stylesheet" href="/mythreeorg/assets/index-9b90e0a1.css">
+  <script type="module" crossorigin src="/mythreeorg/assets/index-56bb1de9.js"></script>
+  <link rel="stylesheet" href="/mythreeorg/assets/index-ec9322fa.css">
 </head>
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY4YR1FWLE"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9SZFX4XJTW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
-  gtag('config', 'G-EY4YR1FWLE');
+  gtag('config', 'G-9SZFX4XJTW');
 </script>
 
 <body class="" data-lang="en">
