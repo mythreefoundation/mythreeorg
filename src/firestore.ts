@@ -13,7 +13,7 @@ const firebaseConfig = {
     storageBucket: "mythree-org.appspot.com",
     messagingSenderId: "946128923664",
     appId: "1:946128923664:web:69418c6e093cb16e72ee95",
-    measurementId: "G-EY4YR1FWLE"
+    measurementId: "G-9SZFX4XJTW"
 };
 
 const app = initializeApp(firebaseConfig);
