@@ -164,7 +164,7 @@ export default {
       this.mitrarashmiTitle = '';
       this.mitrarashmiImage = '';
       this.mitrarashmiLink = '';
-      this.mitrarashmiDate = null;
+      this.mitrarashmiDate = new Date();
       this.clearImage();
       this.documentId = '';
     },
@@ -191,7 +191,7 @@ export default {
       this.bookDescription = '';
       this.bookImage = '';
       this.bookGroupId = '';
-      this.bookPublishDate = null;
+      this.bookPublishDate = new Date();
       this.clearImage();
       this.documentId = '';
     },
