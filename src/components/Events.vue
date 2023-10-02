@@ -1,16 +1,15 @@
-<script setup lang="ts">
-import CalendarView from '../views/CalendarView.vue'
-import { fetchImageURL, readCollection, getTokenFromUrl, getFullUrlPath } from '../utils/utils';
-import { type Event, EventsBucket } from '../utils/models';
-
-</script>
-
 <script lang="ts">
+import CalendarView from '../views/CalendarView.vue'
+import { fetchImageURL, readCollection, getTokenFromUrl, getFullUrlPath, groupBy } from '../utils/utils';
+import { type Event, EventsBucket, type Group, GroupsBucket } from '../utils/models';
+
 export default {
   data() {
     return {
       publicPath: import.meta.env.BASE_URL,
       events: [] as Event[],
+      groups: [] as Array<Group>,
+      groupedEvents: {} as Record<string, Event[]>,
       TOKEN: ''
     }
   }, async created() {
@@ -23,6 +22,16 @@ export default {
       this.TOKEN = getTokenFromUrl(img);
     })
 
+    await readCollection(GroupsBucket).then(_grp => {
+
+      _grp.map((doc) => {
+        this.groups.push({
+          id: doc.id,
+          title: doc.data.title
+        })
+      })
+    })
+
     await readCollection(EventsBucket).then(_events => {
 
       _events.map((doc) => {
@@ -32,10 +41,33 @@ export default {
           id: doc.id,
           imageName: getFullUrlPath(EventsBucket, doc.data.imageName, this.TOKEN),
           joiningLink: doc.data.joiningLink,
-          name: doc.data.name
+          name: doc.data.name,
+          groupId: doc.data.groupId,
+          orderId: doc.data.orderId
         })
-      })
+      });
+
+    }).then(() => {
+      this.groupedEvents = groupBy("groupId")(this.events);
     })
+  },
+  methods: {
+    getGroupName(id: string) {
+      return this.groups.find(g => g.id == id)?.title;
+    },
+    sortByOrderId(groupedEvents: Event[]) {
+      return groupedEvents.sort((a, b) => {
+        if (a.orderId === undefined && b.orderId === undefined) {
+          return 0;
+        } else if (a.orderId === undefined) {
+          return -1;
+        } else if (b.orderId === undefined) {
+          return 1;
+        } else {
+          return Number(a.orderId) - Number(b.orderId);
+        }
+      });
+    }
   }
 }
 
@@ -48,26 +80,24 @@ export default {
   </header>
 
   <div class="w3-row-padding w3-padding-32 w3-container">
+    <h2 class="w3-center">ಪ್ರೋಗ್ರಾಂ ವೀಕ್ಷಿಸಲು ಚಿತ್ರದ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ</h2>
+    <div v-for="(_groupedEvents, title) in groupedEvents" class="w3-container w3-margin-bottom">
+      <h3 class="w3-text-teal w3-center">{{ getGroupName(title) }}</h3>
+      <div v-for="event in sortByOrderId(_groupedEvents)" class="w3-third w3-container w3-margin-bottom"
+        style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="w3-image-container"
+          style="height: 300px; display: flex; align-items: center; justify-content: center;">
 
-    <div v-for="event in events " class="w3-row"
-      style="padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 10px;">
-      <div class="w3-col m6 w3-center w3-padding-large">
-        <img :src="`${event.imageName}`" :alt="`${event.name}`" class="w3-round w3-image" width="500" height="333">
-
-        <!-- <img :src="`${publicPath}./events/${event.title}`" :alt="`${event.title}`" class="w3-round w3-image" width="500"
-          height="333"> -->
+          <a :href="`${event.joiningLink}`" target="_blank">
+            <img :src="`${event.imageName}`" :alt="`${event.name}`" style="max-width: 100%; max-height: 100%;">
+          </a>
+        </div>
+        <div class="w3-container w3-white w3-center">
+          <h4><b>{{ event.name }}</b></h4>
+          <p><b>{{ event.details }}</b></p>
+          <p>{{ event.description }}</p>
+        </div>
       </div>
-
-      <!-- Hide this text on small devices -->
-      <div class="w3-col m6 w3-padding-large">
-        <p><b>{{ event.name }}</b></p>
-        <p>{{ event.description }}</p>
-        <p>{{ event.details }}</p>
-      </div>
-
-      <a :href="event.joiningLink" target="_blank">
-        <button class="w3-button w3-teal w3-padding-large w3-large w3-margin-top">Link to the event</button>
-      </a>
     </div>
 
   </div>

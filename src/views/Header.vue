@@ -5,7 +5,7 @@ export default {
             pages: [
                 { name: 'ಕಾರ್ಯಕ್ರಮಗಳು', href: 'events' },
                 { name: 'ಪ್ರಕಟಣೆಗಳು', href: 'books' },
-                { name: 'ಲೇಖನಗಳು', href: 'articles' },
+                // { name: 'ಲೇಖನಗಳು', href: 'articles' },
                 { name: 'ಮಿತ್ರರಶ್ಮಿ', href: 'mitrarashmi' },
                 { name: 'ಆರೋಗ್ಯ ಸುಭಾಷಿತಗಳು', href: 'arogyasubashita' },
                 { name: 'ನಿತ್ಯ ಸುಭಾಷಿತಗಳು', href: 'nityasubashita' },

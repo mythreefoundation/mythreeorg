@@ -1,11 +1,9 @@
-<script setup lang="ts">
-
-</script>
 <script lang="ts">
 import { db } from "../firestore";
 import { collection, addDoc, deleteDoc, doc, updateDoc, getDocs } from "firebase/firestore";
-import { uploadFile, getFullUrlPath, fetchImageURL, getTokenFromUrl } from '../utils/utils';
-import { type Event, EventsBucket, type MitraRashmi, MitraRashmiBucket, type Book, BooksBucket } from '../utils/models';
+import { uploadFile, getFullUrlPath, fetchImageURL, getTokenFromUrl, deleteFile, sortByDateAscending } from '../utils/utils';
+import { type Event, EventsBucket, type MitraRashmi, MitraRashmiBucket, type Book, BooksBucket, type Group, GroupsBucket } from '../utils/models';
+import mitrarashmi from "./Admin/mitrarashmi.vue";
 
 export default {
   data() {
@@ -13,23 +11,31 @@ export default {
       events: [] as Event[],
       magazines: [] as MitraRashmi[],
       books: [] as Book[],
+      groups: [] as Group[],
       file: {},
       documentId: '',
       eventName: '',
       eventdescription: '',
       eventdetails: '',
       eventjoiningLink: '',
+      eventGroupId: '',
+      eventOrderId: '',
       eventimageName: '',
       mitrarashmiTitle: '',
       mitrarashmiLink: '',
       mitrarashmiImage: '',
+      mitrarashmiDate: new Date(),
       bookName: '',
       bookImage: '',
       bookDescription: '',
       bookAuthor: '',
       bookGroupId: '',
+      groupId: '',
+      groupTitle: '',
+      bookPublishDate: new Date(),
       TOKEN: '',
       EventsBucket,
+      GroupsBucket,
       MitraRashmiBucket,
       BooksBucket,
       createMode: true,
@@ -64,7 +70,9 @@ export default {
           description: data.description,
           details: data.details,
           imageName: data.imageName,
-          joiningLink: data.joiningLink
+          joiningLink: data.joiningLink,
+          groupId: data.groupId,
+          orderId: data.orderId
         };
       });
 
@@ -74,15 +82,18 @@ export default {
 
       const querySnapshot = await getDocs(magzRef);
 
-      this.magazines = querySnapshot.docs.map((doc) => {
+      let _magazines = querySnapshot.docs.map((doc) => {
         const data = doc.data();
         return {
           id: doc.id,
           title: data.title,
           imageName: data.imageName,
-          linkToMagazine: data.linkToMagazine
+          linkToMagazine: data.linkToMagazine,
+          publishedDate: data.publishedDate,
         };
       });
+
+      this.magazines = sortByDateAscending(_magazines);
 
     },
     readBooks: async function () {
@@ -99,9 +110,23 @@ export default {
           description: data.description,
           author: data.author,
           groupId: "2",
+          publishedDate: data.publishedDate
         };
       });
 
+    },
+    readGroups: async function () {
+      const magzRef = collection(db, GroupsBucket);
+
+      const querySnapshot = await getDocs(magzRef);
+
+      this.groups = querySnapshot.docs.map((doc) => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          title: data.title,
+        }
+      })
     },
     clearEvent: function () {
       this.createMode = true;
@@ -110,6 +135,8 @@ export default {
       this.eventdetails = '';
       this.eventimageName = '';
       this.eventjoiningLink = '';
+      this.eventGroupId = '';
+      this.eventOrderId = '';
       this.documentId = '';
       this.clearImage();
     },
@@ -120,6 +147,8 @@ export default {
         imageName: eventDetails.imageName,
         joiningLink: eventDetails.joiningLink,
         name: eventDetails.name,
+        groupId: eventDetails.groupId,
+        orderId: eventDetails.orderId,
       })
         .then((docRef) => {
           console.log("Document added with id", docRef.id);
@@ -135,6 +164,7 @@ export default {
       this.mitrarashmiTitle = '';
       this.mitrarashmiImage = '';
       this.mitrarashmiLink = '';
+      this.mitrarashmiDate = null;
       this.clearImage();
       this.documentId = '';
     },
@@ -143,6 +173,7 @@ export default {
         imageName: magazineDetails.imageName,
         linkToMagazine: magazineDetails.linkToMagazine,
         title: magazineDetails.title,
+        publishedDate: magazineDetails.publishedDate,
       })
         .then((docRef) => {
           console.log("Document added with id", docRef.id);
@@ -160,7 +191,14 @@ export default {
       this.bookDescription = '';
       this.bookImage = '';
       this.bookGroupId = '';
+      this.bookPublishDate = null;
       this.clearImage();
+      this.documentId = '';
+    },
+    clearGroup: function () {
+      this.createMode = true;
+      this.groupId = '';
+      this.groupTitle = '';
       this.documentId = '';
     },
     createBook: async function (bookDetails: Book) {
@@ -169,7 +207,8 @@ export default {
         description: bookDetails.description,
         name: bookDetails.name,
         author: bookDetails.author,
-        groupId: bookDetails.groupId
+        groupId: bookDetails.groupId,
+        publishedDate: bookDetails.publishedDate
       })
         .then((docRef) => {
           console.log("Document added with id", docRef.id);
@@ -180,8 +219,23 @@ export default {
           console.error("Error adding document", error);
         });
     },
-    deleteDocument: async function (bucketName: string, Id: string) {
+    createGroup: async function (bookDetails: Group) {
+      addDoc(collection(db, GroupsBucket), {
+        title: bookDetails.title,
+      })
+        .then((docRef) => {
+          console.log("Document added with id", docRef.id);
+          this.readGroups();
+          this.clearGroup();
+        })
+        .catch((error) => {
+          console.error("Error adding document", error);
+        });
+    },
+    deleteDocument: async function (bucketName: string, fileName: string, Id: string) {
       // Using then
+      let isDeleted = deleteFile(bucketName, fileName)
+
       deleteDoc(doc(db, bucketName, Id))
         .then(() => {
           console.log("Document deleted");
@@ -195,6 +249,9 @@ export default {
               break;
             case BooksBucket:
               this.readBooks();
+              break;
+            case GroupsBucket:
+              this.readGroups();
               break;
             default:
               break;
@@ -215,7 +272,9 @@ export default {
         details: this.eventdetails,
         imageName: this.eventimageName,
         joiningLink: this.eventjoiningLink,
-        name: this.eventName
+        name: this.eventName,
+        groupId: this.eventGroupId,
+        orderId: this.eventOrderId
       }).then(() => {
         console.log("Document updated");
         this.createMode = false;
@@ -232,7 +291,8 @@ export default {
         description: this.bookDescription,
         groupId: this.bookGroupId,
         imageName: this.bookImage,
-        name: this.bookName
+        name: this.bookName,
+        publishedDate: this.bookPublishDate
       }).then(() => {
         console.log("Document updated");
         this.createMode = false;
@@ -241,18 +301,29 @@ export default {
       }).catch((error) => { });
     },
     updateMagazine: async function (Id: string) {
-
       this.uploadImage(MitraRashmiBucket);
       const DocRef = doc(db, MitraRashmiBucket, Id);
       updateDoc(DocRef, {
         title: this.mitrarashmiTitle,
         linkToMagazine: this.mitrarashmiLink,
         imageName: this.mitrarashmiImage,
+        publishedDate: this.mitrarashmiDate,
       }).then(() => {
         console.log("Document updated");
         this.createMode = false;
         this.readMagazines();
         this.clearMagazine();
+      }).catch((error) => { });
+    },
+    updateGroups: async function (Id: string) {
+      const DocRef = doc(db, GroupsBucket, Id);
+      updateDoc(DocRef, {
+        title: this.groupTitle,
+      }).then(() => {
+        console.log("Document updated");
+        this.createMode = false;
+        this.readGroups();
+        this.clearGroup();
       }).catch((error) => { });
     },
     displayEventInForm: function (id: string) {
@@ -263,6 +334,8 @@ export default {
         this.eventimageName = _event.imageName;
         this.eventjoiningLink = _event.joiningLink;
         this.eventName = _event.name;
+        this.eventGroupId = _event.groupId;
+        this.eventOrderId = _event.orderId;
         this.documentId = id;
         this.createMode = false;
       }
@@ -275,6 +348,7 @@ export default {
         this.bookImage = _event.imageName;
         this.bookName = _event.name;
         this.bookGroupId = _event.groupId;
+        this.bookPublishDate = _event.publishedDate;
         this.documentId = id;
         this.createMode = false;
       }
@@ -285,6 +359,16 @@ export default {
         this.mitrarashmiImage = _event.imageName;
         this.mitrarashmiLink = _event.linkToMagazine;
         this.mitrarashmiTitle = _event.title;
+        this.mitrarashmiDate = _event.publishedDate;
+        this.documentId = id;
+        this.createMode = false;
+      }
+    },
+    displayGroupInForm: function (id: string) {
+      let _group = this.groups.find(e => e.id == id);
+      if (_group !== undefined) {
+        this.groupId = _group.id;
+        this.groupTitle = _group.title;
         this.documentId = id;
         this.createMode = false;
       }
@@ -301,13 +385,15 @@ export default {
       this.file = event.target.files[0]
       this.bookImage = event.target.files[0].name;
     },
-    uploadImage: async function (bucketName: string) {
+    uploadImage: async function (bucketName: string): Promise<boolean> {
 
       if ((this.file as { name: string }).name != undefined) {
-        uploadFile(bucketName, this.file)
+        let ret = await uploadFile(bucketName, this.file)
+        return ret;
       }
       else {
-        alert("No Image uploaded")
+        // alert("No Image uploaded")
+        return false;
       }
     },
     uploadEventDetails: async function () {
@@ -319,7 +405,9 @@ export default {
         id: "-1",
         imageName: this.eventimageName,
         joiningLink: this.eventjoiningLink,
-        name: this.eventName
+        name: this.eventName,
+        groupId: this.eventGroupId,
+        orderId: this.eventOrderId
       });
     },
     uploadMagazineDetails: async function () {
@@ -329,33 +417,48 @@ export default {
         id: "-1",
         imageName: this.mitrarashmiImage,
         linkToMagazine: this.mitrarashmiLink,
-        title: this.mitrarashmiTitle
+        title: this.mitrarashmiTitle,
+        publishedDate: this.mitrarashmiDate,
       });
     },
     uploadBookDetails: async function () {
 
-      this.uploadImage(BooksBucket);
-      this.createBook({
+      let imageUploaded = this.uploadImage(BooksBucket);
+      if (await imageUploaded) {
+        this.createBook({
+          id: "-1",
+          imageName: this.bookImage,
+          name: this.bookName,
+          description: this.bookDescription,
+          author: this.bookAuthor,
+          groupId: "2",
+          publishedDate: this.bookPublishDate
+        });
+      }
+    },
+    uploadGroupDetails: async function () {
+      this.createGroup({
         id: "-1",
-        imageName: this.bookImage,
-        name: this.bookName,
-        description: this.bookDescription,
-        author: this.bookAuthor,
-        groupId: "2"
-      });
+        title: this.groupTitle
+      })
     },
     getImageUrl(bucketName: string, imageName: string) {
       return getFullUrlPath(bucketName, imageName, this.TOKEN);
+    },
+    getGroupName(id: string) {
+      return this.groups.find(g => g.id == id)?.title;
     }
 
   }, mounted() {
     this.readEvents();
     this.readMagazines();
     this.readBooks();
+    this.readGroups();
   }
 };
 </script>
 <template>
+  <!-- <mitrarashmi/> -->
   <header class="w3-container w3-teal w3-center" style="padding:64px 16px">
     <h3 class="w3-margin w3-jumbo">Admin</h3>
   </header>
@@ -364,6 +467,7 @@ export default {
     <button class="w3-bar-item w3-button tablink w3-teal" onclick="openCity(event,'events')">ಕಾರ್ಯಕ್ರಮಗಳು</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'mitrarashmi')">ಮಿತ್ರರಶ್ಮಿ</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'books')">ಪ್ರಕಟಣೆಗಳು</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'groups')">Groups</button>
   </div>
 
   <div id="events" class="w3-row-padding w3-padding-32 w3-container w3-border city"
@@ -375,6 +479,8 @@ export default {
         <th>Description</th>
         <th>Image</th>
         <th>Joining Link</th>
+        <td>Group</td>
+        <td>Order Id</td>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
@@ -383,8 +489,10 @@ export default {
         <td>{{ item.description }}</td>
         <td><a :href="getImageUrl(EventsBucket, item.imageName)" target="_blank">{{ item.imageName }}</a></td>
         <td>{{ item.joiningLink }}</td>
+        <td>{{ getGroupName(item.groupId) }}</td>
+        <td>{{ item.orderId }}</td>
         <td><button @click="displayEventInForm(item.id)">Edit</button></td>
-        <td><button @click="deleteDocument(EventsBucket, item.id)">Delete</button></td>
+        <td><button @click="deleteDocument(EventsBucket, item.imageName, item.id)">Delete</button></td>
       </tr>
     </table>
 
@@ -403,6 +511,16 @@ export default {
         <div class="inputStyle">
           <label>Link</label>
           <input type="text" v-model="eventjoiningLink" class="form-control" placeholder="Event link">
+        </div>
+        <div class="inputStyle">
+          <label>Group</label>
+          <select v-model="eventGroupId" class="form-control" placeholder="Select a group">
+            <option v-for="grp in groups" :value="`${grp.id}`">{{ grp.title }}</option>
+          </select>
+        </div>
+        <div class="inputStyle">
+          <label>Order id</label>
+          <input type="text" v-model="eventOrderId" class="form-control" placeholder="Order id within group">
         </div>
         <div v-if="!createMode && eventimageName !== ''" class="inputStyle">
           <label>Current selected image</label>
@@ -429,15 +547,17 @@ export default {
         <th>title</th>
         <th>Image</th>
         <th>Link</th>
+        <th>Publish date</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
       <tr v-for="item in magazines">
         <td>{{ (item.title) }}</td>
         <td><a :href="getImageUrl(MitraRashmiBucket, item.imageName)" target="_blank">{{ item.imageName }}</a></td>
-        <td>{{ item.linkToMagazine }}</td>
+        <td><a :href="item.linkToMagazine" target="_blank">Link</a></td>
+        <td>{{ item.publishedDate }}</td>
         <td><button @click="displayMagazineInForm(item.id)">Edit</button></td>
-        <td><button @click="deleteDocument(MitraRashmiBucket, item.id)">Delete</button></td>
+        <td><button @click="deleteDocument(MitraRashmiBucket, item.imageName, item.id)">Delete</button></td>
       </tr>
     </table>
 
@@ -455,6 +575,10 @@ export default {
         <div v-if="!createMode && mitrarashmiImage !== ''" class="inputStyle">
           <label>Current selected image</label>
           <label>{{ mitrarashmiImage }}</label>
+        </div>
+        <div class="inputStyle">
+          <label>Publishing date</label>
+          <input type="date" v-model="mitrarashmiDate">
         </div>
         <div class="inputStyle">
           <label>Image to Upload</label>
@@ -479,7 +603,7 @@ export default {
         <th>Image</th>
         <th>description</th>
         <th>Author</th>
-        <!-- <th>Group Id</th> -->
+        <th>Publish date</th>
         <th>Delete</th>
       </tr>
       <tr v-for="item in books">
@@ -487,8 +611,9 @@ export default {
         <td><a :href="getImageUrl(BooksBucket, item.imageName)" target="_blank">{{ item.imageName }}</a></td>
         <td>{{ item.description }}</td>
         <td>{{ item.author }}</td>
+        <td>{{ item.publishedDate }}</td>
         <td><button @click="displayBookInForm(item.id)">Edit</button></td>
-        <td><button @click="deleteDocument(BooksBucket, item.id)">Delete</button></td>
+        <td><button @click="deleteDocument(BooksBucket, item.imageName, item.id)">Delete</button></td>
       </tr>
     </table>
     <div class="formStyle">
@@ -507,10 +632,10 @@ export default {
           <label>author</label>
           <input type="text" v-model="bookAuthor" class="form-control" placeholder="author">
         </div>
-        <div class="inputStyle">
+        <!-- <div class="inputStyle">
           <label>Group Id</label>
           <input type="text" v-model="bookGroupId" class="form-control" placeholder="Group Id">
-        </div>
+        </div> -->
         <div v-if="!createMode && bookImage !== ''" class="inputStyle">
           <label>Current selected image</label>
           <label>{{ bookImage }}</label>
@@ -518,6 +643,10 @@ export default {
         <div class="inputStyle">
           <label>Image to Upload</label>
           <input type="file" @change="previewBookImage" :key="fileInputKey" accept="image/*">
+        </div>
+        <div class="inputStyle">
+          <label>Publishing date</label>
+          <input type="date" v-model="bookPublishDate">
         </div>
 
         <div>
@@ -527,6 +656,40 @@ export default {
         </div>
       </div>
     </div>
+  </div>
+
+  <div id="groups" class="w3-row-padding w3-padding-32 w3-container w3-border city"
+    style="padding-bottom: 0px!important;">
+    <p class="w3-center w3-xlarge">Groups</p>
+    <table class="w3-table">
+      <tr>
+        <th>Group Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      <tr v-for="item in groups">
+        <td>{{ (item.title) }}</td>
+        <td><button @click="displayGroupInForm(item.id)">Edit</button></td>
+        <td><button @click="deleteDocument(GroupsBucket, '', item.id)">Delete</button></td>
+      </tr>
+
+    </table>
+
+    <div class="formStyle">
+      <div class="formdesign">
+        <h1>Group FORM</h1>
+        <div class="inputStyle">
+          <label>Name</label>
+          <textarea rows="10" cols="50" type="text" v-model="groupTitle" class="form-control" placeholder="Group Title"></textarea>
+        </div>
+        <div>
+          <button v-text="buttonText" class="w3-margin w3-padding-small"
+            @click="createMode ? uploadGroupDetails() : updateGroups(documentId)"></button>
+          <button v-if="!createMode" class="w3-margin w3-padding-small" @click="clearGroup()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 

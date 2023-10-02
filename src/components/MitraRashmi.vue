@@ -1,6 +1,6 @@
 <script lang="ts">
 import { EventsBucket, MitraRashmiBucket, type MitraRashmi } from '@/utils/models';
-import { fetchImageURL, getTokenFromUrl, readCollection, getFullUrlPath } from '@/utils/utils';
+import { fetchImageURL, getTokenFromUrl, readCollection, getFullUrlPath, sortByDateDescending } from '@/utils/utils';
 import VuePdfEmbed from 'vue-pdf-embed'
 
 export default {
@@ -33,8 +33,11 @@ export default {
                     id: doc.id,
                     imageName: getFullUrlPath(MitraRashmiBucket, doc.data.imageName, this.TOKEN),
                     linkToMagazine: doc.data.linkToMagazine,
+                    publishedDate: doc.data.publishedDate
                 })
-            })
+            });
+
+            this.magazines = sortByDateDescending(this.magazines);
         })
     },
     methods: {

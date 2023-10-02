@@ -1,5 +1,5 @@
 import { storage, db } from '../firestore'
-import { getStorage, ref, getDownloadURL, listAll, uploadBytes } from 'firebase/storage'
+import { getStorage, ref, getDownloadURL, listAll, uploadBytes, deleteObject } from 'firebase/storage'
 import { collection, getDocs } from "firebase/firestore";
 
 export const getTokenFromUrl = (url: string) => {
@@ -53,17 +53,30 @@ export const groupBy =
                 return objectsByKeyValue
             }, {})
 
-export const uploadFile = (bucket: string, fileName: any) => {
+export const uploadFile = async (bucket: string, fileName: any) => {
     const storage = getStorage()
     const storageRef = ref(storage, bucket + "/" + fileName.name)
 
-    uploadBytes(storageRef, fileName)
+    return await uploadBytes(storageRef, fileName)
         .then((snapshot) => {
             console.log('Uploaded!')
+            return true;
         })
         .catch((err) => {
             console.log('Error', err)
+            return false;
         })
+}
+
+export const deleteFile = async (bucket: string, fileName: any) => {
+    const storage = getStorage()
+    const fileRef = ref(storage, bucket + "/" + fileName.name)
+
+    // try {
+    return await deleteObject(fileRef)
+    // } catch (error) {
+    //     console.error('Error deleting file:', error);
+    // }
 }
 
 export const getFullUrlPath = (folderName: string, fileName: string, token: string) => {
@@ -90,4 +103,36 @@ export const readCollection = async function (collectionName: string) {
     });
 
     return collectionData;
+}
+
+export const sortByDateAscending = (list: any[]): any[] => {
+    return list.sort((a, b) => {
+        if (a.publishedDate === undefined && b.publishedDate === undefined) {
+            return 0;
+        } else if (a.publishedDate === undefined) {
+            return -1;
+        } else if (b.publishedDate === undefined) {
+            return 1;
+        } else {
+            const dateA = new Date(a.publishedDate).getTime();
+            const dateB = new Date(b.publishedDate).getTime();
+            return dateA - dateB;
+        }
+    });
+}
+
+export const sortByDateDescending = (list: any[]): any[] => {
+    return list.sort((a, b) => {
+        if (a.publishedDate === undefined && b.publishedDate === undefined) {
+            return 0;
+        } else if (a.publishedDate === undefined) {
+            return -1;
+        } else if (b.publishedDate === undefined) {
+            return 1;
+        } else {
+            const dateA = new Date(a.publishedDate).getTime();
+            const dateB = new Date(b.publishedDate).getTime();
+            return dateB - dateA;
+        }
+    });
 }

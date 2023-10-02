@@ -5,6 +5,8 @@ export interface Event {
     imageName: string;
     joiningLink: string;
     details: string;
+    groupId: string;
+    orderId: string;
     // date: Date;
 }
 
@@ -15,6 +17,7 @@ export interface Book {
     imageName: string;
     description: string;
     author: string;
+    publishedDate: Date
 }
 
 export interface MitraRashmi {
@@ -22,6 +25,7 @@ export interface MitraRashmi {
     imageName: string,
     linkToMagazine: string,
     title: string,
+    publishedDate: Date
 }
 
 export interface Group {

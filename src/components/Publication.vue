@@ -38,7 +38,8 @@ export default {
                     imageName: getFullUrlPath(BooksBucket, doc.data.imageName, this.TOKEN),
                     name: doc.data.name,
                     author: doc.data.author,
-                    groupId: doc.data.groupId
+                    groupId: doc.data.groupId,
+                    publishedDate: doc.data.publishedDate
                 })
             })
         }).then(() => {

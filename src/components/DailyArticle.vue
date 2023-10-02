@@ -34,10 +34,12 @@ export default {
         })
 
         await fetchFileNames(this.folderName).then(fileNames => {
-            fileNames.forEach((fileName) => {
-                let imgUrl = getFullUrlPath(this.folderName, fileName, this.TOKEN);
-                this.allImages.push(imgUrl);
-            })
+            fileNames.
+                sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())).
+                forEach((fileName) => {
+                    let imgUrl = getFullUrlPath(this.folderName, fileName, this.TOKEN);
+                    this.allImages.push(imgUrl);
+                })
 
             this.loadImages();
         });
