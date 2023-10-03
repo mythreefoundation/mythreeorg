@@ -27,7 +27,8 @@ export default {
       _grp.map((doc) => {
         this.groups.push({
           id: doc.id,
-          title: doc.data.title
+          title: doc.data.title,
+          orderId: doc.data.orderId
         })
       })
     })

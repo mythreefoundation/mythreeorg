@@ -31,6 +31,7 @@ export interface MitraRashmi {
 export interface Group {
     id: string;
     title: string,
+    orderId: string
 }
 
 export const EventsBucket = "events"

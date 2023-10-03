@@ -32,6 +32,7 @@ export default {
       bookGroupId: '',
       groupId: '',
       groupTitle: '',
+      groupOrderId: '',
       bookPublishDate: new Date(),
       TOKEN: '',
       EventsBucket,
@@ -125,6 +126,7 @@ export default {
         return {
           id: doc.id,
           title: data.title,
+          orderId: data.orderId
         }
       })
     },
@@ -199,6 +201,7 @@ export default {
       this.createMode = true;
       this.groupId = '';
       this.groupTitle = '';
+      this.groupOrderId = '';
       this.documentId = '';
     },
     createBook: async function (bookDetails: Book) {
@@ -219,9 +222,10 @@ export default {
           console.error("Error adding document", error);
         });
     },
-    createGroup: async function (bookDetails: Group) {
+    createGroup: async function (grpDetails: Group) {
       addDoc(collection(db, GroupsBucket), {
-        title: bookDetails.title,
+        title: grpDetails.title,
+        orderId: grpDetails.orderId
       })
         .then((docRef) => {
           console.log("Document added with id", docRef.id);
@@ -439,7 +443,8 @@ export default {
     uploadGroupDetails: async function () {
       this.createGroup({
         id: "-1",
-        title: this.groupTitle
+        title: this.groupTitle,
+        orderId: this.groupOrderId
       })
     },
     getImageUrl(bucketName: string, imageName: string) {
@@ -664,11 +669,13 @@ export default {
     <table class="w3-table">
       <tr>
         <th>Group Name</th>
+        <th>Order Id</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
       <tr v-for="item in groups">
         <td>{{ (item.title) }}</td>
+        <td>{{ (item.orderId) }}</td>
         <td><button @click="displayGroupInForm(item.id)">Edit</button></td>
         <td><button @click="deleteDocument(GroupsBucket, '', item.id)">Delete</button></td>
       </tr>
@@ -680,7 +687,12 @@ export default {
         <h1>Group FORM</h1>
         <div class="inputStyle">
           <label>Name</label>
-          <textarea rows="10" cols="50" type="text" v-model="groupTitle" class="form-control" placeholder="Group Title"></textarea>
+          <textarea rows="10" cols="50" type="text" v-model="groupTitle" class="form-control"
+            placeholder="Group Title"></textarea>
+        </div>
+        <div class="inputStyle">
+          <label>Order Id</label>
+          <input type="text" v-model="groupOrderId" class="form-control" placeholder="order id">
         </div>
         <div>
           <button v-text="buttonText" class="w3-margin w3-padding-small"
