@@ -53,6 +53,28 @@ export const groupBy =
                 return objectsByKeyValue
             }, {})
 
+export const orderBy =
+    (key: string) =>
+        (array: any[]): any[] =>
+            array.sort((a, b) => {
+                if (a[key] === undefined && b[key] === undefined) {
+                    return 0;
+                }
+                if (a[key] === undefined) {
+                    return 1;
+                }
+                if (b[key] === undefined) {
+                    return -1;
+                }
+                if (a[key] < b[key]) {
+                    return -1;
+                }
+                if (a[key] > b[key]) {
+                    return 1;
+                }
+                return 0;
+            });
+
 export const uploadFile = async (bucket: string, fileName: any) => {
     const storage = getStorage()
     const storageRef = ref(storage, bucket + "/" + fileName.name)

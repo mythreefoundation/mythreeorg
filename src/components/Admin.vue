@@ -63,7 +63,7 @@ export default {
 
       const querySnapshot = await getDocs(eventsRef);
 
-      this.events = querySnapshot.docs.map((doc) => {
+      let _events = querySnapshot.docs.map((doc) => {
         const data = doc.data();
         return {
           id: doc.id,
@@ -73,9 +73,13 @@ export default {
           imageName: data.imageName,
           joiningLink: data.joiningLink,
           groupId: data.groupId,
-          orderId: data.orderId
+          orderId: data.orderId,
+          groupTitle: this.getGroupName(data.groupId)
         };
       });
+
+      this.events = _events.sort((a, b) => (a.groupTitle || "").localeCompare(b.groupTitle || ""));
+
 
     },
     readMagazines: async function () {
@@ -323,6 +327,7 @@ export default {
       const DocRef = doc(db, GroupsBucket, Id);
       updateDoc(DocRef, {
         title: this.groupTitle,
+        orderId: this.groupOrderId
       }).then(() => {
         console.log("Document updated");
         this.createMode = false;
@@ -455,10 +460,10 @@ export default {
     }
 
   }, mounted() {
+    this.readGroups();
     this.readEvents();
     this.readMagazines();
     this.readBooks();
-    this.readGroups();
   }
 };
 </script>
@@ -493,7 +498,7 @@ export default {
         <td>{{ (item.name) }}</td>
         <td>{{ item.description }}</td>
         <td><a :href="getImageUrl(EventsBucket, item.imageName)" target="_blank">{{ item.imageName }}</a></td>
-        <td>{{ item.joiningLink }}</td>
+        <td><a :href="item.joiningLink" target="_blank">Link</a></td>
         <td>{{ getGroupName(item.groupId) }}</td>
         <td>{{ item.orderId }}</td>
         <td><button @click="displayEventInForm(item.id)">Edit</button></td>

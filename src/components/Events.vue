@@ -1,6 +1,5 @@
 <script lang="ts">
-import CalendarView from '../views/CalendarView.vue'
-import { fetchImageURL, readCollection, getTokenFromUrl, getFullUrlPath, groupBy } from '../utils/utils';
+import { fetchImageURL, readCollection, getTokenFromUrl, getFullUrlPath, groupBy, orderBy } from '../utils/utils';
 import { type Event, EventsBucket, type Group, GroupsBucket } from '../utils/models';
 
 export default {
@@ -13,11 +12,6 @@ export default {
       TOKEN: ''
     }
   }, async created() {
-    // await fetchImagesURL(this.folderName).then(images => {
-    //     this.allImages = images;
-    //     this.loadImages();
-    // });
-
     await fetchImageURL("logo.png").then(img => {
       this.TOKEN = getTokenFromUrl(img);
     })
@@ -49,12 +43,29 @@ export default {
       });
 
     }).then(() => {
-      this.groupedEvents = groupBy("groupId")(this.events);
+      let _groupedEvents = groupBy("groupId")(this.events);
+
+      this.groupedEvents = Object.entries(_groupedEvents)
+        .sort(([keyA, eventsA], [keyB, eventsB]) => {
+          const grpA = this.groups.find(g => g.id === keyA);
+          const grpB = this.groups.find(g => g.id === keyB);
+          if (grpA && grpB) {
+            return Number(grpA.orderId) - Number(grpB.orderId);
+          }
+          return 0;
+        })
+        .reduce((acc, [key, value]) => {
+          acc[key] = value;
+          return acc;
+        }, {} as Record<string, Event[]>);
     })
   },
   methods: {
     getGroupName(id: string) {
       return this.groups.find(g => g.id == id)?.title;
+    },
+    getGroupOrderId(id: string) {
+      return this.groups.find(g => g.id == id)?.orderId;
     },
     sortByOrderId(groupedEvents: Event[]) {
       return groupedEvents.sort((a, b) => {
@@ -82,7 +93,7 @@ export default {
 
   <div class="w3-row-padding w3-padding-32 w3-container">
     <h2 class="w3-center">ಪ್ರೋಗ್ರಾಂ ವೀಕ್ಷಿಸಲು ಚಿತ್ರದ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ</h2>
-    <div v-for="(_groupedEvents, title) in groupedEvents" class="w3-container w3-margin-bottom">
+    <div v-for="(_groupedEvents, title) in groupedEvents" class="w3-container">
       <h3 class="w3-text-teal w3-center">{{ getGroupName(title) }}</h3>
       <div v-for="event in sortByOrderId(_groupedEvents)" class="w3-third w3-container w3-margin-bottom"
         style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
@@ -90,13 +101,13 @@ export default {
           style="height: 300px; display: flex; align-items: center; justify-content: center;">
 
           <a :href="`${event.joiningLink}`" target="_blank">
-            <img :src="`${event.imageName}`" :alt="`${event.name}`" style="max-width: 100%; max-height: 100%;">
+            <img :src="`${event.imageName}`" :alt="`${event.name}`" style="max-width: 100%; max-height: 300px; padding: 5px;">
           </a>
         </div>
         <div class="w3-container w3-white w3-center">
-          <h4><b>{{ event.name }}</b></h4>
-          <p><b>{{ event.details }}</b></p>
-          <p>{{ event.description }}</p>
+          <h4 style="margin: 0px;"><b>{{ event.name }}</b></h4>
+          <p style="margin: 0px;"><b>{{ event.details }}</b></p>
+          <p style="margin: 0px;">{{ event.description }}</p>
         </div>
       </div>
     </div>
@@ -104,7 +115,11 @@ export default {
   </div>
 
 
-  <CalendarView />
+  <div class="iframe-container">
+    <iframe
+      src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FKolkata&showNav=1&showPrint=0&showTabs=0&showTz=1&showCalendars=1&title=Mythree%20Pratishtanam%20Programs&src=bXl0aHJlZXByYXRpc2h0YW5hQGdtYWlsLmNvbQ&color=%23039BE5"
+      style="padding: 20px;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+  </div>
 
   <h4 class="w3-center w3-margin">ನಿಮ್ಮ ಕ್ಯಾಲೆಂಡರ್ ಗೆ ಸೇರಿಸಲು ಮತ್ತು ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮಗಳ ಬಗ್ಗೆ ಸೂಚನೆ ಪಡೆಯಲು "+ Google
     Calendar" ಬಟನ್ ಕ್ಲಿಕ್ ಮಾಡಿ</h4>
