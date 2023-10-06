@@ -114,16 +114,6 @@ export default {
 
   </div>
 
-
-  <div class="iframe-container">
-    <iframe
-      src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FKolkata&showNav=1&showPrint=0&showTabs=0&showTz=1&showCalendars=1&title=Mythree%20Pratishtanam%20Programs&src=bXl0aHJlZXByYXRpc2h0YW5hQGdtYWlsLmNvbQ&color=%23039BE5"
-      style="padding: 20px;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-  </div>
-
-  <h4 class="w3-center w3-margin">ನಿಮ್ಮ ಕ್ಯಾಲೆಂಡರ್ ಗೆ ಸೇರಿಸಲು ಮತ್ತು ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮಗಳ ಬಗ್ಗೆ ಸೂಚನೆ ಪಡೆಯಲು "+ Google
-    Calendar" ಬಟನ್ ಕ್ಲಿಕ್ ಮಾಡಿ</h4>
-
   <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
     <h1 class="w3-margin w3-xlarge">ಕಾಯೃಕ್ರಮದ Link ಪಡೆಯಲು ಕು। ಧನ್ಯಶ್ರೀ ಅವರ 74835
       86269 ಸಂಖ್ಯೆಗೆ WhatsApp ಸಂದೇಶ ಕಳುಹಿಸಿ. ಕರೆ ಮಾಡಲು ಅವಕಾಶವಿಲ್ಲ</h1>

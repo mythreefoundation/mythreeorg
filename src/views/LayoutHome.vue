@@ -138,6 +138,14 @@ export default {
         </div>
     </div>
 
+    <div class="iframe-container">
+        <iframe
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FKolkata&showNav=1&showPrint=0&showTabs=0&showTz=1&showCalendars=1&title=Mythree%20Pratishtanam%20Programs&src=bXl0aHJlZXByYXRpc2h0YW5hQGdtYWlsLmNvbQ&color=%23039BE5"
+            style="padding: 20px;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <h4 class="w3-center w3-margin">ನಿಮ್ಮ ಕ್ಯಾಲೆಂಡರ್ ಗೆ ಸೇರಿಸಲು ಮತ್ತು ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮಗಳ ಬಗ್ಗೆ ಸೂಚನೆ ಪಡೆಯಲು "+ Google
+        Calendar" ಬಟನ್ ಕ್ಲಿಕ್ ಮಾಡಿ</h4>
+
     <!-- <p>ಭಾಷೆಯನ್ನು ಪರಿಶುದ್ಧವಾಗಿ ಉಚ್ಚರಿಸಲು ಈ ನಿಯಮಗಳನ್ನು
         ಅನುಸರಿಸಬಹುದು.
 
