@@ -56,6 +56,12 @@ const router = createRouter({
       name: 'nityasubashita',
       component: DailyArticle,
       props: { title: 'ನಿತ್ಯ ಸುಭಾಷಿತಗಳು', folderName: 'nitya_subashita' }
+    },
+    {
+      path: '/suvachana',
+      name: 'suvachana',
+      component: DailyArticle,
+      props: { title: 'ಸುವಚನಗಳು', folderName: 'suvachana' }
     }
   ]
 })

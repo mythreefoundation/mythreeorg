@@ -1,17 +1,27 @@
 <script lang="ts">
-import { fetchImagesURL } from '../utils/utils';
+import { getTokenFromUrl, fetchImageURL, getFullUrlPath, fetchFileNames } from '../utils/utils';
 
 export default {
     data() {
         return {
             publicPath: import.meta.env.BASE_URL,
             latestNews: [] as string[],
-
+            TOKEN: '' as string,
+            newsFolder: "news"
         }
     },
     async created() {
-        await fetchImagesURL("news").then(news => {
-            this.latestNews = news;
+        await fetchImageURL("logo.png").then(img => {
+            this.TOKEN = getTokenFromUrl(img);
+        })
+
+        await fetchFileNames(this.newsFolder).then(news => {
+            news.
+                sort((a, b) => b.toLowerCase().localeCompare(a.toLowerCase())).
+                forEach((fileName) => {
+                    let imgUrl = getFullUrlPath(this.newsFolder, fileName, this.TOKEN);
+                    this.latestNews.push(imgUrl);
+                })
         });
     },
 }

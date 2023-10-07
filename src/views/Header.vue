@@ -9,6 +9,7 @@ export default {
                 { name: 'ಮಿತ್ರರಶ್ಮಿ', href: 'mitrarashmi' },
                 { name: 'ಆರೋಗ್ಯ ಸುಭಾಷಿತಗಳು', href: 'arogyasubashita' },
                 { name: 'ನಿತ್ಯ ಸುಭಾಷಿತಗಳು', href: 'nityasubashita' },
+                { name: 'ಸುವಚನಗಳು', href: 'suvachana' },
             ]
         }
     }
