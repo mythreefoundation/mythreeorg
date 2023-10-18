@@ -85,6 +85,13 @@ export default {
 
     </div>
 
+    <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+        <h1 class="w3-margin w3-xlarge">ಈ ಪುಸತಕಗಳು ನಿಮಗೆ ಬೇಕಾದಲ್ಲಿ,
+            <!-- <router-link :to="{ name: 'purchase' }" class="">ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ</router-link> -->
+            <a href="https://forms.gle/cXQCc6hWP7sQH6KC8" target="_blank">ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ</a>
+        </h1>
+    </div>
+
     <div class="w3-row-padding w3-padding-8 w3-container w3-margin-bottom">
         <h2 class="w3-text-teal w3-center">ಸ್ವಯಂ ಅಧ್ಯಯನಕ್ಕೆ ಕೆಲವು ಸೂಚನೆಗಳು</h2>
 
@@ -99,19 +106,4 @@ export default {
         <li>ಸ೦ಸ್ಕೃತ ಕಾರ್ಯಕ್ರಮಗಳಲ್ಲಿ ಭಾಗವಹಿಸಿ</li>
         <li>ನಿತ್ಯವೂ ಬಳಸುವ ಆಂಗ್ಲ ಪದಗಳ ಬದಲಿಗೆ ಸಂಸ್ಕೃತ ಪದಗಳನ್ನೇ ಬಳಸಿ</li>
     </div>
-
-    <div class="iframe-container">
-        <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfx3c5267Pc-emHYswdDSmoKC7PUgB9MB6tcWZZ9jA1-zYvGg/viewform?embedded=true"
-            width="750" height="1685" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    </div>
-
-    <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-        <h1 class="w3-margin w3-xlarge">ಈ ಪುಸತಕಗಳು ನಿಮಗೆ ಬೇಕಾದಲ್ಲಿ ಆಯಾ ಪುಸತಕಗಳ ಒಟ್ಟು ಬಲೆ ಹಾಗೂ ಅಂಚೆವೆಚ್ಚ ರೂ. 50/- ನುು ಸೇರಿಸಿ
-            94482
-            43724 ಸಂಖ್ಯೆಗೆ PhonePay ಮುಖಾಂತರ ಕಳಿಸಬಹುದು</h1>
-    </div>
 </template>
-
-
-<style scoped></style>

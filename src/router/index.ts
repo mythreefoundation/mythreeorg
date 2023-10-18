@@ -6,6 +6,7 @@ import MitraRashmi from '../components/MitraRashmi.vue'
 import DailyArticle from '../components/DailyArticle.vue'
 import Events from '../components/Events.vue'
 import Articles from '../components/Articles.vue'
+import OrderBooksFormVue from '@/views/OrderBooksForm.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,6 +40,11 @@ const router = createRouter({
       path: '/articles',
       name: 'articles',
       component: Articles
+    },
+    {
+      path: '/purchase',
+      name: 'purchase',
+      component: OrderBooksFormVue
     },
     {
       path: '/admin',
