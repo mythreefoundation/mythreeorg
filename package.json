@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check build-only && npm run copy-script",
+    "build": "run-p type-check build-only && npm run copy-script && npm run copy-CNAME",
     "copy-script": "copy script.js dist",
+    "copy-CNAME": "copy CNAME dist",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",

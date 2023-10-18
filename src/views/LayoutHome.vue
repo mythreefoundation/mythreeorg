@@ -108,7 +108,6 @@ export default {
             </div>
 
             <div class="w3-card-4 w3-margin w3-white">
-                <img src="/w3images/bridge.jpg" alt="Norway" style="width:100%">
                 <div class="w3-container">
                     <h3><b>ಸುಭಾಷಿತಗಳು</b></h3>
                     <h3>ಸಂಗ್ರಹ: ಡಾ| ಗಣಪತಿ ಹೆಗಡೆ</h3>
