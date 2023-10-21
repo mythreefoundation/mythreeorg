@@ -7,12 +7,12 @@ import forwardToTrailingSlash from './forward-to-trailing-slash-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/mythreeorg/',
+  base: '/',
   plugins: [
     vue(),
     vueJsx(),
     // add the plugin here
-    forwardToTrailingSlash(['mitrarashmi', 'books', 'events','nityasubashita','arogyasubashita'])
+    // forwardToTrailingSlash(['mitrarashmi', 'books', 'events','nityasubashita','arogyasubashita'])
   ],
   resolve: {
     alias: {
