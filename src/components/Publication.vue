@@ -61,9 +61,9 @@ export default {
     <header class="w3-container w3-teal gradient w3-center header-padding">
 
         <div class="w3-container header">
-            <img src="@/assets/logo/sun-book-logo.png" alt="Logo Left" />
-            <h3 class="w3-margin w3-jumbo">ನಮ್ಮ ಪ್ರಕಟಣೆಗಳು</h3>
-            <img class="right" src="@/assets/logo/ebook-icon.png" alt="Logo Right" />
+            <img src="@/assets/logo/sun-book-logo.png" alt="Logo Left" class="w3-hide-small"/>
+            <h3 class="w3-margin w3-xxlarge">ನಮ್ಮ ಪ್ರಕಟಣೆಗಳು</h3>
+            <img class="right w3-hide-small" src="@/assets/logo/ebook-icon.png" alt="Logo Right" />
         </div>
 
         <p class="w3-xlarge">ಯಾವುದೇ ವಯೋಮಾನದವರಿಗೂ ಸುಲಭವಾಗಿ ಸಂಸ್ಕೃತ ಕಲಿಯಲು

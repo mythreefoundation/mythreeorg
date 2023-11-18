@@ -89,9 +89,9 @@ export default {
   <header class="w3-container w3-teal gradient w3-center header-padding">
 
     <div class="w3-container header">
-      <img src="@/assets/logo/clubhouse-app-logo.png" alt="Logo Left" />
-      <h3 class="w3-margin w3-jumbo">ಕಾರ್ಯಕ್ರಮಗಳು</h3>
-      <img class="right" src="@/assets/logo/speaker.png" alt="Logo Right" />
+      <img src="@/assets/logo/clubhouse-app-logo.png" class="w3-hide-small" alt="Logo Left" />
+      <h3 class="w3-margin w3-xxlarge">ಕಾರ್ಯಕ್ರಮಗಳು</h3>
+      <img class="right w3-hide-small" src="@/assets/logo/speaker.png" alt="Logo Right" />
     </div>
 
     <p class="w3-xlarge">ನಮ್ಮ ಕಾರ್ಯಕ್ರಮಗಳಲ್ಲಿ ನಮ್ಮೊಂದಿಗೆ ಸೇರಿಕೊಳ್ಳಿ</p>

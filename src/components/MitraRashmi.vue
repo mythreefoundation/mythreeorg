@@ -57,9 +57,9 @@ export default {
 <template>
     <header class="w3-container w3-teal w3-center header-padding gradient">
         <div class="w3-container header">
-            <img src="@/assets/logo/magazine-icon-png-clipart.png" alt="Logo Left" />
-            <h3 class="w3-margin w3-jumbo">ಮಿತ್ರರಶ್ಮಿ ಮಾಸಪತ್ರಿಕೆ</h3>
-            <img class="right" src="@/assets/logo/ebook-icon.png" alt="Logo Right" />
+            <img src="@/assets/logo/magazine-icon-png-clipart.png" class="w3-hide-small" alt="Logo Left" />
+            <h3 class="w3-margin w3-xxlarge">ಮಿತ್ರರಶ್ಮಿ ಮಾಸಪತ್ರಿಕೆ</h3>
+            <img class="right w3-hide-small" src="@/assets/logo/ebook-icon.png" alt="Logo Right" />
         </div>
 
         <p class="w3-xlarge">ಕನ್ನಡದ ಕನ್ನಡಿಯಲ್ಲಿ ಸಂಸ್ಕೃತ ಮಾಸಪತ್ರಿಕೆ</p>

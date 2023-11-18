@@ -29,7 +29,7 @@ export default {
 
 <template>
     <header class="w3-container w3-teal w3-center gradient" style="padding:64px 16px">
-        <h1 class="w3-margin w3-jumbo">ಮೈತ್ರೀ ಸಂಸ್ಕೃತ-ಸಂಸ್ಕೃತಿ ಪ್ರತಿಷ್ಠಾನಮ್</h1>
+        <h1 class="w3-margin w3-xxlarge">ಮೈತ್ರೀ ಸಂಸ್ಕೃತ-ಸಂಸ್ಕೃತಿ ಪ್ರತಿಷ್ಠಾನಮ್</h1>
 
         <!-- <div class="w3-bar-item w3-padding-large">
             <img src="@/assets/mythree-logo.png" alt="Logo" class="w3-image" style="max-height: 150px;">
@@ -44,11 +44,7 @@ export default {
         <div class="w3-col l8 s12">
             <!-- Blog entry -->
             <div class="w3-card-4 w3-margin w3-white">
-                <!-- <img src="/w3images/woods.jpg" alt="Nature" style="width:100%"> -->
-                <div class="w3-center">
-                    <img src="@/assets/mythree-logo.png" alt="Logo" class="w3-image"
-                        style="max-height: 150px; padding: 10px;">
-                </div>
+                <img src="@/assets/mythree-logo.png" alt="Logo" class="w3-image" style="width:100%">
                 <div class="w3-container">
                     <h3 class="w3-center"><b>Mythree Samskritha Samskrithi Prathisthanam</b></h3>
                     <h5 class="w3-center">Mythree is a not-for-profit organisation making an earnest attempt to revamp and
@@ -77,52 +73,38 @@ export default {
 
             <!-- Blog entry -->
             <div class="w3-card-4 w3-margin w3-white">
-                <div class="w3-image-container"
-                    style="height: 300px; display: flex; align-items: center; justify-content: center;">
-                    <img src="@/assets/home/mitrarashmi.png" alt="mitrarashmi-title"
-                        style="max-width: 100%; max-height: 300px; padding: 5px;">
-                    <div class="w3-container">
-                        <h3><b>ಮಿತ್ರರಶ್ಮಿ ಮಾಸಪತ್ರಿಕೆ</b></h3>
-                        <h4>ಡಾ| ಗಣಪತಿ ಹೆಗಡೆ, ಪ್ರಧಾನ ಸಂಪಾದಕರು</h4>
-                        <h5 class="w3-padding-8"> ಪ್ರಕಟಣೆಗಳನ್ನು ಓದಲು,
-                            <router-link :to="{ name: 'mitrarashmi' }" class="">ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ</router-link>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-card-4 w3-margin w3-white">
-                <div class="w3-image-container"
-                    style="height: 300px; display: flex; align-items: center; justify-content: center;">
-
-                    <img src="@/assets/home/events.jpg" alt="events-title"
-                        style="max-width: 100%; max-height: 300px; padding: 5px;">
-
-                    <div class="w3-container">
-                        <h3><b>ಕಾರ್ಯಕ್ರಮಗಳು</b></h3>
-                        <h5 class="w3-padding-8"> ನಮ್ಮ ಕಾರ್ಯಕ್ರಮಗಳಲ್ಲಿ ನಮ್ಮೊಂದಿಗೆ ಸೇರಿಕೊಳ್ಳಿ,
-                            <router-link :to="{ name: 'events' }" class="">ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ</router-link>
-                        </h5>
-                    </div>
+                <img src="@/assets/home/mitrarashmi.png" alt="mitrarashmi-title" style="width:100%">
+                <div class="w3-container">
+                    <h3><b>ಮಿತ್ರರಶ್ಮಿ ಮಾಸಪತ್ರಿಕೆ</b></h3>
+                    <h4>ಡಾ| ಗಣಪತಿ ಹೆಗಡೆ, ಪ್ರಧಾನ ಸಂಪಾದಕರು</h4>
+                    <h5 class="w3-padding-8"> ಪ್ರಕಟಣೆಗಳನ್ನು ಓದಲು,
+                        <router-link :to="{ name: 'mitrarashmi' }" class="">ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ</router-link>
+                    </h5>
                 </div>
             </div>
 
             <div class="w3-card-4 w3-margin w3-white">
 
-                <div class="w3-image-container"
-                    style="height: 300px; display: flex; align-items: center; justify-content: center;">
+                <img src="@/assets/home/events.jpg" alt="events-title" style="width:100%">
 
-                    <img src="@/assets/home/books.jpeg" alt="books-title"
-                        style="max-width: 100%; max-height: 300px; padding: 5px;">
+                <div class="w3-container">
+                    <h3><b>ಕಾರ್ಯಕ್ರಮಗಳು</b></h3>
+                    <h5 class="w3-padding-8"> ನಮ್ಮ ಕಾರ್ಯಕ್ರಮಗಳಲ್ಲಿ ನಮ್ಮೊಂದಿಗೆ ಸೇರಿಕೊಳ್ಳಿ,
+                        <router-link :to="{ name: 'events' }" class="">ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ</router-link>
+                    </h5>
+                </div>
+            </div>
 
-                    <div class="w3-container">
-                        <h3><b>ಪ್ರಕಟಣೆಗಳು</b></h3>
-                        <h4>ಯಾವುದೇ ವಯೋಮಾನದವರಿಗೂ ಸುಲಭವಾಗಿ ಸಂಸ್ಕೃತ ಕಲಿಯಲು
-                            ಮೈತ್ರೀ ಸಂಸ್ಕೃತ ಸಂಸ್ಕೃತಿ ಪ್ರತಿಷ್ಠಾನವು ಈ ಪುಸ್ತಕಗಳನ್ನು ಪ್ರಕಟಿಸಿದೆ</h4>
-                        <h5 class="w3-padding-8"> ಪುಸ್ತಕಗಳ ಪಟ್ಟಿಯನ್ನು ನೋಡಲು,
-                            <router-link :to="{ name: 'books' }" class="">ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ</router-link>
-                        </h5>
-                    </div>
+            <div class="w3-card-4 w3-margin w3-white">
+                <img src="@/assets/home/books.jpeg" alt="books-title" style="width:100%">
+
+                <div class="w3-container">
+                    <h3><b>ಪ್ರಕಟಣೆಗಳು</b></h3>
+                    <h4>ಯಾವುದೇ ವಯೋಮಾನದವರಿಗೂ ಸುಲಭವಾಗಿ ಸಂಸ್ಕೃತ ಕಲಿಯಲು
+                        ಮೈತ್ರೀ ಸಂಸ್ಕೃತ ಸಂಸ್ಕೃತಿ ಪ್ರತಿಷ್ಠಾನವು ಈ ಪುಸ್ತಕಗಳನ್ನು ಪ್ರಕಟಿಸಿದೆ</h4>
+                    <h5 class="w3-padding-8"> ಪುಸ್ತಕಗಳ ಪಟ್ಟಿಯನ್ನು ನೋಡಲು,
+                        <router-link :to="{ name: 'books' }" class="">ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ</router-link>
+                    </h5>
                 </div>
             </div>
 
@@ -148,7 +130,8 @@ export default {
                         src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FKolkata&showNav=1&showPrint=0&showTabs=0&showTz=1&showCalendars=1&title=Mythree%20Pratishtanam%20Programs&src=bXl0aHJlZXByYXRpc2h0YW5hQGdtYWlsLmNvbQ&color=%23039BE5"
                         style="padding: 20px;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
                 </div>
-                <h4 class="w3-center w3-margin-8">ನಿಮ್ಮ ಕ್ಯಾಲೆಂಡರ್ ಗೆ ಸೇರಿಸಲು ಮತ್ತು ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮಗಳ ಬಗ್ಗೆ ಸೂಚನೆ ಪಡೆಯಲು "+
+                <h4 class="w3-center w3-margin-8">ನಿಮ್ಮ ಕ್ಯಾಲೆಂಡರ್ ಗೆ ಸೇರಿಸಲು ಮತ್ತು ಮುಂಬರುವ ಕಾರ್ಯಕ್ರಮಗಳ ಬಗ್ಗೆ ಸೂಚನೆ ಪಡೆಯಲು
+                    "+
                     Google
                     Calendar" ಬಟನ್ ಕ್ಲಿಕ್ ಮಾಡಿ</h4>
             </div>
@@ -312,7 +295,7 @@ export default {
     </p> -->
 
     <div class="w3-container w3-center w3-padding-16" style="background-color: #fef102;">
-        <h1 class="w3-margin" style="color: #8a5241;">ತ್ವಂ ಜ್ಞಾನಮಯೋ ವಿಜ್ಞಾನಮಯೋಸಿ</h1>
+        <h3 class="w3-margin" style="color: #8a5241;">ತ್ವಂ ಜ್ಞಾನಮಯೋ ವಿಜ್ಞಾನಮಯೋಸಿ</h3>
     </div>
 </template>
 

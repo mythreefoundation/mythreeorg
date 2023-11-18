@@ -27,17 +27,6 @@ export default {
             <router-link v-for="page in pages" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-brown page-block"
                 :to="{ name: page.href }">{{ page.name }}</router-link>
 
-            <!-- <div class="w3-dropdown-click w3-mobile w3-hide-small">
-                <button class="w3-button w3-padding-large" onclick="dropdownFunction()">
-                    Dropdown <i class="fa fa-caret-down"></i>
-                </button>
-                <div id="demo" class="w3-dropdown-content w3-bar-block w3-white">
-                    <a href="#" class="w3-bar-item w3-button w3-mobile">Link 1</a>
-                    <a href="#" class="w3-bar-item w3-button w3-mobile">Link 2</a>
-                    <a href="#" class="w3-bar-item w3-button w3-mobile">Link 3</a>
-                </div>
-            </div> -->
-
         </div>
 
         <!-- Navbar on small screens -->
