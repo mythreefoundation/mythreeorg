@@ -1,11 +1,10 @@
 <script lang="ts">
 import { EventsBucket, MitraRashmiBucket, type MitraRashmi } from '@/utils/models';
 import { fetchImageURL, getTokenFromUrl, readCollection, getFullUrlPath, sortByDateDescending } from '@/utils/utils';
-import VuePdfEmbed from 'vue-pdf-embed'
+// import VuePdfEmbed from 'vue-pdf-embed'
 
 export default {
     components: {
-        VuePdfEmbed,
     },
     data() {
         return {
@@ -31,7 +30,7 @@ export default {
                 this.magazines.push({
                     title: doc.data.title,
                     id: doc.id,
-                    imageName: getFullUrlPath(MitraRashmiBucket, doc.data.imageName, this.TOKEN),
+                    imageName: getFullUrlPath(MitraRashmiBucket + "/", doc.data.imageName, this.TOKEN),
                     linkToMagazine: doc.data.linkToMagazine,
                     publishedDate: doc.data.publishedDate
                 })
@@ -56,13 +55,18 @@ export default {
 </script>
 
 <template>
-    <header class="w3-container w3-teal w3-center" style="padding:64px 16px">
-        <h3 class="w3-margin w3-jumbo">ಮಿತ್ರರಶ್ಮಿ ಮಾಸಪತ್ರಿಕೆ</h3>
+    <header class="w3-container w3-teal w3-center header-padding gradient">
+        <div class="w3-container header">
+            <img src="@/assets/logo/magazine-icon-png-clipart.png" alt="Logo Left" />
+            <h3 class="w3-margin w3-jumbo">ಮಿತ್ರರಶ್ಮಿ ಮಾಸಪತ್ರಿಕೆ</h3>
+            <img class="right" src="@/assets/logo/ebook-icon.png" alt="Logo Right" />
+        </div>
+
         <p class="w3-xlarge">ಕನ್ನಡದ ಕನ್ನಡಿಯಲ್ಲಿ ಸಂಸ್ಕೃತ ಮಾಸಪತ್ರಿಕೆ</p>
     </header>
 
     <div class="w3-row-padding w3-padding-32 w3-container">
-        <h2 class="w3-text-teal w3-center">ಮಿತ್ರರಶ್ಮಿ ಮಾಸಪತ್ರಿಕೆಯ ಸಂಚಿಕೆಗಳನ್ನು ಓದಬೇಕೆ? ಹಾಗಾದರೆ ಇಷ್ಟವಾದ ಸಂಚಿಕೆಯ ಮುಖಪುಟದ
+        <h2 class="w3-text-black w3-center">ಮಿತ್ರರಶ್ಮಿ ಮಾಸಪತ್ರಿಕೆಯ ಸಂಚಿಕೆಗಳನ್ನು ಓದಬೇಕೆ? ಹಾಗಾದರೆ ಇಷ್ಟವಾದ ಸಂಚಿಕೆಯ ಮುಖಪುಟದ
             ಚಿತ್ರದ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ</h2>
 
         <div v-for="book in magazines" class="w3-third w3-container w3-margin-bottom"
@@ -79,11 +83,11 @@ export default {
             </div>
         </div>
 
-        <h2 class="w3-text-teal w3-center">ಲೆೇಖಕರಿಗೆ ಮಾರ್ಗಸೂಚಿಗಳು</h2>
+        <h2 class="w3-container w3-text-black w3-center">ಲೆೇಖಕರಿಗೆ ಮಾರ್ಗಸೂಚಿಗಳು</h2>
 
-        <div class="w3-container w3-padding-16">
+        <div class="w3-container w3-padding-8">
 
-            <p>ನೀವೂ ‘ಮಿತ್ರರಶ್ಮಿಃ’ ಮಾಸಪತ್ರಿಕೆಗೆ ಲೀಖನವನ್ನು
+            <p class="w3-center">ನೀವೂ ‘ಮಿತ್ರರಶ್ಮಿಃ’ ಮಾಸಪತ್ರಿಕೆಗೆ ಲೀಖನವನ್ನು
                 ಬರೆಯಲಿಚ್ಛಿಸುವಿರಾ? ಬನ್ನಿ, ಈ ಕೆಳಕಂಡ ಸಾಮಾನ್ಯ
                 ಮಾರ್ಗಸೂಚಿಗಳನ್ನು ಅನುಸರಿಸಿ</p>
             <!-- <p>ತಮಮ ಲೋಖನ/ ಪಿತ್ರಕ್ರಿಯೆಯನುು ವಿದುಯನಾಮನ ಅಂಚೆ (ಈ-ಮೋಲ್) editormrashmi@gmail.com ಮುಖೋನ ಅರ್ವಾ
@@ -91,9 +95,9 @@ export default {
             ಮರೆಯದಿರಿ.</p> -->
         </div>
 
-        <div class="w3-container w3-padding-16">
-            <p class="w3-text-teal">ಲೇಖನದ ವಿಷಯಗಳು</p>
-            <p> ಸಂಸ್ಕೃತ, ಸಂಸ್ಕೃತಿ, ಸಂಸ್ಕಾರ
+        <div class="w3-container w3-padding-8">
+            <h4 class="w3-text-black w3-center">ಲೇಖನದ ವಿಷಯಗಳು</h4>
+            <p class="w3-center"> ಸಂಸ್ಕೃತ, ಸಂಸ್ಕೃತಿ, ಸಂಸ್ಕಾರ
                 ಪರಂಪರೆ, ಶಾಸ್ತ್ರಗಳ ಪರಿಚಯ, ಸಂಸ್ಕೃತದ ಉತ್ತಮ
                 ದೇವತಾಸ್ತುತಿಪದ್ಯಗಳು, ಕೃಷ್ಣಕರ್ಣಾಮೃತ, ಮೇಘದೂತ
                 ಮೊದಲಾದವುಗುಳಿಂದ ಆಯ್ದ ಮಧುರ, ಶೃಂಗಾರ ಪದ್ಯಗಳು,
@@ -115,7 +119,7 @@ export default {
         </div>
 
         <!-- <div class="w3-container w3-padding-16">
-            <p class="w3-text-teal">ಉಪಯೇಗಿಸಬೇಕಾದ ಅಕ್ ಷರ ಶೈಲ್ಲ</p>
+            <p class="w3-text-black">ಉಪಯೇಗಿಸಬೇಕಾದ ಅಕ್ ಷರ ಶೈಲ್ಲ</p>
             <p>ಯಾವುದೀ
                 ಯೂನಿಕೇಡ್ ಫಂಟ್ (ಉದಾ: NudiUni 01e ;
                 NudiParijatha) ; ಅಕಷರಶೈಲಿಯ ಗಾತಿ 14.</p>
@@ -123,7 +127,7 @@ export default {
 
         <div class="w3-container w3-padding-16">
 
-            <p class="w3-text-teal">ಲೇಖನದ ಮಿತಿ</p>
+            <p class="w3-text-black">ಲೇಖನದ ಮಿತಿ</p>
             <p>ಚಿಕ್ಕ, ಚೊಕ್ಕ, ವಿಶಿೇಷಣಾತಮಕ್ ಲೇಖನಗಳನನನ
                 ನಿರಿೇಕ್ಷ ಷಸನತ್ತೇವೆ. ನಿಮ್ಮ ಲೇಖನವು ಕ್ನನಡದಲ್ಲಿದನು, ಸ್ಕಮಾನಯವಾಗಿ
                 200 ರಿಂದ 400 ಪದಗಳಿಗೆ ಸೇಮಿತವಾಗಿರಲ್ಲ; ಅನಿವಾಯಯತ್
@@ -134,7 +138,7 @@ export default {
 
         <div class="w3-container w3-padding-16">
 
-            <p class="w3-text-teal">ಕೇಷ ಟಕ್ಗಳು ಮ್ತನತ ಚಿತಿಗಳು</p>
+            <p class="w3-text-black">ಕೇಷ ಟಕ್ಗಳು ಮ್ತನತ ಚಿತಿಗಳು</p>
             <p>ನಮಮ ಲೀಖನದ ಜ್ತೆಗೆ ಕನಷ್ಠ
                 ಒಂದನ ಸೂಕತವ್ಯದ ಚ್ಛತಿವಿದದರೆ ಉತತಮ. ಅರ್ತಯವಿದದಡೆ ಕೀಷ್ಟಕರ್ಳನನು ಬಳಸಬಹನದನ. ಅಂತಜ್ಞಗಲದಿಂದ
                 ಯಾವುದಾದರೂ ಚ್ಛತಿರ್ಳನನು ಬಳಸಿದದಲಿಿ, ಅವುರ್ಳ
@@ -142,17 +146,17 @@ export default {
                 ಕ್ೃತಿಸ್ಕವಮ್ಯಹಕ್ಕನನನ ಉಲ್ಿಂಘಿಸನವಂತಿಲ್ಿ</p>
         </div> -->
 
-        <div class="w3-container w3-padding-16">
+        <div class="w3-container w3-padding-8">
 
-            <p class="w3-text-teal">ಲೇಖನವನ್ನು ಕಳುಹಿಸಬೇಕಾದ ವಿಳಾಸ </p>
-            <p>ಲೀಖನದ ಕಡತವನ್ನು
+            <h4 class="w3-text-black w3-center">ಲೇಖನವನ್ನು ಕಳುಹಿಸಬೇಕಾದ ವಿಳಾಸ </h4>
+            <p class="w3-center">ಲೀಖನದ ಕಡತವನ್ನು
                 editormrashmi@gmail.com (ಈ-ಮೀಲ್) ಮುಖೇನ ಅಥವಾ 9448243724
                 WhatsApp ಸಂಖ್ಯೆಗೆ ಕಳುಹಿಸಿ</p>
         </div>
 
         <!-- <div class="w3-container w3-padding-16">
 
-            <p class="w3-text-teal">ಲೇಖನಗಳನನನ ಕ್ಳುಹಿಸನವ ದನಂಕ್ </p>
+            <p class="w3-text-black">ಲೇಖನಗಳನನನ ಕ್ಳುಹಿಸನವ ದನಂಕ್ </p>
             <p>ನಮಮ ಲೀಖನರ್ಳನನು
                 ಯಾವುದೀ ಸಮಯ ಈ ಮೀಲ ತ್ರಳಸಿದ ವಿದನಯನ್ಮಮನ ಅಂಚೆಯ
                 ವಿಳಾಸಕೆಕ ಕಳುಹಿಸಬಹನದನ. ‘ಮಿತಿರಶ್ಮಿಃ’ ಮಾಸಪತ್ರಿಕೆಯನ ಪಿತ್ರ
@@ -169,7 +173,7 @@ export default {
 
         <div class="w3-container w3-padding-16">
 
-            <p class="w3-text-teal">ಲೇಖಕ್ರ ಭಾವಚಿತಿ</p>
+            <p class="w3-text-black">ಲೇಖಕ್ರ ಭಾವಚಿತಿ</p>
             <p>ಪಿಥಮ ಬಾರಿ ಮಿತಿರಶಿಮ ಪತ್ರಿಕೆಗೆ
                 ಲೀಖನವನನು ಬರೆಯನತ್ರತರನವವರನ ತಮಮ ಒಂದನ ಪ್ರಸ್-
                 ಪೀರ್ಟಗ ಗಾತಿದ (.jpg ಫಾಮಾಯಗರ್ಟನಲಿಿ ಇರನವಂತಹ)
@@ -183,12 +187,15 @@ export default {
 
         <div class="w3-container w3-padding-16">
 
-            <p class="w3-text-teal">ಲೀಖಕರ ಸಂಪರ್ಕ ವಿವರಗಳು</p>
-            <p>ಲೀಖನವನ್ನು ಈ-ಮೀಲ್
+            <h4 class="w3-text-black w3-center">ಲೀಖಕರ ಸಂಪರ್ಕ ವಿವರಗಳು</h4 >
+            <p class="w3-center">ಲೀಖನವನ್ನು ಈ-ಮೀಲ್
                 ಮಾಡುವಾಗ ಲೀಖಕರು ತಮ್ಮ ಸಂಪೂರ್ಣ ಹಸರನ್ನು, ಹುದ್ಧೆ
                 ಹಾಗು ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ತಿಳಿಸುವುದು</p>
         </div>
-        <h3 class="w3-text-teal w3-center">ಇನ್ನೇಕೆ ತಡ? ಲೇಖನವನ್ನು ಬರೆಯಲು ಆರಂಭಿಸಿ!</h3>
+    </div>
+
+    <div class="w3-container w3-center w3-padding-16" style="background-color: #fef102;">
+        <h1 class="w3-margin" style="color: #8a5241;">ಇನ್ನೇಕೆ ತಡ? ಲೇಖನವನ್ನು ಬರೆಯಲು ಆರಂಭಿಸಿ!</h1>
     </div>
 
     <!-- <div id="modal-id" class="w3-modal">
@@ -212,17 +219,5 @@ export default {
 
 
 <style scoped>
-p {
-    margin: 0;
-    padding: 0;
-}
 
-.app-content {
-    padding: 24px 16px;
-}
-
-.vue-pdf-embed>div {
-    margin-bottom: 8px;
-    box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.1);
-}
 </style>

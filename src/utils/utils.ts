@@ -103,7 +103,8 @@ export const deleteFile = async (bucket: string, fileName: any) => {
 
 export const getFullUrlPath = (folderName: string, fileName: string, token: string) => {
     let xmlFileName = encodeURIComponent(fileName);
-    return "https://firebasestorage.googleapis.com/v0/b/mythree-org.appspot.com/o/" + folderName + "%2F" + xmlFileName + "?alt=media&token=" + token;
+    let xmlFolderName = encodeURIComponent(folderName);
+    return "https://firebasestorage.googleapis.com/v0/b/mythree-org.appspot.com/o/" + xmlFolderName + xmlFileName + "?alt=media&token=" + token;
 }
 
 export const readCollection = async function (collectionName: string) {

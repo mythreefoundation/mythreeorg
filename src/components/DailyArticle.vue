@@ -11,6 +11,14 @@ export default {
             type: String,
             required: true
         },
+        img1: {
+            type: String,
+            required: true
+        },
+        img2: {
+            type: String,
+            required: true
+        }
     },
     data() {
         return {
@@ -58,14 +66,23 @@ export default {
             }
             this.currentIndex += this.stepCount;
         },
+
+        getImagePath(imgName: string){
+            return "src/assets/logo/" + imgName;
+        }
     }
 }
 
 </script>
 
 <template>
-    <header class="w3-container w3-teal w3-center" style="padding:64px 16px">
-        <h3 class="w3-margin w3-jumbo">{{ title }}</h3>
+    <header class="w3-container w3-teal w3-center header-padding gradient">
+        <div class="w3-container header">
+            <img src="@/assets/logo/om.png" alt="Logo Left" />
+            <h3 class="w3-margin w3-jumbo">{{ title }}</h3>
+            <img class="right" src="@/assets/logo/folded-hands.png" alt="Logo Right" />
+        </div>
+
         <!-- <p class="w3-xlarge"></p> -->
     </header>
 

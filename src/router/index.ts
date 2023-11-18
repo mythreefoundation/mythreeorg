@@ -55,19 +55,25 @@ const router = createRouter({
       path: '/arogyasubashita',
       name: 'arogyasubashita',
       component: DailyArticle,
-      props: { title: 'ಆರೋಗ್ಯ ಸುಭಾಷಿತಗಳು', folderName: 'arogya_subashita' }
+      props: { title: 'ಆರೋಗ್ಯ ಸುಭಾಷಿತಗಳು', folderName: 'arogya_subashita/', img1: 'ayurveda-medicine03.png', img2:'ayurveda-medicine03.png' }
     },
     {
       path: '/nityasubashita',
       name: 'nityasubashita',
       component: DailyArticle,
-      props: { title: 'ನಿತ್ಯ ಸುಭಾಷಿತಗಳು', folderName: 'nitya_subashita' }
+      props: { title: 'ನಿತ್ಯ ಸುಭಾಷಿತಗಳು', folderName: 'nitya_subashita/', img1: 'folded-hands.png', img2:'om.png' }
     },
     {
       path: '/suvachana',
       name: 'suvachana',
       component: DailyArticle,
-      props: { title: 'ಸುವಚನಗಳು', folderName: 'suvachana' }
+      props: { title: 'ಸುವಚನಗಳು', folderName: 'suvachana/', img1: '', img2:'' }
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: DailyArticle,
+      props: { title: 'News', folderName: 'news/SS/' }
     }
   ]
 })

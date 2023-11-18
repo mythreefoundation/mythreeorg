@@ -34,7 +34,7 @@ export default {
           description: doc.data.description,
           details: doc.data.details,
           id: doc.id,
-          imageName: getFullUrlPath(EventsBucket, doc.data.imageName, this.TOKEN),
+          imageName: getFullUrlPath(EventsBucket + "/", doc.data.imageName, this.TOKEN),
           joiningLink: doc.data.joiningLink,
           name: doc.data.name,
           groupId: doc.data.groupId,
@@ -86,22 +86,29 @@ export default {
 </script>
 
 <template>
-  <header class="w3-container w3-teal w3-center" style="padding:64px 16px">
-    <h3 class="w3-margin w3-jumbo">ಕಾರ್ಯಕ್ರಮಗಳು</h3>
+  <header class="w3-container w3-teal gradient w3-center header-padding">
+
+    <div class="w3-container header">
+      <img src="@/assets/logo/clubhouse-app-logo.png" alt="Logo Left" />
+      <h3 class="w3-margin w3-jumbo">ಕಾರ್ಯಕ್ರಮಗಳು</h3>
+      <img class="right" src="@/assets/logo/speaker.png" alt="Logo Right" />
+    </div>
+
     <p class="w3-xlarge">ನಮ್ಮ ಕಾರ್ಯಕ್ರಮಗಳಲ್ಲಿ ನಮ್ಮೊಂದಿಗೆ ಸೇರಿಕೊಳ್ಳಿ</p>
   </header>
 
   <div class="w3-row-padding w3-padding-32 w3-container">
-    <h2 class="w3-center">ಪ್ರೋಗ್ರಾಂ ವೀಕ್ಷಿಸಲು ಚಿತ್ರದ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ</h2>
+    <h2 class="w3-center">ಕಾರ್ಯಕ್ರಮ ವೀಕ್ಷಿಸಲು ಚಿತ್ರದ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ</h2>
     <div v-for="(_groupedEvents, title) in groupedEvents" class="w3-container">
-      <h3 class="w3-text-teal w3-center">{{ getGroupName(title) }}</h3>
+      <h3 class="w3-text-black w3-center" style="font-style: italic;">{{ getGroupName(title) }}</h3>
       <div v-for="event in sortByOrderId(_groupedEvents)" class="w3-third w3-container w3-margin-bottom"
         style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
         <div class="w3-image-container"
           style="height: 300px; display: flex; align-items: center; justify-content: center;">
 
           <a :href="`${event.joiningLink}`" target="_blank">
-            <img :src="`${event.imageName}`" :alt="`${event.name}`" style="max-width: 100%; max-height: 300px; padding: 5px;">
+            <img :src="`${event.imageName}`" :alt="`${event.name}`"
+              style="max-width: 100%; max-height: 300px; padding: 5px;">
           </a>
         </div>
         <div class="w3-container w3-white w3-center">
@@ -114,8 +121,8 @@ export default {
 
   </div>
 
-  <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">ಕಾಯೃಕ್ರಮದ Link ಪಡೆಯಲು ಕು। ಧನ್ಯಶ್ರೀ ಅವರ 74835
+  <div class="w3-container w3-center w3-padding-16" style="background-color: #fef102;">
+    <h1 class="w3-margin" style="color: #8a5241;">ಕಾಯೃಕ್ರಮದ Link ಪಡೆಯಲು ಕು। ಧನ್ಯಶ್ರೀ ಅವರ 74835
       86269 ಸಂಖ್ಯೆಗೆ WhatsApp ಸಂದೇಶ ಕಳುಹಿಸಿ. ಕರೆ ಮಾಡಲು ಅವಕಾಶವಿಲ್ಲ</h1>
   </div>
 </template>
